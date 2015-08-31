@@ -1,0 +1,55 @@
+// _variables.scss
+// ============================
+
+@include border-box-sizing; // users border box sizing like the old IE
+
+//Susy Global Settings
+$susy: (
+	column: 12,
+	container: 60em,
+	gutters: 1/4,
+	gutter-position: inside
+);
+
+
+// Color Palette
+$blue      : #336699;
+$maize     : #E89D00;
+$yellow    : #FFBC2E;
+$lightblue : #33A3DC;
+$red       : #DC4332;
+$grey      : #E0E0E0;
+$orange    : #F2C968;
+$dark      : #000000;
+$light     : #FFFFFF;
+
+$backgroundColor : $light;
+$typeDefault     : $dark;
+$navBackground   : $blue;
+$navForeground   : $red;
+$navHover        : $yellow;
+$navBrandBg      : $light;
+$headersubbg     : $dark;
+
+//Font variables
+
+$headfamily : 'Exo 2', 'Helvetica Neue', Helvetica, Arial,  sans-serif;
+$mainfamily : 'Source Sans Pro', sans-serif;
+
+$thin : 200;
+$normal : 400;
+$bold : 600;
+$heavy : 800;
+
+$headFont : $thin 1.5em/1.5em $headfamily;
+$mainFont : $thin 1em/1.5em $mainfamily;
+$headColor: $red;
+
+//Breakpoint variables
+$narrow: 400px;
+$iPhone: 480px;
+$small: 650px;
+$potrait: 768px;
+$medium: 960px;
+$large: 1024px;
+$wide: 1200px;

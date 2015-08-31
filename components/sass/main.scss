@@ -20,11 +20,11 @@
 @import "utils/mixins";
 
 // Import Base
-@import "base/base"
+@import "base/global";
 @import "base/typography";
 
 // Import Components
-@import "components/button";
+@import "components/buttons";
 
 // Import Layout
 @import "layout/footer";

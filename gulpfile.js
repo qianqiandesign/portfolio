@@ -16,7 +16,7 @@ var env,
     outputDir,
     sassStyle;
 
-env = 'production';
+env = 'development';
 
 if (env==='development') {
   outputDir = 'builds/development/';
@@ -28,11 +28,11 @@ if (env==='development') {
 
 jsSources = [
   'components/scripts/jqloader.js',
-  // 'components/scripts/TweenMax.min.js',
-  // 'components/scripts/jquery.scrollmagic.min.js',
+  'components/scripts/TweenMax.min.js',
+  'components/scripts/jquery.scrollmagic.min.js',
   'components/scripts/script.js'
 ];
-sassSources = ['components/sass/style.scss'];
+sassSources = ['components/sass/main.scss'];
 htmlSources = [outputDir + '*.html'];
 
 gulp.task('js', function() {

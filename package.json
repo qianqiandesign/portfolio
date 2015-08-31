@@ -1,10 +1,10 @@
 {
-  "name": "Hubtag_Website",
+  "name": "AArSinglePageResponsive",
   "version": "0.0.1",
-  "description": "Hubtag_Website",
+  "description": "A single page website that berifly introduce Ann Arbor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sgliv8/sass-website.git"
+    "url": "https://github.com/sgliv/sass-website.git"
   },
   "author": "Jay Xu",
   "devDependencies": {
