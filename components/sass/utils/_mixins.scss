@@ -32,3 +32,14 @@
 		clear: both;
 	} // after
 } // clearfix
+
+
+@mixin backSize (
+	$top: 80px,
+	$bottom: 80px
+) {
+	padding-top: $top;
+    padding-bottom: $bottom;
+    position: relative;
+    overflow: hidden;
+}

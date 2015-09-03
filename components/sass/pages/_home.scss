@@ -3,7 +3,7 @@
 	// @include display-flex();
 	// @include align-items(center);
 	// @include justify-content(center);
-	height: 120vh;
+	@include backSize(0px);
 
 	header {
 		padding: 2em 0;
@@ -61,6 +61,7 @@
 			@include text-shadow($dark, 0 0 20px);
 			text-align: center;
 			padding-top: 2em;
+			line-height: 1.1em;
 		} // h1
 
 		p {
@@ -96,13 +97,28 @@
 		@include breakpoint(max-width $small) {
 			h1 {
 				font-size: 2em;
+				line-height: 1.3em;
 			} //h1
 
 			p {
 				font-size: 1em;
+				line-height: 1.2em;
 			} //p
 
-		}// breakpoint
+		}// breakpoint_$small
+
+		@include breakpoint(max-width $narrow) {
+			h1 {
+				font-size: 1.5em;
+				line-height: 1.3em;
+			} //h1
+
+			p {
+				font-size: 0.8em;
+				line-height: 1.2em;
+			} //p
+
+		}// breakpoint_$small
 
 	}//.promo
 
@@ -117,7 +133,13 @@
 				max-width: 100%;
 			}
 		} //icon
+
+		@include breakpoint(max-width $medium){
+			display: none;
+		} // breakpoint_$medium
+
 	} //.icon_container
+
 }//#intro
 
 
@@ -136,6 +158,20 @@
 			p {
 				padding: 0 20px;
 			}
+
+			@include breakpoint($potrait $large) {
+				@include span(6);
+				padding-top: 2em;
+			} // breakpoint_$potrait_to_$large
+
+			@include breakpoint(max-width $potrait) {
+				@include span(12);
+				padding-top: 3.5em;
+
+				&:first-child {
+					padding-top: 1.5em;
+				}
+			} // breakpoint_$potrait
 
 		} //.service_icon
 	} //.service
@@ -162,6 +198,12 @@
 				max-width: 100%;
 
 			} //img
+
+			@include breakpoint(max-width $medium){
+				@include span(12);
+
+			} //breakpoint_$medium
+
 		} //.caster_show
 
 		aside {
@@ -184,15 +226,37 @@
 				
 				} //span
 			} //.caster_title
+
+			@include breakpoint(max-width $medium){
+				@include span(12);
+
+				.caster_title {
+					margin-top: 2em;
+				}
+			} //breakpoint_$medium
+
 		} //aside
-	} //.caster_show
+
+		@include breakpoint(max-width $wide){
+			@include container(94%);
+		}// breakpoint_$wide
+
+		@include breakpoint($medium $large){
+			@include container(97%);
+		}// breakpoint_$medium_to_$large
+
+		@include breakpoint(max-width $medium){
+			@include container(80%);
+		}// breakpoint_$medium
+
+	} //.caster
 } //# product
 
 
 #features {
 	@include backImage('../images/feature-bg.png');
-	height: 110vh;
-
+	@include backSize;
+	
 	.top_section {
 		@include container(70%);
 
@@ -200,16 +264,22 @@
 			color: $light;
 			font-size: 2em;
 			font-family: $mainfamily;
-			line-height: 0.8em;
+			line-height: 1.2em;
 			@include text-shadow($dark, 0 0 20px);
 			text-align: center;
-			padding-top: 2em;
+			// padding-top: 2em;
 			padding-bottom: 2em;
+
+			@include breakpoint(max-width $small){
+				font-size: 1.6em;
+			}
 		} // h1
 	} //.top_section
 	
 	.features_list {
 		@include container;
+		@include clearfix;
+
 
 		.feature {
 			@include span(2);
@@ -224,14 +294,19 @@
 				    height: 134px;
 				    padding: 20px;
 				    margin: 20px;
-				    text-align: center;
+				    margin-left: auto;
+				    margin-left: auto;
+
+				    &:hover {
+						background-color: $highlight;
+					}
 
 				    i {
 						color: #fff;
 					    text-align: center;
 					    display: block;
 					    margin-bottom: 8px;
-					    font-size: 2.3em;
+					    font-size: 1.8em;
 					    margin-top: 12px;
 				    } //i
 
@@ -244,7 +319,29 @@
 				    } //p
 				} //.feature_con
 			} //a	
+
+			@include breakpoint($potrait $large) {
+				@include span(3);
+			} //breakpoint_$potrait_to_$large
+
+			@include breakpoint(max-width $potrait) {
+				@include span(4);
+			} //breakpoint_$potrait
+
+			@include breakpoint(max-width 560px) {
+				@include span(6);
+			} //breakpoint_560px
+
 		} //.feature
+
+		@include breakpoint(max-width $small) {
+			@include container(80%);
+		} //breakpoint_$small
+
+		@include breakpoint(max-width $extrasmall) {
+			@include container(90%);
+		} //breakpoint_$potrait
+
 	} //.feature_list
 
 	.bottom_section {
@@ -260,6 +357,10 @@
 			    font-family: $mainfamily;
 			} //h4
 		} //a
+
+		@include breakpoint(max-width $iPhone) {
+			font-size: 0.8em;
+		} //breakpoint_$iPhone
 	}//.bottom_section
 
 } //#features
@@ -274,11 +375,16 @@
 			color: $dark;
 			font-size: 1.6em;
 			font-family: $mainfamily;
-			line-height: 0.8em;
+			line-height: 1.3em;
 			text-align: center;
 			padding-top: 3em;
 			padding-bottom: 3em;
 		} // h1
+		
+		@include breakpoint(max-width $iPhone) {
+			font-size: 0.7em;
+		} //breakpoint_$iPhone
+
 	} //.clients
 
 	.client_group {
@@ -303,7 +409,8 @@
 
 #academy {
 	@include backImage('../images/acedamy-bg.png');
-	height: 110vh;
+	@include backSize(0px);
+	
 
 	.title_section {
 		@include container(80%);
@@ -311,7 +418,7 @@
 		h1 {
 			color: $grey;
 			font-size: 2.6em;
-			line-height: 0.8em;
+			line-height: 1.4em;
 			font-family: $headfamily;
 			@include text-shadow($dark, 0 0 20px);
 			text-align: center;
@@ -323,7 +430,21 @@
 			img {
 				vertical-align: text-bottom;
 			}
+
+			@include breakpoint(max-width $small) {
+				font-size: 1.7em;
+
+				img {
+					width: 190px;
+				}
+			} //breakpoint_$small
+
 		} // h1
+
+		@include breakpoint(max-width $small) {
+			@include container(90%);
+		} //breakpoint_$small
+
 	} //.title_section
 
 	.intro{
@@ -346,6 +467,19 @@
 			font-family: $mainfamily;
 			font-size: 1.2em;
 		} //h6
+
+		@include breakpoint(max-width $small) {
+			@include container(80%);
+
+			p {
+				font-size: 0.9em;
+			}
+
+			h6 {
+				font-size: 1em;
+			}
+		} //breakpoint_$small
+
 	} //.intro
 
 } //#academy

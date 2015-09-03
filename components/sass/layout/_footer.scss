@@ -6,11 +6,13 @@ footer {
 		padding: 2em 0;
 		@include clearfix;
 
+
 		ul {
 			li {
 				float: left;
 				display: inline-block;
 				text-align: center;
+				// margin: 0 1em;
 
 				a {
 					color: $darkgrey;
@@ -22,6 +24,62 @@ footer {
 				} //a
 			} //li
 		} //ul
+
+		@include breakpoint(max-width 1260px){
+			@include container(40%);
+
+			li {
+				&:first-child {
+				margin-left: 2em;
+				}
+			}
+		}
+
+		@include breakpoint(max-width 1030px){
+			@include container(50%);
+
+			li {
+				&:first-child {
+				margin-left: 3em;
+				}
+			}
+		} //breakpoint_1030px
+
+		@include breakpoint(max-width 860px){
+			@include container(65%);
+
+			li {
+				&:first-child {
+				margin-left: 4.5em;
+				}
+			}
+		} //breakpoint_860px
+
+		@include breakpoint(max-width 768px){
+			@include container(75%);
+
+			li {
+				&:first-child {
+					margin-left: 5em;
+				}
+			}
+		} //breakpoint_768px;
+
+		@include breakpoint(max-width $small) {
+			@include container(80%);
+
+			li {
+				display: block !important;
+				@include span(12);
+				padding: 0.5em 0;
+				&:first-child {
+					margin-left: 0;
+				}
+
+			}
+			
+		} //breakpoint_$small
+
 	} //.footer_top
 
 	hr {
@@ -80,5 +138,13 @@ footer {
 	            font-size: 2.2em;
 			} //a
 		} //.footer_brand
+
+		@include breakpoint(max-width 800px) {
+			@include container(55%);
+		} // breakpoint_800px;
+
+		@include breakpoint(max-width $iPhone) {
+			@include container(80%);
+		} // breakpoint_$iPhone;
 	} //.footer_bottom
 } //footer
