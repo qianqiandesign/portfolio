@@ -1,0 +1,352 @@
+#intro {
+	@include backImage('../images/seattleskyline.jpg');
+	// @include display-flex();
+	// @include align-items(center);
+	// @include justify-content(center);
+	height: 120vh;
+
+	header {
+		padding: 2em 0;
+		@include clearfix;
+
+		.navbar {
+			@include container;
+			.brand {
+				//@include span(3);
+				float: left;
+				font-weight: $normal;
+          		font-family: $headfamily;
+          		text-align: center;
+
+          		a {
+		            color: $navForeground;
+		            text-decoration: none;
+		            text-align: center;
+		            display: inline-block;
+		            padding: 10px;
+		            font-size: 2.2em;
+				} //a
+			} //.brand
+
+			nav {
+				//@include span(9 at 3 of 12);
+				padding: 15px;
+				li {
+					float: right;
+					display: inline-block;
+					a {
+						color: $light;
+						font: $mainFont;
+						font-size: 1em;
+						font-weight: $bold;
+						padding: 10px 15px;
+						text-decoration: none;
+						&.button {
+							padding: 10px 20px;
+						}
+					} //a
+				} //li
+			} // nav
+		} //.navbar
+	} //header
+
+	.promo {
+		@include container(80%);
+
+		h1 {
+			color: $light;
+			font-size: 3em;
+			font-weight: $normal;
+			line-height: 0.8em;
+			@include text-shadow($dark, 0 0 20px);
+			text-align: center;
+			padding-top: 2em;
+		} // h1
+
+		p {
+			color: rgba($light, 0.6);
+			padding-top: 1.8em;
+			line-height: 0.8em;
+			text-align: center;
+			font-size: 1.5em;
+		} //p
+
+		.button_group {
+			text-align: center;
+			padding-top: 2em;
+
+			a {
+				text-decoration: none;
+				color: $light;
+				padding-left: 30px;
+				padding-right: 30px;
+
+				&.button_extra {
+					padding-left:60px;
+					padding-right:60px;
+				} //a.button_extra
+
+				@include breakpoint(max-width $small) {
+					@include span(1 of 1);
+					margin-bottom: 1em;
+				} //breakpoint
+			} //a
+		}//.button_group
+
+		@include breakpoint(max-width $small) {
+			h1 {
+				font-size: 2em;
+			} //h1
+
+			p {
+				font-size: 1em;
+			} //p
+
+		}// breakpoint
+
+	}//.promo
+
+	.icon_container {
+		@include container(80%);
+		padding-top: 4em;
+
+		.icon {
+			@include span(3);
+			text-align: center;
+			img {
+				max-width: 100%;
+			}
+		} //icon
+	} //.icon_container
+}//#intro
+
+
+#product {
+	.service {
+		@include container(80%);
+		padding: 3em 0;
+
+		.service_icon {
+			@include span(3);
+			text-align: center;
+			img {
+				max-width: 100%;
+			} //img
+
+			p {
+				padding: 0 20px;
+			}
+
+		} //.service_icon
+	} //.service
+
+	.heart_divider {
+		@include container(80%);
+		text-align: center;
+
+		img {
+			max-width: 100%;
+		} //img
+	} // heart-divider
+
+	.caster {
+		@include container(80%);
+		padding-top:3em;
+		padding-bottom: 3em;
+
+		.caster_show {
+			@include span(9);
+			padding: 0 2em;
+
+			img {
+				max-width: 100%;
+
+			} //img
+		} //.caster_show
+
+		aside {
+			@include span(3 at 9 of 12);
+			.caster_title {
+				@include container(100%);
+				margin-top: 5em;
+				margin-bottom: 3em;
+
+				span {
+					font-size: 2.5em;
+					font-family: $headfamily;
+					color: $teal;
+
+					img {
+						width: 50px;
+						vertical-align: text-bottom;
+						// max-width: 100%;
+					} //img
+				
+				} //span
+			} //.caster_title
+		} //aside
+	} //.caster_show
+} //# product
+
+
+#features {
+	@include backImage('../images/feature-bg.png');
+	height: 110vh;
+
+	.top_section {
+		@include container(70%);
+
+		h1 {
+			color: $light;
+			font-size: 2em;
+			font-family: $mainfamily;
+			line-height: 0.8em;
+			@include text-shadow($dark, 0 0 20px);
+			text-align: center;
+			padding-top: 2em;
+			padding-bottom: 2em;
+		} // h1
+	} //.top_section
+	
+	.features_list {
+		@include container;
+
+		.feature {
+			@include span(2);
+
+			a {
+				text-decoration: none;
+
+				.feature_con {
+					@include border-radius(20px); 
+					background-color: rgba($orange, 0.8);
+				    width: 134px;
+				    height: 134px;
+				    padding: 20px;
+				    margin: 20px;
+				    text-align: center;
+
+				    i {
+						color: #fff;
+					    text-align: center;
+					    display: block;
+					    margin-bottom: 8px;
+					    font-size: 2.3em;
+					    margin-top: 12px;
+				    } //i
+
+				    p {
+				    	color: $light;
+	    				text-align: center;
+	    				font-size: 1em;
+	    				text-decoration: none;
+	    				line-height: 1em;
+				    } //p
+				} //.feature_con
+			} //a	
+		} //.feature
+	} //.feature_list
+
+	.bottom_section {
+		a {
+			text-decoration: none;
+			// color: $light;
+
+			h4 {
+				color: $light;
+			    text-align: center;
+			    margin-top: 3em;
+			    font-size: 1.3em;
+			    font-family: $mainfamily;
+			} //h4
+		} //a
+	}//.bottom_section
+
+} //#features
+
+
+#partners {
+
+	.clients {
+		@include container(40%);
+
+		h1 {
+			color: $dark;
+			font-size: 1.6em;
+			font-family: $mainfamily;
+			line-height: 0.8em;
+			text-align: center;
+			padding-top: 3em;
+			padding-bottom: 3em;
+		} // h1
+	} //.clients
+
+	.client_group {
+		@include container(70%);
+		padding-bottom: 5em;
+
+		.client {
+			@include span(4);
+			text-align: center;
+			
+			img {
+				max-width: 100%;
+
+				&.img_pad {
+					padding-top: 2em;
+				} //.img_extra
+			} //img
+		} //.client
+	} //.client_group
+
+} //#partners
+
+#academy {
+	@include backImage('../images/acedamy-bg.png');
+	height: 110vh;
+
+	.title_section {
+		@include container(80%);
+
+		h1 {
+			color: $grey;
+			font-size: 2.6em;
+			line-height: 0.8em;
+			font-family: $headfamily;
+			@include text-shadow($dark, 0 0 20px);
+			text-align: center;
+			padding-top: 1.5em;
+			padding-bottom: 1.5em;
+			font-weight: $normal;
+			//display: inline-block;
+
+			img {
+				vertical-align: text-bottom;
+			}
+		} // h1
+	} //.title_section
+
+	.intro{
+		@include container(60%);
+		padding: 3em 0 6em 0;
+		background-color: rgba($light, 0.1);
+
+		p {
+			font-size: 1.2em;
+			color: $light;
+			text-align: left;
+			margin-bottom: 4em;
+			padding: 0 3em;
+			font-weight: $normal;
+		} //p
+
+		h6 {
+			color: $grey;
+			text-align: center;
+			font-family: $mainfamily;
+			font-size: 1.2em;
+		} //h6
+	} //.intro
+
+} //#academy
+

@@ -5,8 +5,10 @@
 
 //Susy Global Settings
 $susy: (
-	column: 12,
-	container: 60em,
+	columns: 12,
+	container: 90%,
+	math: fluid,
+  	output: float,
 	gutters: 1/4,
 	gutter-position: inside
 );
@@ -14,27 +16,31 @@ $susy: (
 
 // Color Palette
 $blue      : #336699;
-$maize     : #E89D00;
+$darkgrey  : #746358;
 $yellow    : #FFBC2E;
-$lightblue : #33A3DC;
+$lightgrey : #F4F4F4;
 $red       : #DC4332;
-$grey      : #E0E0E0;
-$orange    : #F2C968;
+$grey      : #B0B0B0;
+$orange    : #EEC691;
 $dark      : #000000;
 $light     : #FFFFFF;
+$teal      : #4CB9CD;
+$twitter   : #55ACEE;
+$facebook  : #3A5795;
+$linkedin  : #1884BB;
 
 $backgroundColor : $light;
 $typeDefault     : $dark;
 $navBackground   : $blue;
-$navForeground   : $red;
+$navForeground   : $light;
 $navHover        : $yellow;
 $navBrandBg      : $light;
 $headersubbg     : $dark;
 
 //Font variables
 
-$headfamily : 'Exo 2', 'Helvetica Neue', Helvetica, Arial,  sans-serif;
-$mainfamily : 'Source Sans Pro', sans-serif;
+$headfamily : 'Orbitron', 'Helvetica Neue', Helvetica, Arial,  sans-serif;
+$mainfamily : 'Armata', sans-serif;
 
 $thin : 200;
 $normal : 400;

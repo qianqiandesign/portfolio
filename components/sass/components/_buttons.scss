@@ -1,0 +1,6 @@
+.button {
+	@include border-radius(5px);
+	border: 1px solid #fff;
+    margin-left: 15px;
+    padding: 10px 20px;
+}
