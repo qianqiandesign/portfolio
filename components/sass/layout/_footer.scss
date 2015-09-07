@@ -2,16 +2,17 @@ footer {
 	background-color: $lightgrey;
 
 	.footer_top {
-		@include container(30%);
+		@include container(50%);
 		padding: 2em 0;
-		@include clearfix;
+		//@include clearfix;
+		text-align: center;
+
 
 
 		ul {
 			li {
-				float: left;
 				display: inline-block;
-				text-align: center;
+				
 				// margin: 0 1em;
 
 				a {
@@ -25,45 +26,9 @@ footer {
 			} //li
 		} //ul
 
-		@include breakpoint(max-width 1260px){
-			@include container(40%);
-
-			li {
-				&:first-child {
-				margin-left: 2em;
-				}
-			}
-		}
-
-		@include breakpoint(max-width 1030px){
-			@include container(50%);
-
-			li {
-				&:first-child {
-				margin-left: 3em;
-				}
-			}
-		} //breakpoint_1030px
-
-		@include breakpoint(max-width 860px){
+		@include breakpoint(max-width 800px){
 			@include container(65%);
-
-			li {
-				&:first-child {
-				margin-left: 4.5em;
-				}
-			}
-		} //breakpoint_860px
-
-		@include breakpoint(max-width 768px){
-			@include container(75%);
-
-			li {
-				&:first-child {
-					margin-left: 5em;
-				}
-			}
-		} //breakpoint_768px;
+		} //breakpoint_800px;
 
 		@include breakpoint(max-width $small) {
 			@include container(80%);

@@ -5,51 +5,6 @@
 	// @include justify-content(center);
 	@include backSize(0px);
 
-	header {
-		padding: 2em 0;
-		@include clearfix;
-
-		.navbar {
-			@include container;
-			.brand {
-				//@include span(3);
-				float: left;
-				font-weight: $normal;
-          		font-family: $headfamily;
-          		text-align: center;
-
-          		a {
-		            color: $navForeground;
-		            text-decoration: none;
-		            text-align: center;
-		            display: inline-block;
-		            padding: 10px;
-		            font-size: 2.2em;
-				} //a
-			} //.brand
-
-			nav {
-				//@include span(9 at 3 of 12);
-				padding: 15px;
-				li {
-					float: right;
-					display: inline-block;
-					a {
-						color: $light;
-						font: $mainFont;
-						font-size: 1em;
-						font-weight: $bold;
-						padding: 10px 15px;
-						text-decoration: none;
-						&.button {
-							padding: 10px 20px;
-						}
-					} //a
-				} //li
-			} // nav
-		} //.navbar
-	} //header
-
 	.promo {
 		@include container(80%);
 
@@ -338,9 +293,9 @@
 			@include container(80%);
 		} //breakpoint_$small
 
-		@include breakpoint(max-width $extrasmall) {
+		@include breakpoint(max-width $iPhone) {
 			@include container(90%);
-		} //breakpoint_$potrait
+		} //breakpoint_$extra
 
 	} //.feature_list
 
@@ -483,4 +438,44 @@
 	} //.intro
 
 } //#academy
+
+
+
+
+// @media screen and (max-width: 900px){
+// .menu-btn div {
+// 	position: absolute;
+// 	left: 100%;
+// 	top: 64%;
+// 	padding-right: 8px;
+// 	margin-top: -0.50em;
+// 	line-height: 1.2;
+// 	font-size: 18px;
+// 	font-weight: 200;
+// 	vertical-align: middle;
+// 	z-index: 99;
+// }
+ 
+// .menu-btn span {
+// 	display: block;
+// 	width: 30px;
+// 	height: 4px;
+// 	margin: 5px 0;
+// 	background: $light;
+// 	z-index: 100;
+// }
+ 
+// .responsive-menu{
+// 	display: none;
+// }
+ 
+// .expand {
+// 	display: block !important;
+// 	position: absolute; 
+// 	top: 15%; 
+// 	width: 100%; 
+// 	left: 0; 
+// }
+
+// }
 

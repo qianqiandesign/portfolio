@@ -1,0 +1,103 @@
+header {
+	padding: 2em 0;
+	@include clearfix;
+
+	.navbar {
+		@include container;
+		.brand {
+			//@include span(3);
+			float: left;
+			font-weight: $normal;
+      		font-family: $headfamily;
+      		text-align: center;
+
+      		a {
+	            color: $navForeground;
+	            text-decoration: none;
+	            text-align: center;
+	            display: inline-block;
+	            padding: 10px;
+	            font-size: 2.2em;
+			} //a
+		} //.brand
+
+		.mobile-nav {
+			nav {
+				//@include span(9 at 3 of 12);
+				padding: 15px;
+
+				@include breakpoint(max-width 900px){
+					padding: 0;
+					background-color:$teal;
+				}
+
+				li {
+					float: right;
+					display: inline-block;
+
+					a {
+						color: $light;
+						font: $mainFont;
+						font-size: 1em;
+						font-weight: $bold;
+						padding: 10px 15px;
+						text-decoration: none;
+						&.button {
+							padding: 10px 20px;
+						}
+					} //a
+
+					@include breakpoint(max-width 900px){
+						display: block;
+						float:none;
+						width: 100%;
+						text-align: center;
+						padding: 1em 0;
+
+						a {
+							&.button {
+								padding: 10px 40%;
+							}
+						}
+					} // breakpoint_900px
+				} //li
+			} // nav
+
+			@include breakpoint(max-width 900px){
+				.menu-btn {
+					div {
+						position: absolute;
+						left: 100%;
+						top: 64%;
+						padding-right: 8px;
+						margin-top: -0.50em;
+						line-height: 1.2;
+						font-size: 18px;
+						font-weight: 200;
+						vertical-align: middle;
+						z-index: 99;
+					} //div
+
+					span {
+						display: block;
+						width: 30px;
+						height: 4px;
+						margin: 5px 0;
+						background: $light;
+						z-index: 100;
+					} //span
+				} //.menu-btn
+
+				.responsive-menu {
+					display: none;
+					position: absolute; 
+					top: 17%; 
+					width: 100%; 
+					left: 0;
+				} //nav.responsive-menu
+
+			} // breakpoint
+		} //.mobile-nav
+
+	} //.navbar
+} //header
