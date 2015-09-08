@@ -991,25 +991,18 @@ header .navbar .mobile-nav nav li a.button {
 }
 /* line 351, ../../../components/sass/pages/_home.scss */
 #partners .client_group .client {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 33.33333%;
-  float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
-  text-align: center;
+  margin: 20px;
 }
-/* line 355, ../../../components/sass/pages/_home.scss */
+/* line 356, ../../../components/sass/pages/_home.scss */
 #partners .client_group .client img {
   max-width: 100%;
 }
-/* line 358, ../../../components/sass/pages/_home.scss */
+/* line 359, ../../../components/sass/pages/_home.scss */
 #partners .client_group .client img.img_pad {
   padding-top: 2em;
 }
 
-/* line 367, ../../../components/sass/pages/_home.scss */
+/* line 368, ../../../components/sass/pages/_home.scss */
 #academy {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/acedamy-bg.png");
   background-repeat: no-repeat;
@@ -1023,7 +1016,7 @@ header .navbar .mobile-nav nav li a.button {
   position: relative;
   overflow: hidden;
 }
-/* line 372, ../../../components/sass/pages/_home.scss */
+/* line 373, ../../../components/sass/pages/_home.scss */
 #academy .title_section {
   max-width: 80%;
   margin-left: auto;
@@ -1035,7 +1028,7 @@ header .navbar .mobile-nav nav li a.button {
   display: block;
   clear: both;
 }
-/* line 375, ../../../components/sass/pages/_home.scss */
+/* line 376, ../../../components/sass/pages/_home.scss */
 #academy .title_section h1 {
   color: #B0B0B0;
   font-size: 2.6em;
@@ -1047,22 +1040,22 @@ header .navbar .mobile-nav nav li a.button {
   padding-bottom: 1.5em;
   font-weight: 400;
 }
-/* line 387, ../../../components/sass/pages/_home.scss */
+/* line 388, ../../../components/sass/pages/_home.scss */
 #academy .title_section h1 img {
   vertical-align: text-bottom;
 }
 @media (max-width: 650px) {
-  /* line 375, ../../../components/sass/pages/_home.scss */
+  /* line 376, ../../../components/sass/pages/_home.scss */
   #academy .title_section h1 {
     font-size: 1.7em;
   }
-  /* line 394, ../../../components/sass/pages/_home.scss */
+  /* line 395, ../../../components/sass/pages/_home.scss */
   #academy .title_section h1 img {
     width: 190px;
   }
 }
 @media (max-width: 650px) {
-  /* line 372, ../../../components/sass/pages/_home.scss */
+  /* line 373, ../../../components/sass/pages/_home.scss */
   #academy .title_section {
     max-width: 90%;
     margin-left: auto;
@@ -1075,7 +1068,7 @@ header .navbar .mobile-nav nav li a.button {
     clear: both;
   }
 }
-/* line 407, ../../../components/sass/pages/_home.scss */
+/* line 408, ../../../components/sass/pages/_home.scss */
 #academy .intro {
   max-width: 60%;
   margin-left: auto;
@@ -1089,7 +1082,7 @@ header .navbar .mobile-nav nav li a.button {
   display: block;
   clear: both;
 }
-/* line 412, ../../../components/sass/pages/_home.scss */
+/* line 413, ../../../components/sass/pages/_home.scss */
 #academy .intro p {
   font-size: 1.2em;
   color: #FFFFFF;
@@ -1099,7 +1092,7 @@ header .navbar .mobile-nav nav li a.button {
   font-weight: 400;
   line-height: 1.7em;
 }
-/* line 422, ../../../components/sass/pages/_home.scss */
+/* line 423, ../../../components/sass/pages/_home.scss */
 #academy .intro a {
   color: #B0B0B0;
   text-align: center;
@@ -1110,13 +1103,13 @@ header .navbar .mobile-nav nav li a.button {
   font-weight: 600;
   text-decoration: none;
 }
-/* line 432, ../../../components/sass/pages/_home.scss */
+/* line 433, ../../../components/sass/pages/_home.scss */
 #academy .intro a:hover {
   color: #FFFFFF;
   border-color: #FFFFFF;
 }
 @media (max-width: 650px) {
-  /* line 407, ../../../components/sass/pages/_home.scss */
+  /* line 408, ../../../components/sass/pages/_home.scss */
   #academy .intro {
     max-width: 80%;
     margin-left: auto;
@@ -1128,11 +1121,11 @@ header .navbar .mobile-nav nav li a.button {
     display: block;
     clear: both;
   }
-  /* line 441, ../../../components/sass/pages/_home.scss */
+  /* line 442, ../../../components/sass/pages/_home.scss */
   #academy .intro p {
     font-size: 0.9em;
   }
-  /* line 445, ../../../components/sass/pages/_home.scss */
+  /* line 446, ../../../components/sass/pages/_home.scss */
   #academy .intro h6 {
     font-size: 1em;
   }

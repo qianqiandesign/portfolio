@@ -349,8 +349,9 @@
 		padding-bottom: 5em;
 
 		.client {
-			@include span(4);
-			text-align: center;
+			// @include span(4);
+			// text-align: center;
+			margin: 20px;
 			
 			img {
 				max-width: 100%;
