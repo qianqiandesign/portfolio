@@ -45,6 +45,8 @@
 				@include breakpoint(max-width $small) {
 					@include span(1 of 1);
 					margin-bottom: 1em;
+					margin-left: auto;
+					margin-right: auto;
 				} //breakpoint
 			} //a
 		}//.button_group
@@ -146,7 +148,7 @@
 		padding-bottom: 3em;
 
 		.caster_show {
-			@include span(9);
+			@include span(8);
 			padding: 0 2em;
 
 			img {
@@ -162,11 +164,11 @@
 		} //.caster_show
 
 		aside {
-			@include span(3 at 9 of 12);
+			@include span(4 at 8 of 12);
 			.caster_title {
 				@include container(100%);
-				margin-top: 5em;
-				margin-bottom: 3em;
+				margin-top: 1em;
+				margin-bottom: 2em;
 
 				span {
 					font-size: 2.5em;
@@ -226,7 +228,7 @@
 			padding-bottom: 2em;
 
 			@include breakpoint(max-width $small){
-				font-size: 1.6em;
+				font-size: 1.4em;
 			}
 		} // h1
 	} //.top_section
@@ -237,7 +239,7 @@
 
 
 		.feature {
-			@include span(2);
+			@include span(3 of 15);
 
 			a {
 				text-decoration: none;
@@ -249,7 +251,7 @@
 				    height: 134px;
 				    padding: 20px;
 				    margin: 20px;
-				    margin-left: auto;
+				    margin-right: auto;
 				    margin-left: auto;
 
 				    &:hover {
@@ -260,7 +262,7 @@
 						color: #fff;
 					    text-align: center;
 					    display: block;
-					    margin-bottom: 8px;
+					    margin-bottom: 12px;
 					    font-size: 1.8em;
 					    margin-top: 12px;
 				    } //i
@@ -268,9 +270,9 @@
 				    p {
 				    	color: $light;
 	    				text-align: center;
-	    				font-size: 1em;
+	    				font-size: 0.9em;
 	    				text-decoration: none;
-	    				line-height: 1em;
+	    				line-height: 1.3em;
 				    } //p
 				} //.feature_con
 			} //a	
@@ -295,7 +297,7 @@
 
 		@include breakpoint(max-width $iPhone) {
 			@include container(90%);
-		} //breakpoint_$extra
+		} //breakpoint_$iPhone
 
 	} //.feature_list
 
@@ -314,7 +316,7 @@
 		} //a
 
 		@include breakpoint(max-width $iPhone) {
-			font-size: 0.8em;
+			font-size: 0.7em;
 		} //breakpoint_$iPhone
 	}//.bottom_section
 
@@ -414,14 +416,24 @@
 			margin-bottom: 4em;
 			padding: 0 3em;
 			font-weight: $normal;
+			line-height: 1.7em;
 		} //p
 
-		h6 {
+		a {
 			color: $grey;
 			text-align: center;
 			font-family: $mainfamily;
 			font-size: 1.2em;
-		} //h6
+			margin: 0 auto;
+			display: table;
+			font-weight: $bold;
+			text-decoration: none;
+
+			&:hover {
+				color: $light;
+				border-color: $light;
+			}
+		} //a
 
 		@include breakpoint(max-width $small) {
 			@include container(80%);
@@ -439,43 +451,4 @@
 
 } //#academy
 
-
-
-
-// @media screen and (max-width: 900px){
-// .menu-btn div {
-// 	position: absolute;
-// 	left: 100%;
-// 	top: 64%;
-// 	padding-right: 8px;
-// 	margin-top: -0.50em;
-// 	line-height: 1.2;
-// 	font-size: 18px;
-// 	font-weight: 200;
-// 	vertical-align: middle;
-// 	z-index: 99;
-// }
- 
-// .menu-btn span {
-// 	display: block;
-// 	width: 30px;
-// 	height: 4px;
-// 	margin: 5px 0;
-// 	background: $light;
-// 	z-index: 100;
-// }
- 
-// .responsive-menu{
-// 	display: none;
-// }
- 
-// .expand {
-// 	display: block !important;
-// 	position: absolute; 
-// 	top: 15%; 
-// 	width: 100%; 
-// 	left: 0; 
-// }
-
-// }
 

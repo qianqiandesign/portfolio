@@ -25,14 +25,9 @@ header {
 			nav {
 				//@include span(9 at 3 of 12);
 				padding: 15px;
-
-				@include breakpoint(max-width 900px){
-					padding: 0;
-					background-color:$teal;
-				}
+				float: right;
 
 				li {
-					float: right;
 					display: inline-block;
 
 					a {
@@ -54,13 +49,26 @@ header {
 						text-align: center;
 						padding: 1em 0;
 
+						&:last-child {
+							padding-top: 1em;
+							padding-bottom: 2em;
+						}
+
 						a {
 							&.button {
 								padding: 10px 40%;
-							}
-						}
+								margin-right: auto;
+								margin-left: auto;
+							} //a.button
+						} //a
 					} // breakpoint_900px
+
 				} //li
+
+				@include breakpoint(max-width 900px){
+					padding: 0;
+					background-color:$teal;
+				} // breakpoint_900px
 			} // nav
 
 			@include breakpoint(max-width 900px){
@@ -91,12 +99,12 @@ header {
 				.responsive-menu {
 					display: none;
 					position: absolute; 
-					top: 17%; 
+					top: 16%; 
 					width: 100%; 
 					left: 0;
 				} //nav.responsive-menu
 
-			} // breakpoint
+			} // breakpoint_900px
 		} //.mobile-nav
 
 	} //.navbar
