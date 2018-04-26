@@ -1,9 +1,8 @@
 #voco-intro {
   height: 400px;
-  background: $lighterblue;
 
   .half-wrapper{
-    @include halfWrapper($lighterblue, 350px);
+    @include halfWrapper($light, 350px);
     .text-container-left{
       @include textContainer(30%);
       h1 {
@@ -166,6 +165,9 @@
 
 #voco-design-4, #voco-design-6{
   @include container(80%);
+}
+
+#voco-design-4, #voco-design-6, #voco-design-7{
   .text-container{
     p {
       @include p($slate-grey);
@@ -192,3 +194,12 @@
   }
 } //#voco-design-4
 
+#voco-design-7 {
+  img{
+    &.scroll-img{
+      height:600px;
+      padding-bottom:0;
+    }
+  }
+
+}

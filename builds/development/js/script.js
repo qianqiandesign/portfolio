@@ -69,53 +69,113 @@ a);this.unWrap();this.init(a,this.$elem)},addItem:function(a,b){var e;if(!a)retu
 f(this).data("owl-init"))return!1;f(this).data("owl-init",!0);var b=Object.create(l);b.init(a,this);f.data(this,"owlCarousel",b)})};f.fn.owlCarousel.options={items:5,itemsCustom:!1,itemsDesktop:[1199,4],itemsDesktopSmall:[979,3],itemsTablet:[768,2],itemsTabletSmall:!1,itemsMobile:[479,1],singleItem:!1,itemsScaleUp:!1,slideSpeed:200,paginationSpeed:800,rewindSpeed:1E3,autoPlay:!1,stopOnHover:!1,navigation:!1,navigationText:["prev","next"],rewindNav:!0,scrollPerPage:!1,pagination:!0,paginationNumbers:!1,
 responsive:!0,responsiveRefreshRate:200,responsiveBaseWidth:g,baseClass:"owl-carousel",theme:"owl-theme",lazyLoad:!1,lazyFollow:!0,lazyEffect:"fade",autoHeight:!1,jsonPath:!1,jsonSuccess:!1,dragBeforeAnimFinish:!0,mouseDrag:!0,touchDrag:!0,addClassActive:!1,transitionStyle:!1,beforeUpdate:!1,afterUpdate:!1,beforeInit:!1,afterInit:!1,beforeMove:!1,afterMove:!1,afterAction:!1,startDragging:!1,afterLazyLoad:!1}})(jQuery,window,document);
 $(document).ready(function(){
-	
-	// Function to control the toggle of the mobile menu
+
+    var $menu = $('.responsive-menu');
+
+    // Function to control the toggle of the mobile menu
     $( '.menu-btn' ).click(function(){
         //$('.responsive-menu').toggleClass('expand');
 
-        if ($('.responsive-menu').hasClass('expand')) {
-			// Do things on Nav Close
-			//$('#page').removeClass('navigating');
-				$(".responsive-menu").slideUp( "slow" ).removeClass("expand");
-			//$('#sidebar').find('i.tooltips span').show();
-			} else {
-			// Do things on Nav Open
-			//$('#page').addClass('navigating');
-				$(".responsive-menu").slideDown( "slow" ).addClass("expand");
-			//$('#sidebar').find('i.tooltips span').hide();
-		}
-	});
+        if ($menu.hasClass('expand')) {
+            // Do things on Nav Close
+            //$('#page').removeClass('navigating');
+            $menu.slideUp( "slow" ).removeClass("expand");
+            //$('#sidebar').find('i.tooltips span').show();
+        } else {
+            // Do things on Nav Open
+            //$('#page').addClass('navigating');
+            $menu.slideDown( "slow" ).addClass("expand");
+            //$('#sidebar').find('i.tooltips span').hide();
+        }
+    });
 
-	// function to detect when window width less than or greater than 900px of the navigation
-	var windowsize = $(window).width();
+    // function to detect when window width less than or greater than 900px of the navigation
+    var windowsize = $(window).width();
 
-	$(window).resize(function() {
-	  windowsize = $(window).width();
-	  if (windowsize > 960) {
-	    //if the window is greater than 900px wide then display the navigation
-	    $(".responsive-menu").css( "display", "block");
-	  }
+    $(window).resize(function() {
+        windowsize = $(window).width();
+        if (windowsize > 960) {
+            //if the window is greater than 900px wide then display the navigation
+            $(".responsive-menu").css( "display", "block");
+        }
 
-	  if(windowsize < 960) {
-	  	//if the window is less than 900px wide then hide the navigation
-	  	$(".responsive-menu").css( "display", "none");
-	  }
-	});
+        if(windowsize < 960) {
+            //if the window is less than 900px wide then hide the navigation
+            $(".responsive-menu").css( "display", "none");
+        }
+    });
 
 
-	//Initialize the owl carousel
-	$("#owl-carousel").owlCarousel({
- 
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
- 
-      items : 4,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3]
-	 
-	});
+    //Initialize the owl carousel
+    $("#owl-carousel").owlCarousel({
 
-    
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+        items : 4,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+
+    });
+
+    //For Firefox we have to handle it in JavaScript
+    var vids = $("video");
+    $.each(vids, function(){
+        this.controls = false;
+    });
+    //Loop though all Video tags and set Controls as false
+
+
+    var $scrollWrapper = $('.scroll-wrapper');
+
+    $(window).on('resize scroll', function(e) {
+        var elementTop = $scrollWrapper.offset().top;
+        var elementBottom = elementTop + $scrollWrapper.outerHeight();
+
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+        //var inViewPort = elementBottom > viewportTop && elementTop < viewportBottom;
+        //console.log(inViewPort);
+        if(elementBottom > viewportTop && elementTop < viewportBottom){
+            console.log('in view port');
+            bindScrollEvent2();
+        }
+    });
+
+    function bindScrollEvent(){
+        $scrollWrapper.on('mousewheel DOMMouseScroll', function(event){
+
+            var delta = Math.max(-1, Math.min(1, (event.originalEvent.wheelDelta || -event.originalEvent.detail)));
+
+            $(this).scrollLeft( $(this).scrollLeft() - ( delta * 20 ) );
+            event.preventDefault();
+
+            if(this.offsetWidth + this.scrollLeft === this.scrollWidth || this.scrollLeft === 0) {
+                //console.log("event fired ....." + e);
+
+                $(this).unbind('mousewheel DOMMouseScroll');
+
+            }
+
+        });
+    }
+
+    function bindScrollEvent2() {
+        $scrollWrapper.mousewheel(function(event, delta) {
+
+            this.scrollLeft -= (delta * 20);
+
+            event.preventDefault();
+
+            if(this.offsetWidth + this.scrollLeft === this.scrollWidth || this.scrollLeft === 0) {
+
+                $(this).unbind('mousewheel DOMMouseScroll');
+
+            }
+
+        });
+    }
+
+
 });
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"jquery":2}],2:[function(require,module,exports){
