@@ -1,115 +1,28 @@
-footer {
-	background-color: $lightgrey;
-
-	.footer_top {
-		@include container(50%);
-		padding: 2em 0;
-		//@include clearfix;
+#footer {
+	background: $lightblue;
+	height:180px;
+	.icons {
+		@include container(36%);
+		padding: 3rem 0;
+		a{
+			display: inline-block;
+			float:left;
+			width:25%;
+			text-align:center;
+			img {
+				width:32px;
+			} //img
+		} // a
+	} //icons
+	p {
+		font-family: $headfamily;
+		font-size: 14px;
+		font-weight: 500;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.4px;
 		text-align: center;
-
-
-
-		ul {
-			li {
-				display: inline-block;
-				
-				// margin: 0 1em;
-
-				a {
-					color: $darkgrey;
-					font: $mainFont;
-					font-size: 1em;
-					font-weight: $normal;
-					padding: 10px 15px;
-					text-decoration: none;
-				} //a
-			} //li
-		} //ul
-
-		@include breakpoint(max-width 800px){
-			@include container(65%);
-		} //breakpoint_800px;
-
-		@include breakpoint(max-width $small) {
-			@include container(80%);
-
-			li {
-				display: block !important;
-				@include span(12);
-				padding: 0.5em 0;
-				&:first-child {
-					margin-left: 0;
-				}
-
-			}
-			
-		} //breakpoint_$small
-
-	} //.footer_top
-
-	hr {
-		margin-top: 0;
-		color: $darkgrey;
-	}
-
-	.footer_bottom {
-		@include container(30%);
-		text-align: center;
-
-		.social_icons {
-			font-size: 2em;
-			padding: 1.3em 0;
-
-			a {
-				text-decoration: none;
-				color: $darkgrey;
-
-				i {
-					padding: 0 0.7em;
-				} //i
-
-				&.twitter:hover {
-					color: $twitter;
-				}
-
-				&.facebook:hover {
-					color: $facebook;
-				}
-
-				&.linkedin:hover {
-					color: $linkedin;
-				}
-
-			} //a	
-		} // .social_icons
-
-		p {
-			font-size: 1em;
-			color: $darkgrey;
-		} //p
-	
-		.footer_brand {
-			font-weight: $normal;
-      		font-family: $headfamily;
-      		text-align: center;
-
-      		a {
-	            color: $darkgrey;
-	            text-decoration: none;
-	            text-align: center;
-	            display: inline-block;
-	            padding-top: 1em;
-	            padding-bottom: 2em;
-	            font-size: 2.2em;
-			} //a
-		} //.footer_brand
-
-		@include breakpoint(max-width 800px) {
-			@include container(55%);
-		} // breakpoint_800px;
-
-		@include breakpoint(max-width $iPhone) {
-			@include container(80%);
-		} // breakpoint_$iPhone;
-	} //.footer_bottom
-} //footer
+		color: $blue;
+	} //p
+} // #footer

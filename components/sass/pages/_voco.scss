@@ -1,0 +1,291 @@
+#voco-intro {
+  height: 400px;
+  background: $lighterblue;
+
+  .half-wrapper{
+    @include halfWrapper($lighterblue, 350px);
+    .text-container-left{
+      @include textContainer(30%);
+      h1 {
+        color: $slate-grey;
+        font-size: 3rem;
+        text-align: left;
+        line-height: 4rem;
+        font-weight: 900;
+      } // h1
+
+      p {
+        color: $slate-grey;
+        line-height: 4rem;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      } // p
+    } // text-container-left
+
+    .text-container-right {
+      margin-left: 2rem;
+      padding-right: 7.5rem;
+      p {
+        @include subText();
+        margin-top: 1.3rem;
+        margin-bottom: 2.5rem;
+      } // p
+    } // text-container-right
+  } // text-wrapper
+
+  @include breakpoint(max-width $small) {
+    h1 {
+      font-size: 2rem;
+      line-height: 1.3rem;
+    } //h1
+
+    p {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    } //p
+
+  }// breakpoint_$small
+
+  @include breakpoint(max-width $narrow) {
+    h1 {
+      font-size: 1.5rem;
+      line-height: 1.3rem;
+    } //h1
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+    } //p
+
+  }// breakpoint_$small
+
+}//#voco-intro
+
+#voco-design{
+
+} //#voco-design
+
+#voco-bg{
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  .quad-wrapper{
+    @include container(80%);
+    &:first-child {
+      padding-bottom: 8rem;
+    }
+    .quad {
+      p{
+        margin-bottom: 1rem;
+      } //p
+      h5 {
+        font-family: $mainfamily;
+        font-size: 18px;
+        line-height: 1.67;
+        text-align: left;
+        color: $slate-grey;
+      } //h5
+    } // quad
+
+    .half-wrapper{
+      @include halfWrapper($light, 500px);
+      .text-container-left{
+        p {
+          @include p($slate-grey);
+          &.sub-title {
+            @include createLine($lightgrey, 2px, 1em);
+          }
+          &.sub-text {
+            @include subText();
+            text-transform: none;
+            letter-spacing: normal;
+            padding-top: 1rem;
+            padding-right:1rem;
+          }
+        } //p
+      } //text-container-left
+
+      .text-container-right{
+        @include container(80%);
+        img {
+          width:100%;;
+        } //img
+      } //text-container-right
+    } // half-wrapper
+
+    .arb-wrapper-left{
+      @include arbWrapper(40%, 500px);
+      .text-container-left{
+        img {
+          width:100%;;
+        } //img
+      } //text-container-left
+    } // arb-wrapper-left
+
+    .arb-wrapper-right{
+      @include arbWrapper(60%, 500px);
+      .text-container-right{
+        @include textWrapper(4rem, 8rem);
+        p {
+          @include p($slate-grey);
+          &.sub-title {
+            @include createLine($lightgrey, 2px, 1em);
+          } // sub-title
+          &.sub-text {
+            @include subText();
+            text-transform: none;
+            letter-spacing: normal;
+            padding-top: 1rem;
+            padding-right:1rem;
+          } //sub-text
+        } //p
+      } //text-container-right
+    } // arb-wrapper-right
+
+    .arb-wrapper-central{
+      @include container(60%);
+      //@include arbWrapper(60%, 200px);
+      p {
+        @include p($slate-grey);
+        &.sub-title {
+          @include createLine($lightgrey, 2px, 1em);
+        } // sub-title
+        &.sub-text {
+          @include subText();
+          text-transform: none;
+          letter-spacing: normal;
+          padding-top: 1rem;
+          padding-right:1rem;
+        } //sub-text
+      } //p
+    } // arb-wrapper-central
+
+  } // quad-wrapper
+} //#voco-bg
+
+
+#voco-design-4, #voco-design-6{
+  @include container(80%);
+  .text-container{
+    p {
+      @include p($slate-grey);
+      @include container(70%);
+      padding: 3rem 0;
+      &.sub-title {
+        @include createLine($lightgrey, 2px, 1em);
+      } // sub-title
+      &.sub-title-2 {
+        @include createLine($lightgrey, 2px, 1em);
+        padding-bottom:0;
+      }
+      &.sub-text {
+        @include subText();
+        text-transform: none;
+        letter-spacing: normal;
+        padding-top: 1rem;
+        padding-right:1rem;
+      } //sub-text
+    } //p
+    img {
+      padding-bottom: 2rem;
+    }
+  }
+} //#voco-design-4
+
+
+#interaction{
+  height:600px;
+
+  .half-wrapper{
+    .text-container-left{
+      @include textWrapper(8rem, 12rem);
+      h1 {
+        @include h1($pink, 0.5rem);
+        @include createLine($pink);
+      } // h1
+
+      p {
+        @include p($pink);
+        &.sub-text {
+          @include subText();
+          text-transform: none;
+          letter-spacing: normal;
+          padding-top: 1rem;
+          padding-right:1rem;
+        }
+      } //p
+    } //text-container-left
+  } // half-wrapper
+
+  .half-wrapper-color{
+    @include halfWrapper($pink);
+    .text-container-right{
+      @include textContainer(80%, 3rem);
+      img{
+        width: 400px;
+      } //img
+    } //text-container-right
+  } // half-wrapper-color
+} //#design
+
+
+
+#arrow{
+  height:600px;
+  .half-wrapper-color{
+    @include halfWrapper($purple);
+    .text-container-left{
+      @include textContainer(80%, 3rem);
+      img{
+        width: 400px;
+      } //img
+    } //text-container-left
+  } // half-wrapper-color
+
+  .half-wrapper{
+    .text-container-right{
+      @include textWrapper(8rem, 12rem);
+      h1 {
+        @include h1($purple, 0.5rem);
+        @include createLine($purple);
+      } // h1
+
+      p {
+        @include p($purple);
+        &.sub-text {
+          @include subText();
+          text-transform: none;
+          letter-spacing: normal;
+          padding-top: 1rem;
+          padding-right: 1rem;
+        }
+      } //p
+    } //text-container-right
+  } // half-wrapper
+} //#arrow
+
+#phone{
+  height:350px;
+  background: $lightblue;
+  .half-wrapper-color{
+    @include halfWrapper($lightblue, 350px);
+    .text-container-left{
+      @include textContainer(80%, 3rem);
+      img{
+        width: 400px;
+      } //img
+    } //text-container-left
+  } // half-wrapper-color
+
+  .half-wrapper-color{
+    @include halfWrapper($lightblue, 350px);
+    .text-container-right{
+      @include textWrapper(9rem, 2rem);
+
+      p {
+        @include p($purple);
+        padding-bottom: 1rem;
+      } //p
+    } //text-container-right
+  } // half-wrapper-color
+} //#phone

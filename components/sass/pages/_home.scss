@@ -1,213 +1,296 @@
 #intro {
-	@include backImage('../images/seattleskyline.jpg');
-	// @include display-flex();
-	// @include align-items(center);
-	// @include justify-content(center);
+	@include backImage('../images/header_bg_desktop@2x.png', 700px);
 	@include backSize(0px);
 
 	.promo {
 		@include container(80%);
 
-		h1 {
-			color: $light;
-			font-size: 3em;
-			font-weight: $normal;
-			line-height: 0.8em;
-			@include text-shadow($dark, 0 0 20px);
-			text-align: center;
-			padding-top: 2em;
-			line-height: 1.1em;
-		} // h1
+		.text-wrapper{
+			@include textWrapper(6rem, 4rem);
+			h1 {
+				color: $slate-grey;
+				font-size: 3rem;
+				text-align: left;
+				line-height: 4rem;
+			} // h1
 
-		p {
-			color: rgba($light, 0.6);
-			padding-top: 1.8em;
-			line-height: 0.8em;
-			text-align: center;
-			font-size: 1.5em;
-		} //p
-
-		.button_group {
-			text-align: center;
-			padding-top: 2em;
-
-			a {
-				text-decoration: none;
-				color: $light;
-				padding-left: 30px;
-				padding-right: 30px;
-
-				&.button_extra {
-					padding-left:60px;
-					padding-right:60px;
-				} //a.button_extra
-
-				@include breakpoint(max-width $small) {
-					@include span(1 of 1);
-					margin-bottom: 1em;
-					margin-left: auto;
-					margin-right: auto;
-				} //breakpoint
-			} //a
-		}//.button_group
+			p {
+				color: $slate-grey;
+				line-height: 4rem;
+				text-align: left;
+				font-size: 3rem;
+				font-weight: bold;
+				span {
+					text-decoration-line: underline;
+					text-decoration-style: dashed;
+				}
+			} // p
+		} // text-wrapper
 
 		@include breakpoint(max-width $small) {
 			h1 {
-				font-size: 2em;
-				line-height: 1.3em;
+				font-size: 2rem;
+				line-height: 1.3rem;
 			} //h1
 
 			p {
-				font-size: 1em;
-				line-height: 1.2em;
+				font-size: 1rem;
+				line-height: 1.2rem;
 			} //p
 
 		}// breakpoint_$small
 
 		@include breakpoint(max-width $narrow) {
 			h1 {
-				font-size: 1.5em;
-				line-height: 1.3em;
+				font-size: 1.5rem;
+				line-height: 1.3rem;
 			} //h1
 
 			p {
-				font-size: 0.8em;
-				line-height: 1.2em;
+				font-size: 0.8rem;
+				line-height: 1.2rem;
 			} //p
 
 		}// breakpoint_$small
 
 	}//.promo
 
-	.icon_container {
-		@include container(80%);
-		padding-top: 4em;
-
-		.icon {
-			@include span(3);
-			text-align: center;
-			img {
-				max-width: 100%;
-			}
-		} //icon
-
-		@include breakpoint(max-width $medium){
-			display: none;
-		} // breakpoint_$medium
-
-	} //.icon_container
-
 }//#intro
 
 
-#product {
-	.service {
-		@include container(80%);
-		padding: 3em 0;
+#voco {
+	@include backImage('../images/voco_banner_mockup@2x.png');
+	@include backSize(0px);
 
-		.service_icon {
-			@include span(3);
-			text-align: center;
-			img {
-				max-width: 100%;
-			} //img
+	.text-wrapper{
+		@include textWrapper(15rem, 14rem);
+		h1 {
 
-			p {
-				padding: 0 20px;
+			@include h1($light, 0.5rem);
+			@include createLine();
+		} // h1
+
+		p {
+			@include p();
+			&.see-case {
+				margin-top: 5rem;
 			}
+		} //p
+	} // .text-wrapper
 
-			@include breakpoint($potrait $large) {
-				@include span(6);
-				padding-top: 2em;
-			} // breakpoint_$potrait_to_$large
+} //#voco
 
-			@include breakpoint(max-width $potrait) {
-				@include span(12);
-				padding-top: 3.5em;
 
-				&:first-child {
-					padding-top: 1.5em;
-				}
-			} // breakpoint_$potrait
+#pch {
+	@include backImage('../images/pch_banner_mockup@2x.png');
+	@include backSize(0px);
 
-		} //.service_icon
-	} //.service
+	.text-wrapper{
+		width: 54%;
+		margin: 0 auto;
+		padding-top: 5rem;
+		h1 {
+			@include h1($light, 0.5rem);
+			@include createLine();
+		} // h1
 
-	.heart_divider {
-		@include container(80%);
-		text-align: center;
+		p {
+			@include p();
+		} //p
+	} // .text-wrapper
 
-		img {
-			max-width: 100%;
-		} //img
-	} // heart-divider
+} //#pch
 
-	.caster {
-		@include container(80%);
-		padding-top:3em;
-		padding-bottom: 3em;
 
-		.caster_show {
-			@include span(8);
-			padding: 0 2em;
+#color-theory {
+	@include backImage('../images/color_theory_banner_mockup@2x.png');
+	@include backSize(0px);
 
-			img {
-				max-width: 100%;
+	.text-wrapper{
+		@include textWrapper(12.5rem, 14rem);
+		h1 {
+			@include h1($slate-grey, 0.5rem);
 
-			} //img
+			@include createLine($slate-grey);
+		} // h1
 
-			@include breakpoint(max-width $medium){
-				@include span(12);
+		p {
+			@include p($slate-grey);
+		} //p
+	} // .text-wrapper
 
-			} //breakpoint_$medium
+} //#color-theory
 
-		} //.caster_show
+#less-than-one {
+	@include backImage('../images/lessthanone_banner_mockup@2x.png');
+	@include backSize(0px);
 
-		aside {
-			@include span(4 at 8 of 12);
-			.caster_title {
-				@include container(100%);
-				margin-top: 1em;
-				margin-bottom: 2em;
+	.text-wrapper{
+		float:right;
+		@include textWrapper(15rem, 0, 3rem);
+		h1 {
+			@include h1($light, 0.5rem);
+			@include createLine();
+		} // h1
 
-				span {
-					font-size: 2.5em;
-					font-family: $headfamily;
-					color: $teal;
+		p {
+			@include p();
+		} //p
+	} // .text-wrapper
 
-					img {
-						width: 50px;
-						vertical-align: text-bottom;
-						// max-width: 100%;
-					} //img
-				
-				} //span
-			} //.caster_title
+} //#less-than-one
 
-			@include breakpoint(max-width $medium){
-				@include span(12);
 
-				.caster_title {
-					margin-top: 2em;
-				}
-			} //breakpoint_$medium
+#petopia {
+	@include backImage('../images/petopia_banner_mockup.png');
+	@include backSize(0px);
 
-		} //aside
+	.text-wrapper{
+		@include textWrapper(14.5rem, 14rem);
+		h1 {
+			@include h1($orange, 0.7rem);
+			@include createLine($orange);
+		} // h1
 
-		@include breakpoint(max-width $wide){
-			@include container(94%);
-		}// breakpoint_$wide
+		p {
+			@include p($orange);
+		} //p
+	} // .text-wrapper
 
-		@include breakpoint($medium $large){
-			@include container(97%);
-		}// breakpoint_$medium_to_$large
+} //#petopia
 
-		@include breakpoint(max-width $medium){
-			@include container(80%);
-		}// breakpoint_$medium
+#pillow {
+	@include backImage('../images/pillow_website_banner_mockup@2x.png');
+	@include backSize(0px);
 
-	} //.caster
-} //# product
+	.text-wrapper{
+		float:right;
+		@include textWrapper(15rem, 0, 10rem);
+		h1 {
+			@include h1($slate-grey, 0.5rem);
+			@include createLine($slate-grey);
+		} // h1
+
+		p {
+			@include p($slate-grey);
+		} //p
+	} // .text-wrapper
+
+} //#pillow
+
+
+#crazy-ramen {
+	@include backImage('../images/crazyramen_banner_mockup@2x.png');
+	@include backSize(0px);
+
+	.text-wrapper{
+		@include textWrapper(14.5rem, 9rem);
+		h1 {
+			@include h1($slate-grey, 0.5rem);
+			@include createLine($slate-grey);
+		} // h1
+
+		p {
+			@include p($slate-grey);
+		} //p
+	} // .text-wrapper
+
+} //#crazy-ramen
+
+
+#short-term-rental {
+	@include backImage('../images/pillow_dashboard_banner_mockup.png');
+	@include backSize(0px);
+
+	.text-wrapper{
+		float:right;
+		@include textWrapper(15rem, 0);
+		h1 {
+			@include h1($slate-grey, 0.5rem);
+			@include createLine($slate-grey);
+		} // h1
+
+		p {
+			@include p($slate-grey);
+		} //p
+	} // .text-wrapper
+
+} //#short-term-rental
+
+#volunteer-match {
+	@include backImage('../images/volunteermatch_banner_mockup@2x.png');
+	@include backSize(0px);
+
+	.text-wrapper{
+		@include textWrapper(14.5rem, 12rem);
+		h1 {
+			@include h1($slate-grey, 0.5rem);
+			@include createLine($slate-grey);
+		} // h1
+
+		p {
+			@include p($slate-grey);
+		} //p
+	} // .text-wrapper
+
+} //#volunteer-match
+
+#kidzjet {
+	@include backImage('../images/kidzjet_banner_mockup@2x.png');
+	@include backSize(0px);
+
+	.text-wrapper{
+		float:right;
+		@include textWrapper(15rem, 0, 9rem);
+		h1 {
+			@include h1($slate-grey, 0.5rem);
+			@include createLine($slate-grey);
+		} // h1
+
+		p {
+			@include p($slate-grey);
+		} //p
+	} // .text-wrapper
+
+} //#kidzjet
+
+
+#promotion {
+	@include backImage('../images/pillow_marketing_right_mockup.png');
+	@include backSize(0px);
+
+	.text-wrapper{
+		@include textWrapper(14.5rem, 12rem);
+		h1 {
+			@include h1($slate-grey, 0.5rem);
+			@include createLine($slate-grey);
+		} // h1
+
+		p {
+			@include p($slate-grey);
+		} //p
+	} // .text-wrapper
+
+} //#promotion
+
+#post-rock-music {
+	@include backImage('../images/postrock_banner_mockup@2x.png');
+	@include backSize(0px);
+
+	.text-wrapper{
+		float:right;
+		@include textWrapper(15rem, 0);
+		h1 {
+			@include h1($light, 0.5rem);
+			@include createLine($light);
+		} // h1
+
+		p {
+			@include p();
+		} //p
+	} // .text-wrapper
+
+} //#post-rock-music
 
 
 #features {
@@ -219,16 +302,16 @@
 
 		h1 {
 			color: $light;
-			font-size: 2em;
+			font-size: 2rem;
 			font-family: $mainfamily;
-			line-height: 1.2em;
+			line-height: 1.2rem;
 			@include text-shadow($dark, 0 0 20px);
 			text-align: center;
-			// padding-top: 2em;
-			padding-bottom: 2em;
+			// padding-top: 2rem;
+			padding-bottom: 2rem;
 
 			@include breakpoint(max-width $small){
-				font-size: 1.4em;
+				font-size: 1.4rem;
 			}
 		} // h1
 	} //.top_section
@@ -263,16 +346,16 @@
 					    text-align: center;
 					    display: block;
 					    margin-bottom: 12px;
-					    font-size: 1.8em;
+					    font-size: 1.8rem;
 					    margin-top: 12px;
 				    } //i
 
 				    p {
 				    	color: $light;
 	    				text-align: center;
-	    				font-size: 0.9em;
+	    				font-size: 0.9rem;
 	    				text-decoration: none;
-	    				line-height: 1.3em;
+	    				line-height: 1.3rem;
 				    } //p
 				} //.feature_con
 			} //a	
@@ -309,14 +392,14 @@
 			h4 {
 				color: $light;
 			    text-align: center;
-			    margin-top: 3em;
-			    font-size: 1.3em;
+			    margin-top: 3rem;
+			    font-size: 1.3rem;
 			    font-family: $mainfamily;
 			} //h4
 		} //a
 
 		@include breakpoint(max-width $iPhone) {
-			font-size: 0.7em;
+			font-size: 0.7rem;
 		} //breakpoint_$iPhone
 	}//.bottom_section
 
@@ -330,23 +413,23 @@
 
 		h1 {
 			color: $dark;
-			font-size: 1.6em;
+			font-size: 1.6rem;
 			font-family: $mainfamily;
-			line-height: 1.3em;
+			line-height: 1.3rem;
 			text-align: center;
-			padding-top: 3em;
-			padding-bottom: 3em;
+			padding-top: 3rem;
+			padding-bottom: 3rem;
 		} // h1
 		
 		@include breakpoint(max-width $iPhone) {
-			font-size: 0.7em;
+			font-size: 0.7rem;
 		} //breakpoint_$iPhone
 
 	} //.clients
 
 	.client_group {
 		@include container(70%);
-		padding-bottom: 5em;
+		padding-bottom: 5rem;
 
 		.client {
 			// @include span(4);
@@ -357,7 +440,7 @@
 				max-width: 100%;
 
 				&.img_pad {
-					padding-top: 2em;
+					padding-top: 2rem;
 				} //.img_extra
 			} //img
 		} //.client
@@ -365,7 +448,7 @@
 
 } //#partners
 
-#academy {
+#acadremy {
 	@include backImage('../images/acedamy-bg.png');
 	@include backSize(0px);
 	
@@ -375,13 +458,13 @@
 
 		h1 {
 			color: $grey;
-			font-size: 2.6em;
-			line-height: 1.4em;
+			font-size: 2.6rem;
+			line-height: 1.4rem;
 			font-family: $headfamily;
 			@include text-shadow($dark, 0 0 20px);
 			text-align: center;
-			padding-top: 1.5em;
-			padding-bottom: 1.5em;
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
 			font-weight: $normal;
 			//display: inline-block;
 
@@ -390,7 +473,7 @@
 			}
 
 			@include breakpoint(max-width $small) {
-				font-size: 1.7em;
+				font-size: 1.7rem;
 
 				img {
 					width: 190px;
@@ -407,24 +490,24 @@
 
 	.intro{
 		@include container(60%);
-		padding: 3em 0 6em 0;
+		padding: 3rem 0 6rem 0;
 		background-color: rgba($light, 0.1);
 
 		p {
-			font-size: 1.2em;
+			font-size: 1.2rem;
 			color: $light;
 			text-align: left;
-			margin-bottom: 4em;
-			padding: 0 3em;
+			margin-bottom: 4rem;
+			padding: 0 3rem;
 			font-weight: $normal;
-			line-height: 1.7em;
+			line-height: 1.7rem;
 		} //p
 
 		a {
 			color: $grey;
 			text-align: center;
 			font-family: $mainfamily;
-			font-size: 1.2em;
+			font-size: 1.2rem;
 			margin: 0 auto;
 			display: table;
 			font-weight: $bold;
@@ -440,16 +523,16 @@
 			@include container(80%);
 
 			p {
-				font-size: 0.9em;
+				font-size: 0.9rem;
 			}
 
 			h6 {
-				font-size: 1em;
+				font-size: 1rem;
 			}
 		} //breakpoint_$small
 
 	} //.intro
 
-} //#academy
+} //#acadremy
 
 

@@ -3,6 +3,7 @@
 
 @mixin backImage(
 	$image,
+	$height: 600px,
 	$grDir: to bottom,
 	$opStart: 0,
 	$opEnd: 0,
@@ -19,6 +20,7 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	height: $height;
 }  // backImage
 
 
@@ -42,4 +44,103 @@
     padding-bottom: $bottom;
     position: relative;
     overflow: hidden;
+}
+
+@mixin textWrapper (
+	$top: 80px,
+	$left:80px,
+	$right:0px
+) {
+	padding-top: $top;
+	padding-left: $left;
+	padding-right:$right;
+}
+
+@mixin textContainer(
+	$width: 60%,
+	$paddingTop:0
+){
+	@include container($width);
+	text-align: center;
+	padding-top: $paddingTop;
+}
+
+@mixin subText(){
+	color: $slate-grey;
+	line-height: 2rem;
+	text-align: left;
+	font-size: 24px;
+}
+
+@mixin createLine (
+	$color: #fff,
+	$height: 3px,
+	$left: -5rem,
+	$top: -0.4em,
+	$right: 0.8em,
+	$width: 5rem
+) {
+	&:before{
+		background-color: $color;
+		content: "";
+		display: inline-block;
+		height: $height;
+		position: relative;
+		vertical-align: middle;
+		width: $width;
+	}
+
+	&:before {
+		top: $top;
+		right: $right;
+		margin-left: $left;
+	}
+}
+
+
+@mixin h1 (
+	$color: $light,
+	$marginTop: 0,
+	$textAlign: left,
+	$fontSize: 3rem
+) {
+	color: $color;
+	font-size: $fontSize;
+	text-align: $textAlign;
+	line-height: 4rem;
+	margin-top: $marginTop;
+	letter-spacing: 4px;
+}
+
+@mixin p (
+	$color: $light,
+	$textAlign: left,
+	$fontWeight: normal
+){
+	color: $color;
+	text-align: $textAlign;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+	font-weight: $fontWeight;
+}
+
+@mixin halfWrapper(
+	$bgColor: $light,
+	$height: 600px
+){
+	float:left;
+	width: 50%;
+	background: $bgColor;
+	height: $height;
+}
+
+@mixin arbWrapper(
+	$width: 50%,
+	$height: 600px,
+	$bgColor: $light
+){
+	float:left;
+	width: $width;
+	background: $bgColor;
+	height: $height;
 }

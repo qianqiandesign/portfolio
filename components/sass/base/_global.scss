@@ -2,8 +2,9 @@
 // ==============
 body {
   font: $mainFont;
-  // background: $backgroundColor;
   color: $typeDefault;
+  //max-width:1500px;
+  //margin: 0 auto;
 }
 
 #{headings()} {
@@ -18,5 +19,58 @@ strong {
 
 p {
   font-weight: $thin;
-  padding-bottom: 10px;
+  font: $pFont;
+}
+
+.container{
+  @include container;
+}
+
+.clearfix{
+  @include clearfix;
+}
+
+.half-wrapper{
+  @include halfWrapper();
+}
+
+.quad{
+  float:left;
+  width:25%;
+  text-align: left;
+}
+
+.btn-class{
+  border-radius: 30px;
+  background-color: #595bf0;
+  width: 320px;
+  height: 60px;
+  border: none;
+  font-family: $headfamily;
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.sub-text{
+  color: $slate-grey;
+  line-height: 2rem;
+  text-align: left;
+  font-size: 24px;
+}
+
+.input-class{
+  width: 480px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  font-size: 18px;
+  text-align: left;
+  color: $slate-grey;
+  border:none;
+  padding-left:2rem;
+}
+
+.full-img {
+  width: 100%;
 }

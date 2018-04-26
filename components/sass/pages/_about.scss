@@ -1,0 +1,194 @@
+#about {
+  height: 600px;
+
+  @include container(80%);
+
+  .half-wrapper{
+    .text-container-left{
+      @include textContainer(60%);
+      h1 {
+        color: $slate-grey;
+        font-size: 3rem;
+        text-align: left;
+        line-height: 4rem;
+        font-weight: 900;
+      } // h1
+
+      p {
+        color: $slate-grey;
+        line-height: 4rem;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      } // p
+    } // text-container-left
+
+    .text-container-right {
+      margin-left: 2rem;
+      p {
+        @include subText();
+        margin-top: 1.3rem;
+        margin-bottom: 2.5rem;
+      } // p
+    } // text-container-right
+  } // text-wrapper
+
+  @include breakpoint(max-width $small) {
+    h1 {
+      font-size: 2rem;
+      line-height: 1.3rem;
+    } //h1
+
+    p {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    } //p
+
+  }// breakpoint_$small
+
+  @include breakpoint(max-width $narrow) {
+    h1 {
+      font-size: 1.5rem;
+      line-height: 1.3rem;
+    } //h1
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+    } //p
+
+  }// breakpoint_$small
+
+}//#intro
+
+#design{
+  height:600px;
+  .half-wrapper-color{
+    @include halfWrapper($blue);
+    .text-container-left{
+      @include textContainer(80%, 3rem);
+      img{
+        width: 400px;
+      } //img
+    } //text-container-left
+  } // half-wrapper-color
+
+  .half-wrapper{
+    .text-container-right{
+      @include textWrapper(8rem, 12rem);
+      h1 {
+        @include h1($blue, 0.5rem);
+        @include createLine($blue);
+      } // h1
+
+      p {
+        @include p($blue);
+        &.sub-text {
+          @include subText();
+          text-transform: none;
+          letter-spacing: normal;
+          padding-top: 1rem;
+          padding-right: 1rem;
+        }
+      } //p
+    } //text-container-right
+  } // half-wrapper
+} //#design
+
+
+#interaction{
+  height:600px;
+
+  .half-wrapper{
+    .text-container-left{
+      @include textWrapper(8rem, 12rem);
+      h1 {
+        @include h1($pink, 0.5rem);
+        @include createLine($pink);
+      } // h1
+
+      p {
+        @include p($pink);
+        &.sub-text {
+          @include subText();
+          text-transform: none;
+          letter-spacing: normal;
+          padding-top: 1rem;
+          padding-right:1rem;
+        }
+      } //p
+    } //text-container-left
+  } // half-wrapper
+
+  .half-wrapper-color{
+    @include halfWrapper($pink);
+    .text-container-right{
+      @include textContainer(80%, 3rem);
+      img{
+        width: 400px;
+      } //img
+    } //text-container-right
+  } // half-wrapper-color
+} //#design
+
+
+
+#arrow{
+  height:600px;
+  .half-wrapper-color{
+    @include halfWrapper($purple);
+    .text-container-left{
+      @include textContainer(80%, 3rem);
+      img{
+        width: 400px;
+      } //img
+    } //text-container-left
+  } // half-wrapper-color
+
+  .half-wrapper{
+    .text-container-right{
+      @include textWrapper(8rem, 12rem);
+      h1 {
+        @include h1($purple, 0.5rem);
+        @include createLine($purple);
+      } // h1
+
+      p {
+        @include p($purple);
+        &.sub-text {
+          @include subText();
+          text-transform: none;
+          letter-spacing: normal;
+          padding-top: 1rem;
+          padding-right: 1rem;
+        }
+      } //p
+    } //text-container-right
+  } // half-wrapper
+} //#arrow
+
+#phone{
+  height:350px;
+  background: $lightblue;
+  .half-wrapper-color{
+    @include halfWrapper($lightblue, 350px);
+    .text-container-left{
+      @include textContainer(80%, 3rem);
+      img{
+        width: 400px;
+      } //img
+    } //text-container-left
+  } // half-wrapper-color
+
+  .half-wrapper-color{
+    @include halfWrapper($lightblue, 350px);
+    .text-container-right{
+      @include textWrapper(9rem, 2rem);
+
+      p {
+        @include p($purple);
+        padding-bottom: 1rem;
+      } //p
+    } //text-container-right
+  } // half-wrapper-color
+} //#phone

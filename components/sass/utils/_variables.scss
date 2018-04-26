@@ -15,13 +15,15 @@ $susy: (
 
 
 // Color Palette
-$blue      : #336699;
+$blue      : #595BF0;
+$lightblue : #EEEEFF;
+$lighterblue: #F0F5FB;
 $darkgrey  : #746358;
 $yellow    : #FFBC2E;
-$lightgrey : #F4F4F4;
+$lightgrey : #A9B3BC;
 $red       : #DC4332;
 $grey      : #B0B0B0;
-$orange    : #EEC691;
+$orange    : #FF6945;
 $dark      : #000000;
 $light     : #FFFFFF;
 $teal      : #4CB9CD;
@@ -29,26 +31,32 @@ $twitter   : #55ACEE;
 $facebook  : #3A5795;
 $linkedin  : #1884BB;
 $highlight : #F4A068;
+$grey      : #9B9B9B;
+$slate-grey: #5B6772;
+$pink      : #FDA1BF;
+$purple    : #A070E1;
+
 
 $backgroundColor : $light;
 $typeDefault     : $dark;
 $navBackground   : $blue;
-$navForeground   : $light;
+$navForeground   : $grey;
 $navHover        : $yellow;
 $navBrandBg      : $light;
 $headersubbg     : $dark;
 
 //Font variables
 
-$headfamily : 'Orbitron', 'Helvetica Neue', Helvetica, Arial,  sans-serif;
-$mainfamily : 'Armata', sans-serif;
+$headfamily : 'Raleway', 'Helvetica Neue', Helvetica, Arial,  sans-serif;
+$mainfamily : 'Lato', sans-serif;
 
-$thin : 200;
+$thin : 100;
 $normal : 400;
 $bold : 600;
 $heavy : 800;
 
 $headFont : $thin 1.5em/1.5em $headfamily;
+$pFont:$thin 1em/1.5em $headfamily;
 $mainFont : $thin 1em/1.5em $mainfamily;
 $headColor: $red;
 

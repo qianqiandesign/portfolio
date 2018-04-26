@@ -20,7 +20,8 @@ env = 'development';
 
 if (env==='development') {
   outputDir = 'builds/development/';
-  sassStyle = 'expanded';
+  //sassStyle = 'expanded';
+  sassStyle ='compressed';
 } else {
   outputDir = 'builds/production/';
   sassStyle = 'compressed';

@@ -1,15 +1,21 @@
 header {
-	padding: 2em 0;
+	padding: 0 0 2rem;
 	@include clearfix;
+	max-width:1500px;
+
+	&.voco {
+		background: $lighterblue;
+	}
 
 	.navbar {
-		@include container;
+		@include container(80%);
 		.brand {
 			//@include span(3);
 			float: left;
 			font-weight: $normal;
       		font-family: $headfamily;
       		text-align: center;
+			padding-top: 1rem;
 
       		a {
 	            color: $navForeground;
@@ -18,28 +24,40 @@ header {
 	            display: inline-block;
 	            padding: 10px;
 	            font-size: 2.2em;
+				.logo{
+					width: 50px;
+				}
 			} //a
+
 		} //.brand
 
 		.mobile-nav {
 			nav {
 				//@include span(9 at 3 of 12);
-				padding: 15px;
+				padding: 0 15px 15px;
 				float: right;
 
 				li {
 					display: inline-block;
+					padding-top: 2.5rem;
+					padding-bottom: 1rem;
+					//&:hover{
+					//	background: $blue;
+					//}
+					&.active {
+						background: $blue;
+						a{
+							color: $light;
+						}
+					}
 
 					a {
-						color: $light;
+						color: $grey;
 						font: $mainFont;
 						font-size: 1em;
-						font-weight: $bold;
+						font-weight: 100;
 						padding: 10px 15px;
 						text-decoration: none;
-						&.button {
-							padding: 10px 20px;
-						}
 					} //a
 
 					@include breakpoint(max-width 900px){
@@ -67,12 +85,13 @@ header {
 
 				@include breakpoint(max-width 900px){
 					padding: 0;
-					background-color:$teal;
+					background-color: $light;
 				} // breakpoint_900px
 			} // nav
 
 			@include breakpoint(max-width 900px){
 				.menu-btn {
+					padding-top: 2.5rem;
 					div {
 						position: absolute;
 						left: 100%;
@@ -91,7 +110,7 @@ header {
 						width: 30px;
 						height: 4px;
 						margin: 5px 0;
-						background: $light;
+						background: $grey;
 						z-index: 100;
 					} //span
 				} //.menu-btn
