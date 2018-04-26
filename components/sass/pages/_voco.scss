@@ -196,10 +196,15 @@
 
 #voco-design-7 {
   img{
+    width:auto;
     &.scroll-img{
       height:600px;
       padding-bottom:0;
     }
   }
 
+}
+
+.scroll-wrapper{
+  overflow-x: hidden ;
 }
