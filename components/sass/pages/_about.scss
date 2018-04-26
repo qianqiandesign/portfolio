@@ -1,11 +1,11 @@
 #about {
   height: 600px;
+  margin-top: 5rem;
 
   @include container(80%);
 
   .half-wrapper{
     .text-container-left{
-      @include textContainer(60%);
       h1 {
         color: $slate-grey;
         font-size: 3rem;
@@ -74,8 +74,9 @@
   } // half-wrapper-color
 
   .half-wrapper{
+    padding-right: 2rem;
     .text-container-right{
-      @include textWrapper(8rem, 12rem);
+      @include textWrapper(8rem, 10rem);
       h1 {
         @include h1($blue, 0.5rem);
         @include createLine($blue);
@@ -100,8 +101,9 @@
   height:600px;
 
   .half-wrapper{
+    padding-right: 2rem;
     .text-container-left{
-      @include textWrapper(8rem, 12rem);
+      @include textWrapper(8rem, 10rem);
       h1 {
         @include h1($pink, 0.5rem);
         @include createLine($pink);
@@ -146,8 +148,9 @@
   } // half-wrapper-color
 
   .half-wrapper{
+    padding-right: 2rem;
     .text-container-right{
-      @include textWrapper(8rem, 12rem);
+      @include textWrapper(8rem, 10rem);
       h1 {
         @include h1($purple, 0.5rem);
         @include createLine($purple);

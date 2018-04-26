@@ -92,12 +92,12 @@ $(document).ready(function(){
 
 	$(window).resize(function() {
 	  windowsize = $(window).width();
-	  if (windowsize > 900) {
+	  if (windowsize > 960) {
 	    //if the window is greater than 900px wide then display the navigation
 	    $(".responsive-menu").css( "display", "block");
 	  }
 
-	  if(windowsize < 900) {
+	  if(windowsize < 960) {
 	  	//if the window is less than 900px wide then hide the navigation
 	  	$(".responsive-menu").css( "display", "none");
 	  }

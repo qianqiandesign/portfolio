@@ -1,17 +1,40 @@
 #intro {
-	@include backImage('../images/header_bg_desktop@2x.png', 700px);
-	@include backSize(0px);
 
 	.promo {
 		@include container(80%);
+		.large-wrapper {
+			@include largeWrapper($light, 500px);
 
-		.text-wrapper{
-			@include textWrapper(6rem, 4rem);
+			@include breakpoint(max-width $medium){
+					width: 100%;
+				}
+		}
+		.small-wrapper {
+			@include smallWrapper($light, 500px);
+			@include breakpoint(max-width $medium){
+					display: none;
+				}
+		}
+
+		.text-container-right{
+			@include textWrapper(6rem, 0);
+		}
+
+		.text-container-left{
+			@include textWrapper(6rem, 0);
 			h1 {
 				color: $slate-grey;
 				font-size: 3rem;
 				text-align: left;
 				line-height: 4rem;
+				letter-spacing: .1rem;
+				@include breakpoint(max-width $large){
+						font-size: 2.4rem;
+				}
+				@include breakpoint(max-width $small){
+						font-size: 1.6rem;
+						line-height: 2.4rem;
+				}
 			} // h1
 
 			p {
@@ -20,38 +43,22 @@
 				text-align: left;
 				font-size: 3rem;
 				font-weight: bold;
+				padding-top:3rem;
 				span {
 					text-decoration-line: underline;
 					text-decoration-style: dashed;
 				}
+				@include breakpoint(max-width $large){
+						font-size: 2.4rem;
+				}
+				@include breakpoint(max-width $small){
+						font-size: 1.6rem;
+						line-height: 2.4rem;
+				}
 			} // p
 		} // text-wrapper
 
-		@include breakpoint(max-width $small) {
-			h1 {
-				font-size: 2rem;
-				line-height: 1.3rem;
-			} //h1
-
-			p {
-				font-size: 1rem;
-				line-height: 1.2rem;
-			} //p
-
-		}// breakpoint_$small
-
-		@include breakpoint(max-width $narrow) {
-			h1 {
-				font-size: 1.5rem;
-				line-height: 1.3rem;
-			} //h1
-
-			p {
-				font-size: 0.8rem;
-				line-height: 1.2rem;
-			} //p
-
-		}// breakpoint_$small
+		
 
 	}//.promo
 
@@ -59,15 +66,18 @@
 
 
 #voco {
-	@include backImage('../images/voco_banner_mockup@2x.png');
+	@include backImage('../images/voco_banner_mockup@2x.png', calc(20% - 0px) center);
 	@include backSize(0px);
-
+	
 	.text-wrapper{
 		@include textWrapper(15rem, 14rem);
 		h1 {
 
 			@include h1($light, 0.5rem);
 			@include createLine();
+			@include breakpoint(max-width $medium){
+						font-size: 2rem;
+				}
 		} // h1
 
 		p {
@@ -75,6 +85,9 @@
 			&.see-case {
 				margin-top: 5rem;
 			}
+			@include breakpoint(max-width $medium){
+						font-size: .75rem;
+				}
 		} //p
 	} // .text-wrapper
 
@@ -292,247 +305,5 @@
 
 } //#post-rock-music
 
-
-#features {
-	@include backImage('../images/feature-bg.png');
-	@include backSize;
-	
-	.top_section {
-		@include container(70%);
-
-		h1 {
-			color: $light;
-			font-size: 2rem;
-			font-family: $mainfamily;
-			line-height: 1.2rem;
-			@include text-shadow($dark, 0 0 20px);
-			text-align: center;
-			// padding-top: 2rem;
-			padding-bottom: 2rem;
-
-			@include breakpoint(max-width $small){
-				font-size: 1.4rem;
-			}
-		} // h1
-	} //.top_section
-	
-	.features_list {
-		@include container;
-		@include clearfix;
-
-
-		.feature {
-			@include span(3 of 15);
-
-			a {
-				text-decoration: none;
-
-				.feature_con {
-					@include border-radius(20px); 
-					background-color: rgba($orange, 0.8);
-				    width: 134px;
-				    height: 134px;
-				    padding: 20px;
-				    margin: 20px;
-				    margin-right: auto;
-				    margin-left: auto;
-
-				    &:hover {
-						background-color: $highlight;
-					}
-
-				    i {
-						color: #fff;
-					    text-align: center;
-					    display: block;
-					    margin-bottom: 12px;
-					    font-size: 1.8rem;
-					    margin-top: 12px;
-				    } //i
-
-				    p {
-				    	color: $light;
-	    				text-align: center;
-	    				font-size: 0.9rem;
-	    				text-decoration: none;
-	    				line-height: 1.3rem;
-				    } //p
-				} //.feature_con
-			} //a	
-
-			@include breakpoint($potrait $large) {
-				@include span(3);
-			} //breakpoint_$potrait_to_$large
-
-			@include breakpoint(max-width $potrait) {
-				@include span(4);
-			} //breakpoint_$potrait
-
-			@include breakpoint(max-width 560px) {
-				@include span(6);
-			} //breakpoint_560px
-
-		} //.feature
-
-		@include breakpoint(max-width $small) {
-			@include container(80%);
-		} //breakpoint_$small
-
-		@include breakpoint(max-width $iPhone) {
-			@include container(90%);
-		} //breakpoint_$iPhone
-
-	} //.feature_list
-
-	.bottom_section {
-		a {
-			text-decoration: none;
-			// color: $light;
-
-			h4 {
-				color: $light;
-			    text-align: center;
-			    margin-top: 3rem;
-			    font-size: 1.3rem;
-			    font-family: $mainfamily;
-			} //h4
-		} //a
-
-		@include breakpoint(max-width $iPhone) {
-			font-size: 0.7rem;
-		} //breakpoint_$iPhone
-	}//.bottom_section
-
-} //#features
-
-
-#partners {
-
-	.clients {
-		@include container(40%);
-
-		h1 {
-			color: $dark;
-			font-size: 1.6rem;
-			font-family: $mainfamily;
-			line-height: 1.3rem;
-			text-align: center;
-			padding-top: 3rem;
-			padding-bottom: 3rem;
-		} // h1
-		
-		@include breakpoint(max-width $iPhone) {
-			font-size: 0.7rem;
-		} //breakpoint_$iPhone
-
-	} //.clients
-
-	.client_group {
-		@include container(70%);
-		padding-bottom: 5rem;
-
-		.client {
-			// @include span(4);
-			// text-align: center;
-			margin: 20px;
-			
-			img {
-				max-width: 100%;
-
-				&.img_pad {
-					padding-top: 2rem;
-				} //.img_extra
-			} //img
-		} //.client
-	} //.client_group
-
-} //#partners
-
-#acadremy {
-	@include backImage('../images/acedamy-bg.png');
-	@include backSize(0px);
-	
-
-	.title_section {
-		@include container(80%);
-
-		h1 {
-			color: $grey;
-			font-size: 2.6rem;
-			line-height: 1.4rem;
-			font-family: $headfamily;
-			@include text-shadow($dark, 0 0 20px);
-			text-align: center;
-			padding-top: 1.5rem;
-			padding-bottom: 1.5rem;
-			font-weight: $normal;
-			//display: inline-block;
-
-			img {
-				vertical-align: text-bottom;
-			}
-
-			@include breakpoint(max-width $small) {
-				font-size: 1.7rem;
-
-				img {
-					width: 190px;
-				}
-			} //breakpoint_$small
-
-		} // h1
-
-		@include breakpoint(max-width $small) {
-			@include container(90%);
-		} //breakpoint_$small
-
-	} //.title_section
-
-	.intro{
-		@include container(60%);
-		padding: 3rem 0 6rem 0;
-		background-color: rgba($light, 0.1);
-
-		p {
-			font-size: 1.2rem;
-			color: $light;
-			text-align: left;
-			margin-bottom: 4rem;
-			padding: 0 3rem;
-			font-weight: $normal;
-			line-height: 1.7rem;
-		} //p
-
-		a {
-			color: $grey;
-			text-align: center;
-			font-family: $mainfamily;
-			font-size: 1.2rem;
-			margin: 0 auto;
-			display: table;
-			font-weight: $bold;
-			text-decoration: none;
-
-			&:hover {
-				color: $light;
-				border-color: $light;
-			}
-		} //a
-
-		@include breakpoint(max-width $small) {
-			@include container(80%);
-
-			p {
-				font-size: 0.9rem;
-			}
-
-			h6 {
-				font-size: 1rem;
-			}
-		} //breakpoint_$small
-
-	} //.intro
-
-} //#acadremy
 
 

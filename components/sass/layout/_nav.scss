@@ -1,5 +1,5 @@
 header {
-	padding: 0 0 2rem;
+	padding: 0;
 	@include clearfix;
 	max-width:1500px;
 
@@ -22,10 +22,10 @@ header {
 	            text-decoration: none;
 	            text-align: center;
 	            display: inline-block;
-	            padding: 10px;
-	            font-size: 2.2em;
+	            padding: 1rem 0 .8rem 0;
+	            
 				.logo{
-					width: 50px;
+					width: 3.2rem;
 				}
 			} //a
 
@@ -39,7 +39,7 @@ header {
 
 				li {
 					display: inline-block;
-					padding-top: 2.5rem;
+					padding-top: 4rem;
 					padding-bottom: 1rem;
 					//&:hover{
 					//	background: $blue;
@@ -52,15 +52,17 @@ header {
 					}
 
 					a {
-						color: $grey;
-						font: $mainFont;
-						font-size: 1em;
+						color: $dark;
+						font-family: $headfamily;
+						font-size: 1rem;
 						font-weight: 100;
 						padding: 10px 15px;
 						text-decoration: none;
+						text-transform: uppercase;
+    					letter-spacing: .2rem;
 					} //a
 
-					@include breakpoint(max-width 900px){
+					@include breakpoint(max-width $medium){
 						display: block;
 						float:none;
 						width: 100%;
@@ -79,17 +81,17 @@ header {
 								margin-left: auto;
 							} //a.button
 						} //a
-					} // breakpoint_900px
+					} // breakpoint_960px
 
 				} //li
 
-				@include breakpoint(max-width 900px){
+				@include breakpoint(max-width $medium){
 					padding: 0;
 					background-color: $light;
-				} // breakpoint_900px
+				} // breakpoint_960px
 			} // nav
 
-			@include breakpoint(max-width 900px){
+			@include breakpoint(max-width $medium){
 				.menu-btn {
 					padding-top: 2.5rem;
 					div {
@@ -110,7 +112,7 @@ header {
 						width: 30px;
 						height: 4px;
 						margin: 5px 0;
-						background: $grey;
+						background: $dark;
 						z-index: 100;
 					} //span
 				} //.menu-btn
@@ -123,7 +125,7 @@ header {
 					left: 0;
 				} //nav.responsive-menu
 
-			} // breakpoint_900px
+			} // breakpoint_960px
 		} //.mobile-nav
 
 	} //.navbar
