@@ -3,11 +3,11 @@
 
 @mixin backImage(
 	$image,
+	$bgPos: center center,
 	$height: 600px,
 	$grDir: to bottom,
 	$opStart: 0,
-	$opEnd: 0,
-	$bgPos: center center
+	$opEnd: 0
 ){
 	background: linear-gradient(
 		$grDir,
@@ -74,10 +74,10 @@
 
 @mixin createLine (
 	$color: #fff,
-	$height: 3px,
+	$height: .1rem,
 	$left: -5rem,
-	$top: -0.4em,
-	$right: 0.8em,
+	$top:  -1.2rem,
+	$right: 3rem,
 	$width: 5rem
 ) {
 	&:before{
@@ -109,7 +109,7 @@
 	text-align: $textAlign;
 	line-height: 4rem;
 	margin-top: $marginTop;
-	letter-spacing: 4px;
+	letter-spacing: .1rem;
 }
 
 @mixin p (
@@ -119,7 +119,7 @@
 ){
 	color: $color;
 	text-align: $textAlign;
-	letter-spacing: 8px;
+	letter-spacing: .6rem;
 	text-transform: uppercase;
 	font-weight: $fontWeight;
 }
@@ -130,6 +130,26 @@
 ){
 	float:left;
 	width: 50%;
+	background: $bgColor;
+	height: $height;
+}
+
+@mixin largeWrapper(
+	$bgColor: $light,
+	$height: 600px
+){
+	float:left;
+	width: 60%;
+	background: $bgColor;
+	height: $height;
+}
+
+@mixin smallWrapper(
+	$bgColor: $light,
+	$height: 600px
+){
+	float:left;
+	width: 40%;
 	background: $bgColor;
 	height: $height;
 }

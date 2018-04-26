@@ -22,6 +22,10 @@ p {
   font: $pFont;
 }
 
+img {
+  width: 100%;
+}
+
 .container{
   @include container;
 }
@@ -34,6 +38,14 @@ p {
   @include halfWrapper();
 }
 
+.large-wrapper{
+  @include largeWrapper();
+}
+
+.small-wrapper{
+  @include smallWrapper();
+}
+
 .quad{
   float:left;
   width:25%;
@@ -41,15 +53,16 @@ p {
 }
 
 .btn-class{
-  border-radius: 30px;
+  border-radius: 1.75rem;
   background-color: #595bf0;
-  width: 320px;
-  height: 60px;
+  width: 20rem;
+  height: 3.5rem;
   border: none;
-  font-family: $headfamily;
+  font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #ffffff;
-  letter-spacing: 2px;
-  font-size: 14px;
+  letter-spacing: .2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .sub-text{

@@ -24,7 +24,7 @@ $lightgrey : #A9B3BC;
 $red       : #DC4332;
 $grey      : #B0B0B0;
 $orange    : #FF6945;
-$dark      : #000000;
+$dark      : #444444;
 $light     : #FFFFFF;
 $teal      : #4CB9CD;
 $twitter   : #55ACEE;
@@ -40,14 +40,14 @@ $purple    : #A070E1;
 $backgroundColor : $light;
 $typeDefault     : $dark;
 $navBackground   : $blue;
-$navForeground   : $grey;
+$navForeground   : $dark;
 $navHover        : $yellow;
 $navBrandBg      : $light;
 $headersubbg     : $dark;
 
 //Font variables
 
-$headfamily : 'Raleway', 'Helvetica Neue', Helvetica, Arial,  sans-serif;
+$headfamily : 'Raleway', 'Helvetica Neue', sans-serif;
 $mainfamily : 'Lato', sans-serif;
 
 $thin : 100;
@@ -55,17 +55,14 @@ $normal : 400;
 $bold : 600;
 $heavy : 800;
 
-$headFont : $thin 1.5em/1.5em $headfamily;
-$pFont:$thin 1em/1.5em $headfamily;
-$mainFont : $thin 1em/1.5em $mainfamily;
+$headFont : $thin 1rem $headfamily;
+$pFont:$thin 1rem $headfamily;
+$mainFont : $thin 1rem $mainfamily;
 $headColor: $red;
 
 //Breakpoint variables
-$extranarrow: 320px;
-$extrasmall: 360px;
-$narrow: 400px;
-$iPhone: 480px;
-$small: 650px;
+$narrow: 320px;
+$small: 375px;;
 $potrait: 768px;
 $medium: 960px;
 $large: 1024px;
