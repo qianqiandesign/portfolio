@@ -58,9 +58,11 @@ $(document).ready(function(){
     var $scrollWrapper = $('.scroll-wrapper');
 
     $(window).on('resize scroll', function(e) {
-        var elementTop = $scrollWrapper.offset().top;
-        var elementBottom = elementTop + $scrollWrapper.outerHeight();
-
+        if($scrollWrapper.length >0)
+        {
+            var elementTop = $scrollWrapper.offset().top;
+            var elementBottom = elementTop + $scrollWrapper.outerHeight();
+        }
         var viewportTop = $(window).scrollTop();
         var viewportBottom = viewportTop + $(window).height();
         //var inViewPort = elementBottom > viewportTop && elementTop < viewportBottom;
@@ -104,6 +106,11 @@ $(document).ready(function(){
 
         });
     }
+
+    $("#voco p").click(function(e){
+        $('#voco').addClass('animated fadeOut');
+        //$('body').css('opacity', 0);
+    });
 
 
 });

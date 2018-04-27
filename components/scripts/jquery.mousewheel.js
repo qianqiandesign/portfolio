@@ -81,4 +81,4 @@
         return ($.event.dispatch || $.event.handle).apply(this, args);
     }
 
-})(jQuery);
+})(window.jQuery);
