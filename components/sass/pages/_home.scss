@@ -22,6 +22,15 @@
 
 		.text-container-left{
 			@include textWrapper(6rem, 0);
+			.typewriter {
+  				display: flex;
+  				flex-direction: column;
+  				justify-content: left;
+  				align-content: left;
+  				&-text span {
+  					color: $blue;
+  				}
+  			}
 			h1 {
 				color: $slate-grey;
 				font-size: 3rem;
@@ -83,7 +92,7 @@
 	}
 	
 	.text-wrapper{
-		@include textWrapper(15rem, 14rem);
+		@include textWrapper(15rem, 8rem);
 		h1 {
 			@include h1($light, 0.5rem);
 			@include createLine();
@@ -127,6 +136,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px 
@@ -188,6 +198,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -234,6 +245,9 @@
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -244,6 +258,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -291,6 +306,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -301,6 +319,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -310,7 +329,7 @@
 
 
 #petopia {
-	@include backImage('../images/petopia_banner_mockup.png', 80% center);
+	@include backImage('../images/petopia_banner_mockup@2x.png', 80% center);
 	@include backSize(0px);
 	@include breakpoint(max-width $small){
 		height: 500px;
@@ -346,6 +365,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			} 
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -356,6 +378,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -364,9 +387,6 @@
 } //#petopia
 
 #pillow {
-	.container {
-		max-width: 70%;
-	}
 	@include backImage('../images/pillow_website_banner_mockup@2x.png', 30% center);
 	@include backSize(0px);
 	@include breakpoint(max-width $small){
@@ -376,7 +396,7 @@
 
 	.text-wrapper{
 		float:right;
-		@include textWrapper(15rem, 0, 10rem);
+		@include textWrapper(15rem, 0, 3rem);
 		h1 {
 			@include h1($slate-grey, 0.5rem);
 			@include createLine(5rem, $slate-grey);
@@ -405,6 +425,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -415,6 +438,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -461,6 +485,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -471,6 +498,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -480,8 +508,12 @@
 
 
 #short-term-rental {
-	@include backImage('../images/pillow_dashboard_banner_mockup.png');
+	@include backImage('../images/pillow_dashboard_banner_mockup@2x.png');
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/pillow_dashboard_banner_mockup_mobile@2x.jpg');
+	}
 
 	.text-wrapper{
 		float:right;
@@ -514,6 +546,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -524,6 +559,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -532,8 +568,12 @@
 } //#short-term-rental
 
 #volunteer-match {
-	@include backImage('../images/volunteermatch_banner_mockup@2x.png');
+	@include backImage('../images/volunteermatch_banner_mockup@2x.jpg', 70% center);
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/volunteermatch_banner_mockup_mobile@2x.jpg', center center);
+	}
 
 	.text-wrapper{
 		@include textWrapper(14.5rem, 12rem);
@@ -565,6 +605,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -575,6 +618,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -583,8 +627,12 @@
 } //#volunteer-match
 
 #kidzjet {
-	@include backImage('../images/kidzjet_banner_mockup@2x.png');
+	@include backImage('../images/kidzjet_banner_mockup@2x.png', 40% center);
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/kidzjet_banner_mockup_mobile@2x.jpg', center center);
+	}
 
 	.text-wrapper{
 		float:right;
@@ -617,6 +665,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -627,6 +678,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -636,8 +688,12 @@
 
 
 #promotion {
-	@include backImage('../images/pillow_marketing_right_mockup.png');
+	@include backImage('../images/pillow_marketing_right_mockup@2x.png', 70% center);
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/pillow_marketing_right_mockup_mobile@2x.jpg', center center);
+	}
 
 	.text-wrapper{
 		@include textWrapper(14.5rem, 12rem);
@@ -669,6 +725,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -679,6 +738,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px
@@ -687,8 +747,12 @@
 } //#promotion
 
 #post-rock-music {
-	@include backImage('../images/postrock_banner_mockup@2x.png');
+	@include backImage('../images/postrock_banner_mockup@2x.png', 10% center);
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/postrock_banner_mockup_mobile@2x.jpg', center center);
+	}
 
 	.text-wrapper{
 		float:right;
@@ -721,6 +785,9 @@
 		@include breakpoint(max-width $potrait){
 			float: none;
 			@include textWrapper(5rem, 35%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
 		@include breakpoint(max-width $small){
 			@include textWrapper(5rem, 25%);
@@ -731,6 +798,7 @@
 				width: 2rem;
 				right: 1rem;
 				margin-left: -2rem;
+				top: -.7rem;
 				}
 			}
 		}// .breakpoint 375px

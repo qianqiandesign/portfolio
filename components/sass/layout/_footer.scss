@@ -16,13 +16,26 @@
 	} //icons
 	p {
 		font-family: $headfamily;
-		font-size: 14px;
+		font-size: .8rem;
 		font-weight: 500;
 		font-style: normal;
 		font-stretch: normal;
 		line-height: normal;
-		letter-spacing: 0.4px;
+		letter-spacing: .1rem;
 		text-align: center;
 		color: $blue;
 	} //p
+	@include breakpoint(max-width $potrait){
+		.icons {
+			@include container(60%);
+		}	
+	}// .breakpoint 768px
+	@include breakpoint(max-width $small){
+		.icons {
+			@include container(80%);
+		}
+		p {
+			letter-spacing:0;
+		}	
+	}// .breakpoint 375px
 } // #footer
