@@ -68,16 +68,17 @@
 #voco {
 	@include backImage('../images/voco_banner_mockup@2x.png', calc(20% - 0px) center);
 	@include backSize(0px);
+	background-color: #6A5BEF;
+	@include breakpoint(max-width $potrait){
+		height: 500px;
+		background-position: 100% 200px;
+	}
 	
 	.text-wrapper{
 		@include textWrapper(15rem, 14rem);
 		h1 {
-
 			@include h1($light, 0.5rem);
 			@include createLine();
-			@include breakpoint(max-width $medium){
-						font-size: 2rem;
-				}
 		} // h1
 
 		p {
@@ -85,18 +86,40 @@
 			&.see-case {
 				margin-top: 5rem;
 			}
-			@include breakpoint(max-width $medium){
-						font-size: .75rem;
-				}
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
+		    
 	} // .text-wrapper
 
 } //#voco
 
 
 #pch {
-	@include backImage('../images/pch_banner_mockup@2x.png');
+	@include backImage('../images/pch_banner_mockup@2x.png', bottom center);
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/pch_banner_mockup_mobile@2x.jpg', center center);
+	}
 
 	.text-wrapper{
 		width: 54%;
@@ -110,14 +133,38 @@
 		p {
 			@include p();
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#pch
 
 
 #color-theory {
-	@include backImage('../images/color_theory_banner_mockup@2x.png');
+	@include backImage('../images/color_theory_banner_mockup@2x.png', calc(20% - 0px) center);
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/color_theory_banner_mockup_mobile@2x.jpg', center center)
+	}
 
 	.text-wrapper{
 		@include textWrapper(12.5rem, 14rem);
@@ -130,13 +177,38 @@
 		p {
 			@include p($slate-grey);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#color-theory
 
 #less-than-one {
-	@include backImage('../images/lessthanone_banner_mockup@2x.png');
+	@include backImage('../images/lessthanone_banner_mockup@2x.png', calc(70% - 0px) center);
 	@include backSize(0px);
+	background-color: #161743;
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/lessthanone_banner_mockup_mobile@2x.jpg', center center);
+	}
 
 	.text-wrapper{
 		float:right;
@@ -149,15 +221,38 @@
 		p {
 			@include p();
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#less-than-one
 
 
 #petopia {
-	@include backImage('../images/petopia_banner_mockup.png');
+	@include backImage('../images/petopia_banner_mockup.png', calc(20% - 0px) center);
 	@include backSize(0px);
-
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/petopia_banner_mockup_mobile.jpg', center center);
+	}
 	.text-wrapper{
 		@include textWrapper(14.5rem, 14rem);
 		h1 {
@@ -168,13 +263,37 @@
 		p {
 			@include p($orange);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#petopia
 
 #pillow {
-	@include backImage('../images/pillow_website_banner_mockup@2x.png');
+	@include backImage('../images/pillow_website_banner_mockup@2x.png', calc(70% - 0px) center);
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/pillow_website_banner_mockup_mobile@2x.jpg', center center);
+	}
 
 	.text-wrapper{
 		float:right;
@@ -187,6 +306,26 @@
 		p {
 			@include p($slate-grey);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#pillow
@@ -206,6 +345,26 @@
 		p {
 			@include p($slate-grey);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#crazy-ramen
@@ -226,6 +385,26 @@
 		p {
 			@include p($slate-grey);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#short-term-rental
@@ -244,6 +423,26 @@
 		p {
 			@include p($slate-grey);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#volunteer-match
@@ -263,6 +462,26 @@
 		p {
 			@include p($slate-grey);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#kidzjet
@@ -282,6 +501,26 @@
 		p {
 			@include p($slate-grey);
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#promotion
@@ -301,6 +540,26 @@
 		p {
 			@include p();
 		} //p
+		@include breakpoint(max-width $medium){
+			@include textWrapper(15rem, 8rem);
+			h1 {
+				font-size: 2.4rem;
+				&:before{
+				width: 3rem;
+				right: 2rem;
+				margin-left: -3rem;
+				}
+			}
+			p {
+				font-size: .75rem;
+				&.see-case {
+					margin-top: 2rem;
+				}
+			}
+		}// .breakpoint 960px
+		@include breakpoint(max-width $potrait){
+			@include textWrapper(5rem, calc(50% - 3rem));
+		}// .breakpoint 768px
 	} // .text-wrapper
 
 } //#post-rock-music

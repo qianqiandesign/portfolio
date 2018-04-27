@@ -1,18 +1,19 @@
 // _mixins.scss
 // ========
 
+
 @mixin backImage(
 	$image,
 	$bgPos: center center,
 	$height: 600px,
-	$grDir: to bottom,
-	$opStart: 0,
-	$opEnd: 0
+    $color1: rgba(0,0,0,0),
+	$color2: rgba(0,0,0,0),
+	$grDir: to bottom
 ){
 	background: linear-gradient(
 		$grDir,
-		rgba(0,0,0, $opStart),
-		rgba(0,0,0, $opEnd)
+		$color1,
+		$color2
 		), url($image);
 	background-repeat: no-repeat;
 	background-position: $bgPos;
@@ -22,7 +23,6 @@
 	background-size: cover;
 	height: $height;
 }  // backImage
-
 
 @mixin clearfix {
 	&:before,
@@ -73,21 +73,21 @@
 }
 
 @mixin createLine (
+	$width: 5rem,
 	$color: #fff,
 	$height: .1rem,
 	$left: -5rem,
 	$top:  -1.2rem,
-	$right: 3rem,
-	$width: 5rem
+	$right: 3rem
 ) {
 	&:before{
+		width: $width;
 		background-color: $color;
 		content: "";
 		display: inline-block;
 		height: $height;
 		position: relative;
 		vertical-align: middle;
-		width: $width;
 	}
 
 	&:before {
