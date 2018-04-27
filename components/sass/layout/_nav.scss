@@ -3,10 +3,6 @@ header {
 	@include clearfix;
 	max-width:1500px;
 
-	&.voco {
-		background: $lighterblue;
-	}
-
 	.navbar {
 		@include container(80%);
 		.brand {
