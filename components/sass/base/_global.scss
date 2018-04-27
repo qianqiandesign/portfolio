@@ -63,6 +63,11 @@ img {
   letter-spacing: .2rem;
   font-size: 1rem;
   text-transform: uppercase;
+  @include breakpoint(max-width $potrait){
+    font-size: .75rem;
+    width: 18rem;
+    height: 3rem;
+  }
 }
 
 .sub-text{

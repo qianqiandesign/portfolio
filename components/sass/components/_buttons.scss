@@ -2,7 +2,10 @@
 	@include border-radius(5px);
 	border: 1px solid #fff;
     margin-left: 15px;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
+    @include breakpoint(max-width $potrait){
+		font-size: 1.2rem;
+    }
 }
 
 .button_grey {

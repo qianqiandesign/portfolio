@@ -25,9 +25,8 @@
 }  // backImage
 
 @mixin clearfix {
-	&:before,
-	&:after {
-		content: "";
+	&:before, &:after {
+		content: " ";
 		display: table;
 	}  // before, after
 	&:after {
@@ -69,7 +68,7 @@
 	color: $slate-grey;
 	line-height: 2rem;
 	text-align: left;
-	font-size: 24px;
+	font-size: 1.5rem;
 }
 
 @mixin createLine (
@@ -132,6 +131,10 @@
 	width: 50%;
 	background: $bgColor;
 	height: $height;
+	@include breakpoint(max-width $medium){
+		float: none;
+		width: 100%;
+	}
 }
 
 @mixin largeWrapper(
