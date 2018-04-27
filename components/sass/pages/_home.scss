@@ -31,6 +31,10 @@
 				@include breakpoint(max-width $large){
 						font-size: 2.4rem;
 				}
+				@include breakpoint(max-width $potrait){
+					font-size: 2rem;
+					line-height:3rem;
+				}// .breakpoint 768px
 				@include breakpoint(max-width $small){
 						font-size: 1.6rem;
 						line-height: 2.4rem;
@@ -51,6 +55,10 @@
 				@include breakpoint(max-width $large){
 						font-size: 2.4rem;
 				}
+				@include breakpoint(max-width $potrait){
+					font-size: 2rem;
+					line-height:3rem;
+				}// .breakpoint 768px
 				@include breakpoint(max-width $small){
 						font-size: 1.6rem;
 						line-height: 2.4rem;
@@ -100,14 +108,28 @@
 			p {
 				font-size: .75rem;
 				&.see-case {
-					margin-top: 2rem;
+					margin-top: 1rem;
 				}
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
 			@include textWrapper(5rem, calc(50% - 3rem));
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
-		    
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px 
 	} // .text-wrapper
 
 } //#voco
@@ -122,8 +144,9 @@
 	}
 
 	.text-wrapper{
-		width: 54%;
+		width: 100%;
 		margin: 0 auto;
+		padding-left: 25%;
 		padding-top: 5rem;
 		h1 {
 			@include h1($light, 0.5rem);
@@ -134,7 +157,7 @@
 			@include p();
 		} //p
 		@include breakpoint(max-width $medium){
-			@include textWrapper(15rem, 8rem);
+			@include textWrapper(5rem, 25%);
 			h1 {
 				font-size: 2.4rem;
 				&:before{
@@ -146,24 +169,39 @@
 			p {
 				font-size: .75rem;
 				&.see-case {
-					margin-top: 2rem;
+					margin-top: 1rem;
 				}
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 2rem;
+			}
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#pch
 
 
 #color-theory {
-	@include backImage('../images/color_theory_banner_mockup@2x.png', calc(20% - 0px) center);
+	@include backImage('../images/color_theory_banner_mockup@2x.png');
 	@include backSize(0px);
 	@include breakpoint(max-width $small){
 		height: 500px;
-		@include backImage('../images/color_theory_banner_mockup_mobile@2x.jpg', center center)
+		@include backImage('../images/color_theory_banner_mockup_mobile@2x.jpg')
 	}
 
 	.text-wrapper{
@@ -171,7 +209,7 @@
 		h1 {
 			@include h1($slate-grey, 0.5rem);
 
-			@include createLine($slate-grey);
+			@include createLine(5rem, $slate-grey);
 		} // h1
 
 		p {
@@ -195,14 +233,26 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#color-theory
 
 #less-than-one {
-	@include backImage('../images/lessthanone_banner_mockup@2x.png', calc(70% - 0px) center);
+	@include backImage('../images/lessthanone_banner_mockup@2x.png', 30% center);
 	@include backSize(0px);
 	background-color: #161743;
 	@include breakpoint(max-width $small){
@@ -239,15 +289,28 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#less-than-one
 
 
 #petopia {
-	@include backImage('../images/petopia_banner_mockup.png', calc(20% - 0px) center);
+	@include backImage('../images/petopia_banner_mockup.png', 80% center);
 	@include backSize(0px);
 	@include breakpoint(max-width $small){
 		height: 500px;
@@ -257,7 +320,7 @@
 		@include textWrapper(14.5rem, 14rem);
 		h1 {
 			@include h1($orange, 0.7rem);
-			@include createLine($orange);
+			@include createLine(5rem, $orange);
 		} // h1
 
 		p {
@@ -281,14 +344,30 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#petopia
 
 #pillow {
-	@include backImage('../images/pillow_website_banner_mockup@2x.png', calc(70% - 0px) center);
+	.container {
+		max-width: 70%;
+	}
+	@include backImage('../images/pillow_website_banner_mockup@2x.png', 30% center);
 	@include backSize(0px);
 	@include breakpoint(max-width $small){
 		height: 500px;
@@ -300,7 +379,7 @@
 		@include textWrapper(15rem, 0, 10rem);
 		h1 {
 			@include h1($slate-grey, 0.5rem);
-			@include createLine($slate-grey);
+			@include createLine(5rem, $slate-grey);
 		} // h1
 
 		p {
@@ -324,8 +403,21 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#pillow
@@ -334,12 +426,16 @@
 #crazy-ramen {
 	@include backImage('../images/crazyramen_banner_mockup@2x.png');
 	@include backSize(0px);
+	@include breakpoint(max-width $small){
+		height: 500px;
+		@include backImage('../images/crazyramen_banner_mockup_mobile@2x.jpg');
+	}
 
 	.text-wrapper{
 		@include textWrapper(14.5rem, 9rem);
 		h1 {
 			@include h1($slate-grey, 0.5rem);
-			@include createLine($slate-grey);
+			@include createLine(5rem, $slate-grey);
 		} // h1
 
 		p {
@@ -363,8 +459,21 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#crazy-ramen
@@ -379,7 +488,7 @@
 		@include textWrapper(15rem, 0);
 		h1 {
 			@include h1($slate-grey, 0.5rem);
-			@include createLine($slate-grey);
+			@include createLine(5rem, $slate-grey);
 		} // h1
 
 		p {
@@ -403,8 +512,21 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#short-term-rental
@@ -417,7 +539,7 @@
 		@include textWrapper(14.5rem, 12rem);
 		h1 {
 			@include h1($slate-grey, 0.5rem);
-			@include createLine($slate-grey);
+			@include createLine(5rem, $slate-grey);
 		} // h1
 
 		p {
@@ -441,8 +563,21 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#volunteer-match
@@ -456,7 +591,7 @@
 		@include textWrapper(15rem, 0, 9rem);
 		h1 {
 			@include h1($slate-grey, 0.5rem);
-			@include createLine($slate-grey);
+			@include createLine(5rem, $slate-grey);
 		} // h1
 
 		p {
@@ -480,8 +615,21 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#kidzjet
@@ -495,7 +643,7 @@
 		@include textWrapper(14.5rem, 12rem);
 		h1 {
 			@include h1($slate-grey, 0.5rem);
-			@include createLine($slate-grey);
+			@include createLine(5rem, $slate-grey);
 		} // h1
 
 		p {
@@ -519,8 +667,21 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#promotion
@@ -534,7 +695,7 @@
 		@include textWrapper(15rem, 0);
 		h1 {
 			@include h1($light, 0.5rem);
-			@include createLine($light);
+			@include createLine(5rem, $light);
 		} // h1
 
 		p {
@@ -558,8 +719,21 @@
 			}
 		}// .breakpoint 960px
 		@include breakpoint(max-width $potrait){
-			@include textWrapper(5rem, calc(50% - 3rem));
+			float: none;
+			@include textWrapper(5rem, 35%);
 		}// .breakpoint 768px
+		@include breakpoint(max-width $small){
+			@include textWrapper(5rem, 25%);
+			h1 {
+				font-size: 1.6rem;
+				line-height: 2rem;
+				&:before{
+				width: 2rem;
+				right: 1rem;
+				margin-left: -2rem;
+				}
+			}
+		}// .breakpoint 375px
 	} // .text-wrapper
 
 } //#post-rock-music
