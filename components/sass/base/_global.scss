@@ -93,6 +93,10 @@ img {
   width: 100%;
 }
 
+.img-container{
+  margin: 2rem 0;
+}
+
 video {
   width: 100%;
 }
@@ -100,3 +104,4 @@ video {
 video::-webkit-media-controls {
   display: none;
 }
+

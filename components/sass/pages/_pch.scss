@@ -1,10 +1,10 @@
-#voco-intro {
+#pch-intro {
   height: 400px;
 
   .half-wrapper{
     @include halfWrapper($light, 350px);
     .text-container-left{
-      @include textContainer(30%);
+      @include textContainer(45%);
       h1 {
         color: $slate-grey;
         font-size: 3rem;
@@ -19,6 +19,9 @@
         text-align: left;
         text-transform: uppercase;
         letter-spacing: 4px;
+        &.see-proto{
+          color: $pink;
+        }
       } // p
     } // text-container-left
 
@@ -61,17 +64,18 @@
 
 }//#voco-intro
 
-#voco-design{
+#pch-design{
 
 } //#voco-design
 
-#voco-bg{
+#pch-bg{
   margin-top: 8rem;
   margin-bottom: 8rem;
   .quad-wrapper{
     @include container(80%);
+    margin-top: 4rem;
     &:first-child {
-      padding-bottom: 8rem;
+      padding-bottom: 6rem;
     }
     .quad {
       p{
@@ -92,7 +96,7 @@
         p {
           @include p($slate-grey);
           &.sub-title {
-            @include createLine(5rem, $lightgrey, 2px, 1em);
+            @include createLine(5rem, $lightgrey, .1rem, 1rem, 0, 1rem);
           }
           &.sub-text {
             @include subText();
@@ -128,7 +132,7 @@
         p {
           @include p($slate-grey);
           &.sub-title {
-            @include createLine(5rem, $lightgrey, 2px, 1em);
+            @include createLine(5rem, $lightgrey, .1rem, 1rem, 0, 1rem);
           } // sub-title
           &.sub-text {
             @include subText();
@@ -142,12 +146,12 @@
     } // arb-wrapper-right
 
     .arb-wrapper-central{
-      @include container(60%);
+      @include container(80%);
       //@include arbWrapper(60%, 200px);
       p {
         @include p($slate-grey);
         &.sub-title {
-          @include createLine(5rem, $lightgrey, 2px, 1em);
+          @include createLine(5rem, $lightgrey, .1rem, 1rem, 0, 1rem);
         } // sub-title
         &.sub-text {
           @include subText();
@@ -159,52 +163,40 @@
       } //p
     } // arb-wrapper-central
 
-  } // quad-wrapper
-} //#voco-bg
-
-
-#voco-design-4, #voco-design-6{
-  @include container(80%);
-}
-
-#voco-design-4, #voco-design-6, #voco-design-7{
-  .text-container{
-    p {
-      @include p($slate-grey);
-      @include container(70%);
-      padding: 3rem 0;
-      &.sub-title {
-        @include createLine(5rem,$lightgrey, 2px, 1em);
-      } // sub-title
-      &.sub-title-2 {
-        @include createLine(5rem, $lightgrey, 2px, 1em);
-        padding-bottom:0;
+    .mac-img {
+      display: block;
+      position: relative;
+      top: 38rem;
+      margin-bottom: 50rem;
+      .mac-img-1{
+        position: absolute;
+        top:-37.5rem;
+        z-index: 1;
       }
-      &.sub-text {
-        @include subText();
-        text-transform: none;
-        letter-spacing: normal;
-        padding-top: 1rem;
-        padding-right:1rem;
-      } //sub-text
-    } //p
-    img {
-      padding-bottom: 2rem;
-    }
+      .mac-img-2{
+        position: absolute;
+        z-index: 2;
+      }
+    } //mac-img
+
+  } // quad-wrapper
+} //#pch-bg
+
+
+#pch-design-0 {
+  background: $red;
+  .text-container{
+    @include container(80%);
+    padding: 7rem 0;
   }
-} //#voco-design-4
+} // #pch-design-0
 
-#voco-design-7 {
-  img{
-    width:auto;
-    &.scroll-img{
-      height:600px;
-      padding-bottom:0;
-    }
+#pch-design-1 {
+  background: $bgBlue;
+  .text-container{
+    @include container(80%);
+    padding: 7rem 0;
   }
+} // #pch-design-0
 
-}
 
-.scroll-wrapper{
-  overflow-x: hidden ;
-}
