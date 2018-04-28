@@ -37,15 +37,15 @@ $(document).ready(function(){
 
 
     //Initialize the owl carousel
-    $("#owl-carousel").owlCarousel({
-
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-        items : 4,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
-
-    });
+    // $("#owl-carousel").owlCarousel({
+    //
+    //     autoPlay: 3000, //Set AutoPlay to 3 seconds
+    //
+    //     items : 4,
+    //     itemsDesktop : [1199,3],
+    //     itemsDesktopSmall : [979,3]
+    //
+    // });
 
     //For Firefox we have to handle it in JavaScript
     var vids = $("video");
@@ -58,8 +58,11 @@ $(document).ready(function(){
     var $scrollWrapper = $('.scroll-wrapper');
 
     $(window).on('resize scroll', function(e) {
-        var elementTop = $scrollWrapper.offset().top;
-        var elementBottom = elementTop + $scrollWrapper.outerHeight();
+        // Fixing the undefined error for the pages that dont have this scroll wrapper element
+        if($scrollWrapper.length > 0){
+            var elementTop = $scrollWrapper.offset().top;
+            var elementBottom = elementTop + $scrollWrapper.outerHeight();
+        }
 
         var viewportTop = $(window).scrollTop();
         var viewportBottom = viewportTop + $(window).height();
