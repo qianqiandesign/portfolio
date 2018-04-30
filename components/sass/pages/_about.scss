@@ -1,8 +1,15 @@
 #about {
   margin-top: 5rem;
+  height: 600px;
   @include container(80%);
+  @include breakpoint (max-width $medium) {
+    height: auto;
+  }
+  @include breakpoint (max-width $potrait) {
+    @include container(85%);
+  }
 
-  .half-wrapper{
+  .small-wrapper{
     .text-container-left{
       h1 {
         color: $slate-grey;
@@ -21,26 +28,25 @@
         letter-spacing: .6rem;
       } // p
     } // text-container-left
+  }
+
+  .large-wrapper {
 
     .text-container-right {
       margin-left: 2rem;
-      p {
-        @include subText();
-        margin-top: 1.3rem;
-        margin-bottom: 2.5rem;
-      } // p
     } // text-container-right
   } // text-wrapper
+
   
   @include breakpoint(max-width $medium){
-    .half-wrapper{
-      height: auto;
-      margin-bottom: 6rem;
+    .small-wrapper{
       .text-container-left{
         h1 {
           font-size: 2.4rem;
         }
       }
+    }
+    .large-wrapper {
       .text-container-right {
         margin-left:0;
         padding-bottom: 4rem;
@@ -48,24 +54,18 @@
     }
   }// .breakpoint 960px
   @include breakpoint(max-width $potrait){
-    .half-wrapper{
+    .small-wrapper{
       .text-container-left{
         h1 {
           font-size: 2rem;
           line-height:3rem;
         }
       }
-      .text-container-right{
-        p {
-          font-size: 1.2rem;
-          line-height: 1.6rem;
-        }
-      }
     }
           
   }// .breakpoint 768px
   @include breakpoint(max-width $small){
-    .half-wrapper{
+    .small-wrapper{
       .text-container-left{
         h1 {
           font-size: 1.6rem;
@@ -95,21 +95,14 @@
   .half-wrapper{
     padding-right: 2rem;
     .text-container-right{
-      @include textWrapper(8rem, 10rem);
+      @include textWrapper(8rem, 5rem);
       h1 {
         @include h1($blue, 0.5rem);
       } // h1
 
-      p {
-        @include p($blue);
-        &.sub-text {
-          @include subText();
-          text-transform: none;
-          letter-spacing: normal;
-          padding-top: 1rem;
-          padding-right: 1rem;
-        }
-      } //p
+      .subtitle {
+        color: $blue;
+      }
     } //text-container-right
   } // half-wrapper
   @include breakpoint(max-width $medium){
@@ -118,18 +111,11 @@
       margin-bottom: 6rem;
       padding-right: 0;
       .text-container-right{
-        width: 80%;
         margin:0 auto;
         padding: 8rem 0 0 0;
         h1 {
           font-size: 2.4rem;
         }
-        p {
-          &.sub-text {
-           font-size: 1.2rem;
-           line-height: 1.6rem;
-          }
-        } //p
       }
     }
     .half-wrapper-color {
@@ -159,13 +145,7 @@
           font-size: 1.6rem;
           line-height: 2.4rem;
         }
-        p {
-          font-size: .75rem;
-          letter-spacing:.4rem;
-          &.sub-text {
-           padding:0;
-         }
-        }
+
       }
     }
     .half-wrapper-color {
@@ -184,21 +164,14 @@
   .half-wrapper{
     padding-right: 2rem;
     .text-container-left{
-      @include textWrapper(8rem, 10rem);
+      @include textWrapper(8rem, 5rem);
       h1 {
         @include h1($pink, 0.5rem);
       } // h1
 
-      p {
-        @include p($pink);
-        &.sub-text {
-          @include subText();
-          text-transform: none;
-          letter-spacing: normal;
-          padding-top: 1rem;
-          padding-right:1rem;
-        }
-      } //p
+     .subtitle {
+        color: $pink;
+      }
     } //text-container-left
   } // half-wrapper
 
@@ -217,18 +190,11 @@
       margin-bottom: 6rem;
       padding-right: 0;
       .text-container-left{
-        width: 80%;
         margin:0 auto;
         padding: 8rem 0 0 0;
         h1 {
           font-size: 2.4rem;
         }
-        p {
-          &.sub-text {
-           font-size: 1.2rem;
-           line-height: 1.6rem;
-          }
-        } //p
       }
     }
     .half-wrapper-color {
@@ -260,13 +226,6 @@
           font-size: 1.6rem;
           line-height: 2.4rem;
         }
-        p {
-          font-size: .75rem;
-          letter-spacing:.4rem;
-          &.sub-text {
-           padding:0;
-         }
-        }
       }
     }
     .half-wrapper-color {
@@ -296,21 +255,14 @@
   .half-wrapper{
     padding-right: 2rem;
     .text-container-right{
-      @include textWrapper(8rem, 10rem);
+      @include textWrapper(8rem, 5rem);
       h1 {
         @include h1($purple, 0.5rem);
       } // h1
 
-      p {
-        @include p($purple);
-        &.sub-text {
-          @include subText();
-          text-transform: none;
-          letter-spacing: normal;
-          padding-top: 1rem;
-          padding-right: 1rem;
-        }
-      } //p
+      .subtitle {
+        color: $purple;
+      }
     } //text-container-right
   } // half-wrapper
   @include breakpoint(max-width $medium){
@@ -319,18 +271,12 @@
       margin-bottom: 6rem;
       padding-right: 0;
       .text-container-right{
-        width: 80%;
         margin:0 auto;
         padding: 8rem 0 0 0;
         h1 {
           font-size: 2.4rem;
         }
-        p {
-          &.sub-text {
-           font-size: 1.2rem;
-           line-height: 1.6rem;
-          }
-        } //p
+      
       }
     }
     .half-wrapper-color {
@@ -359,13 +305,6 @@
         h1 {
           font-size: 1.6rem;
           line-height: 2.4rem;
-        }
-        p {
-          font-size: .75rem;
-          letter-spacing:.4rem;
-          &.sub-text {
-           padding:0;
-         }
         }
       }
     }
@@ -427,7 +366,6 @@
     .half-wrapper-color {
 
       .text-container-right{
-        width:80%;
         p {
           font-size: .75rem;
           letter-spacing:.4rem;
