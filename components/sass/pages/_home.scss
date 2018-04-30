@@ -2,6 +2,9 @@
 
 	.promo {
 		@include container(80%);
+		@include breakpoint (max-width $potrait){
+			@include container(85%);
+		}
 		.large-wrapper {
 			@include largeWrapper($light, 500px);
 
