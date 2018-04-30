@@ -336,7 +336,7 @@
 	@include backSize(0px);
 	@include breakpoint(max-width $small){
 		height: 500px;
-		@include backImage('../images/petopia_banner_mockup_mobile.jpg', center center);
+		@include backImage('../images/petopia_banner_mockup_mobile@2x.jpg', center center);
 	}
 	.text-wrapper{
 		@include textWrapper(14.5rem, 14rem);
