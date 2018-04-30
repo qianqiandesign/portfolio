@@ -3,7 +3,11 @@ $(document).ready(function(){
     var $menu = $('.responsive-menu');
     var $menuBtn = $('.menu-btn');
     var $scrollWrapper = $('.scroll-wrapper');
-    var animateBg = $('.animated-bg');
+    var $animateBg = $('.animated-bg');
+    window.USER_IS_TOUCHING = false;
+
+    // On Pageload all scrollWrappers need to remove the mobile class
+    $scrollWrapper.removeClass('mobile');
 
     // function to detect when window width less than or greater than 960px of the navigation
     var windowsize = $(window).width();
@@ -36,10 +40,14 @@ $(document).ready(function(){
 
     $(window).on('resize scroll', function(e) {
         // Background image/image scrolling fade Loading control
-        viewPortDetectController(animateBg, imgAnimationBinder);
+        viewPortDetectController($animateBg, imgAnimationBinder);
 
         // horizontal slider
-        viewPortDetectController($scrollWrapper, bindScrollEvent);
+        if(!window.USER_IS_TOUCHING){
+            viewPortDetectController($scrollWrapper, bindScrollEvent);
+        }else {
+            mobileHorizontalScroll($scrollWrapper);
+        }
 
     });
 
@@ -48,6 +56,10 @@ $(document).ready(function(){
 
     // Init video control hidden
     videoHideControl();
+
+    window.addEventListener('touchstart', function() {
+        window.USER_IS_TOUCHING = true;
+    });
 
 });
 
@@ -157,6 +169,12 @@ var bindScrollEvent = function ($bindEl) {
         }
 
     });
+};
+
+var mobileHorizontalScroll = function($bindEl){
+    if($bindEl.length >0){
+        $bindEl.addClass('mobile');
+    }
 };
 
 var imgAnimationBinder = function($bindEl){
