@@ -120,6 +120,7 @@ img {
   font-family:  $mainfamily;
   font-weight: $thin; 
     font-style: italic;
+    padding-bottom: 1rem;
   @include breakpoint(max-width $potrait){
     font-size: 1rem;
     line-height: 1.6rem;
@@ -455,3 +456,43 @@ video::-webkit-media-controls {
   }
 }
 
+.title-only-section {
+  @include container();
+  padding: 4rem 0 0 0;
+  .text-container-center {
+    width: 80%;
+    margin: 0 auto;
+    .subtitle {
+      padding-bottom: 1rem;
+          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+        }
+  }
+  @include breakpoint (max-width $medium){
+      max-width: 80%;
+      .text-container-center {
+        width: 100%;
+      }
+    }
+  @include breakpoint (max-width $potrait){
+      max-width: 85%;
+      padding: 2rem 0 0 0;
+      .text-container-center{
+          .subtitle {
+            @include createLine (3rem, $lightgrey, 2px, 1.5rem, -.4rem, 1.5rem) 
+          }
+        }
+      }
+  @include breakpoint (max-width $small){
+        padding: 1rem 0 0 0;
+    }
+    
+}
+
+.gif-container {
+  width: 80%;
+  margin: 0 auto;
+  .half-wrapper {
+    padding: 0 1rem;
+    height: auto;
+  }
+}
