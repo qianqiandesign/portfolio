@@ -454,3 +454,94 @@ video::-webkit-media-controls {
     }
   }
 }
+
+// Image Animation global
+.animated-bg .curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(253, 253, 253);
+  transform: translate3d(-100%,0,0);
+  -webkit-transform: translate3d(-100%,0,0);
+  z-index: 100;
+}
+
+.animated-bg .curtain-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 50;
+}
+
+.animated-bg .curtain::after {
+  position: absolute;
+  top: 0;
+  left: -100%;;
+  width: 100%;
+  height: 100%;
+  background: black;
+  content: '';
+}
+
+.animated-bg.animated .curtain::after {
+  -webkit-animation: fadeOutShadow 2s ease forwards;
+  animation: fadeOutShadow 2s ease forwards;
+  -webkit-animation-delay: inherit;
+  animation-delay: inherit;
+}
+
+.animated-bg.animated .curtain, .animated-bg.animated .curtain-bg {
+  -webkit-animation: swipeRight 2s cubic-bezier(0.6,0,0.4,1) forwards;
+  animation: swipeRight 2s cubic-bezier(0.6,0,0.4,1) forwards;
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+}
+
+@-webkit-keyframes swipeRight {
+  0% {} /* fixes Chrome 35.0.1916.114 issue (easing breaks) */
+  50%, 60% { -webkit-transform: translate3d(0,0,0); }
+  100% { -webkit-transform: translate3d(100%,0,0); }
+}
+
+@keyframes swipeRight {
+  0% {}
+  50%, 60% { -webkit-transform: translate3d(0,0,0); transform: translate(0); }
+  100% { -webkit-transform: translate3d(100%,0,0); transform: translate3d(100%,0,0); }
+}
+
+@-webkit-keyframes fadeOutShadow {
+  0% {} /* fixes Chrome 35.0.1916.114 issue (easing breaks) */
+  50%, 60% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeOutShadow {
+  0% {}
+  50%, 60% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Hide image and title and show at half time */
+.animated-bg {
+  visibility: hidden;
+}
+
+.animated-bg.animated {
+  -webkit-animation: showMe 2s step-end forwards;
+  animation: showMe 2s step-end forwards;
+}
+
+@-webkit-keyframes showMe {
+  from { visibility: hidden; }
+  20%, 100% { visibility: visible; }
+}
+
+@keyframes showMe {
+  from { visibility: hidden; }
+  20%, 100% { visibility: visible; }
+}
