@@ -28,6 +28,9 @@ img {
 
 .container{
   @include container;
+  @include breakpoint (max-width $potrait){
+    width: 85%;
+  }
 }
 
 .clearfix{
@@ -40,19 +43,47 @@ img {
 
 .large-wrapper{
   @include largeWrapper();
+  @include breakpoint (max-width $medium){
+    width: 100%;
+    margin-bottom: 3rem;
+    height: auto;
+  }
 }
 
 .small-wrapper{
   @include smallWrapper();
+  @include breakpoint (max-width $medium){
+    width: 100%;
+    margin-bottom: 3rem;
+    height: auto;
+  }
+}
+
+.text-container-left, .text-container-right {
+  width: 90%;
+  @include breakpoint(max-width $medium){
+    width: 80%;
+  }
+  @include breakpoint(max-width $potrait){
+    width: 85%;
+  }
+}
+
+.subtitle{
+  @include subTitle(); 
 }
 
 .quad{
   float:left;
   width:25%;
   text-align: left;
+  @include breakpoint(max-width $small){
+    width: 50%;
+  }
 }
 
 .btn-class{
+  margin: 2rem 0;
   border-radius: 1.75rem;
   background-color: #595bf0;
   width: 20rem;
@@ -70,11 +101,29 @@ img {
   }
 }
 
-.sub-text{
-  color: $slate-grey;
+.subtext{
+  @include subText();
+  @include breakpoint(max-width $potrait){
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
+
+.subtext-headline {
+      
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    color: $slate-grey;
+  font-size: 1.4rem;
   line-height: 2rem;
-  text-align: left;
-  font-size: 24px;
+  font-family:  $mainfamily;
+  font-weight: $thin; 
+    font-style: italic;
+  @include breakpoint(max-width $potrait){
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
 }
 
 .input-class{
@@ -95,6 +144,10 @@ img {
 
 .full-img {
   width: 100%;
+  padding: 2rem 0;
+  @include breakpoint (max-width $small){
+    padding: 1rem 0;
+  }
 }
 
 .img-container{
@@ -109,3 +162,295 @@ video::-webkit-media-controls {
   display: none;
 }
 
+.video-play{
+  padding: 4rem 0;
+  @include breakpoint (max-width $potrait){
+    padding: 2rem 0;
+  }
+  @include breakpoint (max-width $small){
+    padding: 1rem 0;
+  }
+
+} //.video-play
+
+
+//---- Project Page Style ----//
+.project-intro {
+  margin: 4rem 0 0 0;
+  height: 400px;
+  @include container(80%);
+  @include breakpoint(max-width $medium){
+    height: auto;
+    margin: 4rem auto;
+    @include container(85%);
+  }
+
+  .small-wrapper{
+    height: auto;
+    .text-container-left{
+      h1 {
+        color: $slate-grey;
+        font-size: 3rem;
+        text-align: left;
+        line-height: 4rem;
+        font-weight: 900;
+        letter-spacing: .1rem;
+      } // h1
+    } // text-container-left
+  }
+
+  .large-wrapper {
+    height: auto;
+    .text-container-right {
+      margin-left: 2rem;
+      p {
+        @include subText();
+        margin-top: 1.3rem;
+        margin-bottom: 2.5rem;
+      } // p
+    } // text-container-right
+  } // text-wrapper
+  
+  @include breakpoint(max-width $medium){
+    .small-wrapper{
+      .text-container-left{
+        h1 {
+          font-size: 2.4rem;
+        }
+      }
+    }
+    .large-wrapper {
+      margin-bottom:0;
+      .text-container-right {
+        margin-left:0;
+      }
+    }
+  }// .breakpoint 960px
+  @include breakpoint(max-width $potrait){
+    .small-wrapper{
+      .text-container-left{
+        h1 {
+          font-size: 2rem;
+          line-height:3rem;
+        }
+      }
+    }
+    .large-wrapper {
+      .text-container-right{
+        p {
+          font-size: 1.2rem;
+          line-height: 1.6rem;
+        }
+      }
+    }
+          
+  }// .breakpoint 768px
+  @include breakpoint(max-width $small){
+    .small-wrapper{
+      .text-container-left{
+        h1 {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+        p {
+          font-size: .75rem;
+          letter-spacing:.4rem;
+        }
+      }
+    }
+  }// .breakpoint 375px
+
+
+}//.project-intro
+
+
+
+.category{
+  margin: 4rem auto;
+  @include container();
+  // &:first-child {
+  //   padding-bottom: 8rem;
+  // }
+    .quad {
+      .subtitle {
+        letter-spacing: .2rem;
+      }
+      h5 {
+        font-family: $mainfamily;
+        font-size: 1rem;
+        line-height: 2rem;
+        text-align: left;
+        font-weight: 100;
+        color: $slate-grey;
+      } //h5
+    } // quad
+  @include breakpoint(max-width $potrait){
+    @include container(85%);
+  }// .breakpoint 375px
+  @include breakpoint(max-width $small){
+    margin: 2rem auto;
+  }// .breakpoint 375px
+}
+
+.text-left-section {
+  @include container();
+  padding: 4rem 0;
+    .large-wrapper{
+      .text-container-left{
+        width: 100%;
+        padding-right: 2rem;
+        .subtitle {
+          padding-bottom: 1rem;
+          @include createLine (5rem, $lightgrey, 2px, 2rem, -.6rem, 2rem)
+        }
+      } //text-container-left
+    } //large-wrapper
+    .small-wrapper {
+      .image-container-right{
+        img {
+          width:100%;;
+        } //img
+      } //text-container-right
+    } //small-wrapper 
+    @include breakpoint (max-width $medium){
+      .small-wrapper {
+        margin-bottom: 0;
+      }
+    }
+    @include breakpoint (max-width $potrait){
+      max-width: 85%;
+      padding: 2rem 0;
+      .large-wrapper {
+        .text-container-left{
+          .subtitle {
+            @include createLine (3rem, $lightgrey, 2px, 1.5rem, -.4rem, 1.5rem) 
+          }
+        }
+      }
+      
+    }
+    @include breakpoint (max-width $small){
+        padding: 1rem 0;
+      }
+}
+
+.text-right-section {
+  @include container();
+  padding: 4rem 0;
+    .large-wrapper{
+      .text-container-right{
+        width: 100%;
+        padding-left: 2rem;
+        .subtitle {
+          padding-bottom: 1rem;
+          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+        }
+      } //text-container-left
+    } //large-wrapper
+    .small-wrapper {
+      .image-container{
+        img {
+          width:100%;;
+        } //img
+      } //text-container-right
+    } //small-wrapper 
+
+  @include breakpoint(max-width $medium){
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      /* optional */
+      -webkit-box-align: start;
+      -moz-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+      .small-wrapper {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+      }
+      .large-wrapper {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+         order: 1;
+         .text-container-right {
+          padding-left: 0;
+         }
+      }
+  }
+  @include breakpoint(max-width $potrait){
+    max-width: 85%;
+    padding: 2rem 0;
+    .large-wrapper {
+        .text-container-right{
+          .subtitle {
+            @include createLine (3rem, $lightgrey, 2px, 1.5rem, -.4rem, 1.5rem) 
+          }
+        }
+      }
+  }
+  @include breakpoint (max-width $small){
+        padding: 1rem 0;
+      }
+}
+
+.text-center-section {
+  @include container();
+  padding: 4rem 0;
+  .text-container-center {
+    width: 80%;
+    margin: 0 auto;
+    .subtitle {
+      padding-bottom: 1rem;
+          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+        }
+  }
+  @include breakpoint (max-width $medium){
+      max-width: 80%;
+      .text-container-center {
+        width: 100%;
+      }
+    }
+  @include breakpoint (max-width $potrait){
+      max-width: 85%;
+      padding: 2rem 0;
+      .text-container-center{
+          .subtitle {
+            @include createLine (3rem, $lightgrey, 2px, 1.5rem, -.4rem, 1.5rem) 
+          }
+        }
+      }
+  @include breakpoint (max-width $small){
+        padding: 1rem 0;
+    }
+    
+}
+
+.full-image-section {
+  width: 100%;
+  .text-container-center {
+    width: 80%;
+    margin: 0 auto;
+    .subtitle {
+      padding-bottom: 1rem;
+          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+    }
+  }
+  @include breakpoint (max-width $potrait){
+    .text-container-center {
+       width: 85%;
+    }
+  }
+}
