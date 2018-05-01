@@ -33,7 +33,6 @@ jsSources = [
   'components/scripts/jquery.scrollmagic.min.js',
   //'components/scripts/owl.carousel.min.js',
   'components/scripts/jquery.mousewheel.js',
-  'components/scripts/charming.min.js',
   'components/scripts/script.js'
 ];
 sassSources = ['components/sass/main.scss'];
