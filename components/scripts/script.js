@@ -1,10 +1,12 @@
 $(document).ready(function(){
 
-    var $menu = $('.responsive-menu');
     var $menuBtn = $('.menu-btn');
     var $scrollWrapper = $('.scroll-wrapper');
     var $animateBg = $('.animated-bg');
     window.USER_IS_TOUCHING = false;
+
+    // On Pageload all scrollWrappers need to remove the mobile class
+    $scrollWrapper.removeClass('mobile');
 
     // Function to control the toggle of the mobile menu
     $menuBtn.click(function(){
@@ -28,9 +30,6 @@ $(document).ready(function(){
           $('.current').addClass('active');
         }
     });
-
-    // On Pageload all scrollWrappers need to remove the mobile class
-    $scrollWrapper.removeClass('mobile');
 
     $(window).on('resize scroll', function(e) {
         // Background image/image scrolling fade Loading control
