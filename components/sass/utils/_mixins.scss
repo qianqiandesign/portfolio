@@ -79,7 +79,7 @@
 @mixin createLine (
 	$width: 5rem,
 	$color: #fff,
-	$height: 2px,
+	$height: .15rem,
 	$left: -5rem,
 	$top:  -1.2rem,
 	$right: 3rem
@@ -114,6 +114,24 @@
 	line-height: 4rem;
 	margin-top: $marginTop;
 	letter-spacing: .1rem;
+	font-family: $headfamily;
+	font-weight: 400;
+}
+
+@mixin a (
+	$color: $light,
+	$marginTop: 0,
+	$textAlign: left,
+	$fontSize: 3rem
+) {
+	color: $color;
+	font-size: $fontSize;
+	text-align: $textAlign;
+	line-height: 4rem;
+	margin-top: $marginTop;
+	letter-spacing: .1rem;
+	font-family: $headfamily;
+	font-weight: 400;
 }
 
 @mixin p (

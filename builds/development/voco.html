@@ -9,30 +9,42 @@
 </head>
 <body>
 <header class="voco">
+    <div class="svg-wrap">
+            
+            <svg width="64" height="64" viewBox="0 0 64 64">
+                <path id="arrow-left" d="M15.946 48l0.003-10.33 47.411 0.003v-11.37h-47.414l0.003-10.304-15.309 16z" />
+            </svg>
+            <svg width="64" height="64" viewBox="0 0 64 64">
+                <path id="arrow-right" d="M48.058 48l-0.003-10.33-47.414 0.003v-11.37h47.418l-0.003-10.304 15.306 16z" />
+            </svg>
+        </div>
     <div class="navbar">
-        <div class="brand">
-            <a href="index.html" id="logo"><img src="images/logo@2x.png" class="logo" alt="logo"></a>
-        </div> <!-- brand -->
+            <div class="brand">
+                <a href="index.html" id="logo"><img src="images/logo@2x.png" class="logo" alt="logo"></a>
+            </div> <!-- brand -->
 
-        <div class="mobile-nav">
+            <div class="mobile-nav">
 
-            <div class="menu-btn" id="menu-btn" style="float: right; position: relative;">
-                <div></div>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div> <!-- #menu-btn -->
+                <div class="menu-btn" id="menu-btn">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div> <!-- #menu-btn -->
 
-            <nav class="responsive-menu">
-                <ul>
-                    <li><a href="project.html">Project</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul> <!-- ul -->
-            </nav> <!-- nav -->
-        </div> <!-- .mobile-nav -->
+                <div class="responsive-overlay">
+                    <nav class="responsive-menu">
+                      <ul>
+                        <li><a class="link-text" href="index.html">Proejcts</a></li>
+                        <li><a class="link-text" href="about.html">About</a></li>
+                        <li><img src="images/crown@2x.png" alt="crown" style="width: 15rem; margin-left:-5rem;"></li>
+                      </ul>
+                    </nav>
 
+                </div>
 
-    </div> <!-- navbar -->
+                
+            </div> <!-- .mobile-nav -->
+        </div> <!-- navbar -->
 </header> <!-- header -->
 
 <div class="project-intro" class="clearfix">
@@ -161,6 +173,15 @@
     <img class="full-img" src="images/voco_targetaudience_desktop@2x.jpg" alt="voco story board">
 </div>
 
+<div id="voco-design-6" class="full-image-section">
+    <div class="text-container-center">
+        <p class="subtitle">PERSONAS</p>
+    </div>
+        <div class="scroll-wrapper">
+            <img class="scroll-img" src="images/voco_persona_slim@2x.jpg" alt="voco wireframe">
+        </div>
+</div>
+
 <div class="text-center-section">
     <div class="text-container-center">
         <p class="subtitle">USER RESEARCH</p>
@@ -186,11 +207,51 @@
         <div class="scroll-wrapper">
             <img class="scroll-img" src="images/voco_iwatch_wireframes@2x.jpg" alt="voco wireframe">
         </div>
-
-
 </div>
 
+<div class="title-only-section">
+        <div class="text-container-center">
+            <p class="subtitle">PROTOTYPE</p>
+        </div>       
+</div>
+<div class="full-img"  style="text-align: center;">
+    <iframe src="https://marvelapp.com/221dfbd?emb=1&iosapp=false&frameless=false" width="375" height="600" allowTransparency="true" frameborder="0"></iframe>
+</div>
 
+<div class="title-only-section">
+        <div class="text-container-center">
+            <p class="subtitle">STYLE GUIDE</p>
+        </div>       
+</div>
+<img class="full-img" src="images/voco_styleguide@2x.jpg" alt="pch interview">
+
+<div class="title-only-section">
+        <div class="text-container-center">
+            <p class="subtitle">PROMOTION</p>
+        </div>       
+</div>
+<img class="full-img" src="images/voco_promotion@2x.jpg" alt="pch interview" style="padding-bottom: 0;">
+
+<div class="slide-navigation">
+    <nav class="nav-fillslide">
+        <a class="prev" href="/item1">
+            <span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-left"></svg></span>
+            <div>
+                <p class="subtitle">WEBSITE</p>
+                <p class="subtext">Post-rock Music</p>
+                <img src="images/voco_thumbnail@2x.jpg" alt="Previous thumb"/>
+            </div>
+        </a>
+        <a class="next" href="/item3">
+            <span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-right"></svg></span>
+            <div>
+                <p class="subtitle">WEBSITE</p>
+                <p class="subtext">Post-rock Music</p>
+                <img src="img/20.png" alt="Next thumb"/>
+            </div>
+        </a>
+    </nav>
+</div>
 
 
 <div id="footer">

@@ -26,6 +26,11 @@ img {
   width: 100%;
 }
 
+a{
+  text-decoration: none;
+        cursor: pointer;
+}
+
 .container{
   @include container;
   @include breakpoint (max-width $potrait){
@@ -85,15 +90,40 @@ img {
 .btn-class{
   margin: 2rem 0;
   border-radius: 1.75rem;
-  background-color: #595bf0;
+  background-color: $blue;
+  position: relative;
+  overflow: hidden;
   width: 20rem;
   height: 3.5rem;
   border: none;
-  font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: $headfamily;
   color: #ffffff;
   letter-spacing: .2rem;
   font-size: 1rem;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  &:before{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: $pink;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover{
+    color: $light;
+    &:before{
+      left: 0;
+    }
+  }
   @include breakpoint(max-width $potrait){
     font-size: .75rem;
     width: 18rem;
@@ -113,7 +143,7 @@ img {
       
     text-align: center;
     font-size: 1.2rem;
-    letter-spacing: .1rem;
+    letter-spacing: .15rem;
     color: $slate-grey;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -195,7 +225,7 @@ video::-webkit-media-controls {
         text-align: left;
         line-height: 4rem;
         font-weight: 900;
-        letter-spacing: .1rem;
+        letter-spacing: .15rem;
       } // h1
     } // text-container-left
   }
@@ -344,7 +374,7 @@ video::-webkit-media-controls {
         padding-left: 2rem;
         .subtitle {
           padding-bottom: 1rem;
-          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+          @include createLine (5rem, $lightgrey, .15rem, 2rem, -.6rem, 2rem)
         }
       } //text-container-left
     } //large-wrapper
@@ -415,7 +445,7 @@ video::-webkit-media-controls {
     margin: 0 auto;
     .subtitle {
       padding-bottom: 1rem;
-          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+          @include createLine (5rem, $lightgrey, .15rem, 2rem, -.6rem, 2rem)
         }
   }
   @include breakpoint (max-width $medium){
@@ -446,12 +476,15 @@ video::-webkit-media-controls {
     margin: 0 auto;
     .subtitle {
       padding-bottom: 1rem;
-          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+          @include createLine (5rem, $lightgrey, .15rem, 2rem, -.6rem, 2rem)
     }
   }
   @include breakpoint (max-width $potrait){
     .text-container-center {
        width: 85%;
+       .subtitle {
+            @include createLine (3rem, $lightgrey, 2px, 1.5rem, -.4rem, 1.5rem) 
+          }
     }
   }
 }
@@ -464,7 +497,7 @@ video::-webkit-media-controls {
     margin: 0 auto;
     .subtitle {
       padding-bottom: 1rem;
-          @include createLine (5rem, $lightgrey, .1rem, 2rem, -.6rem, 2rem)
+          @include createLine (5rem, $lightgrey, .15rem, 2rem, -.6rem, 2rem)
         }
   }
   @include breakpoint (max-width $medium){

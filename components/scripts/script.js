@@ -6,37 +6,31 @@ $(document).ready(function(){
     var $animateBg = $('.animated-bg');
     window.USER_IS_TOUCHING = false;
 
-    // On Pageload all scrollWrappers need to remove the mobile class
-    $scrollWrapper.removeClass('mobile');
-
-    // function to detect when window width less than or greater than 960px of the navigation
-    var windowsize = $(window).width();
-
     // Function to control the toggle of the mobile menu
     $menuBtn.click(function(){
+      var windowsize = $(window).width();
+      if(windowsize < 960){
+        $('.current').removeClass('active');
+      }else {
+        $('.current').addClass('active');
+      }
+      
+      $(this).toggleClass('active');
+      $('.responsive-overlay').toggleClass('open');
 
-        if ($menu.hasClass('expand')) {
-            // Do things on Nav Close
-            $menu.slideUp( "slow" ).removeClass("expand");
-        } else {
-            // Do things on Nav Open
-            $menu.slideDown( "slow" ).addClass("expand");
-        }
     });
 
     $(window).resize(function() {
-        windowsize = $(window).width();
-        if (windowsize > 960) {
-            //if the window is greater than 900px wide then display the navigation
-            $menu.css( "display", "block");
-        }
-
-        if(windowsize < 960) {
-            //if the window is less than 900px wide then hide the navigation
-            $menu.css( "display", "none");
+      var windowsize = $(window).width();
+        if(windowsize < 960){
+          $('.current').removeClass('active');
+        }else {
+          $('.current').addClass('active');
         }
     });
 
+    // On Pageload all scrollWrappers need to remove the mobile class
+    $scrollWrapper.removeClass('mobile');
 
     $(window).on('resize scroll', function(e) {
         // Background image/image scrolling fade Loading control
@@ -48,7 +42,6 @@ $(document).ready(function(){
         }else {
             mobileHorizontalScroll($scrollWrapper);
         }
-
     });
 
     // Init text rotate
@@ -267,11 +260,6 @@ var scrollMacBook = function(){
         lastY = currY;
     });
 };
-
-
-
-
-
 
 
 
