@@ -13,9 +13,17 @@
     }
   }
 }
+
 .scroll-wrapper{
   overflow-x: hidden ;
+   &.mobile {
+    overflow-x: auto;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
 }
+
 
 /* Fill Slide */
 /*--------------------*/
@@ -139,3 +147,4 @@
     }
   }
 }
+
