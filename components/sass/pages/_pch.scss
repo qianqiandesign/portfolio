@@ -12,23 +12,34 @@
 }
 
 .macbook:hover .screen-close{
-  -webkit-transform: 
-    rotateX(0deg) 
-    scale(1);
-  bottom: 0;
-  -webkit-transition: all 1s ease-in-out, bottom .1s ease-in-out .9s;
+  //-webkit-transform:
+  //  rotateX(0deg)
+  //  scale(1);
+  //bottom: 0;
+  //-webkit-transition: all 1s ease-in-out, bottom .1s ease-in-out .9s;
+
+  -webkit-transform: rotateX(90deg) scale(0.9);
+  //-webkit-transform-origin: center bottom -580px;
+  -webkit-transition: all 1s ease-in-out, bottom .1s ease-in-out;
+  bottom: -5px;
   
 }
 
 .macbook:hover .screen-open{
-  -webkit-transform: 
-    translateZ(-580px)
-    rotateX(-90deg);
+  //-webkit-transform:
+  //  translateZ(-580px)
+  //  rotateX(-90deg);
+
+  -webkit-transform: translateZ(-580px) rotateX(0deg);
+  -webkit-transform-origin: center bottom;
 }
 
 .macbook:hover img {
-  opacity: 0.2;
-  -webkit-transition: opacity 0.05s linear 0.7s;
+  //opacity: 0.2;
+  //-webkit-transition: opacity 0.05s linear 0.7s;
+
+  //-webkit-transition: opacity 0.05s linear 0.7s;
+  //opacity: 1;
 }
 
 .screen img {
@@ -38,8 +49,10 @@
   height: 88%;
   top: 6%;
   background: #151515;
-  -webkit-transition: opacity 0.05s linear 0.3s;
-  opacity: 1;
+  //-webkit-transition: opacity 0.05s linear 0.3s;
+  //opacity: 1;
+  //opacity: 0.2;
+  //-webkit-transition: opacity 0.05s linear 0.3s;
 }
 
 .macbook .screen-open::before{
@@ -66,12 +79,12 @@
 
 .macbook .screen-close{
   position: absolute;
-  -webkit-transform: 
-    rotateX(90deg) 
-    scale(0.9);
+  -webkit-transform:
+          rotateX(0deg)
+          scale(1);
+  bottom: 0;
+  -webkit-transition: all 1s ease-in-out, bottom .1s ease-in-out .9s;
   -webkit-transform-origin: center bottom -580px;
-  -webkit-transition: all 1s ease-in-out, bottom .1s ease-in-out;
-  bottom: -5px;
   width: 860px;
   height: 13px;
   background: -webkit-linear-gradient(top, #acadb3 0%,#acadb3 2%,#91939b 2%,#91939b 4%,#a7a9b0 4%,#F5F6F7 67%,#F5F6F7 100%);
@@ -94,8 +107,8 @@
 
 .macbook .screen-open{
   -webkit-transform:
-    translateZ(-580px)
-    rotateX(0deg);
+          translateZ(-580px)
+          rotateX(-90deg);
   -webkit-transform-origin: center bottom;
   -webkit-transition: all 1s ease-in-out;
   height: 578px;
