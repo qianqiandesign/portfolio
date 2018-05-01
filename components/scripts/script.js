@@ -57,6 +57,9 @@ $(document).ready(function(){
     // Init video control hidden
     videoHideControl();
 
+    // Init macbook scrolling
+    scrollMacBook();
+
     window.addEventListener('touchstart', function() {
         window.USER_IS_TOUCHING = true;
     });
@@ -190,6 +193,79 @@ var videoHideControl = function(){
         this.controls = false;
     });
     //Loop though all Video tags and set Controls as false
+};
+
+var scrollMacBook = function(){
+    // initialize last scroll position
+    var lastY =  $(window).scrollTop();
+
+    // Attach scroll event handler for the macbook element
+    $(window).on('scroll', function() {
+        // get current scroll position
+        var currY = $(window).scrollTop();
+        var scrollPercent;
+        var rotateDeg;
+        var translateZ;
+
+        var $elem = $(".macbook");
+        var elemHeight = $elem.outerHeight();
+        var elementTop = $elem.offset().top;
+        var elementBottom = elementTop + elemHeight;
+
+        var windowHeight = $(window).height();
+        var viewportBottom = currY + windowHeight;
+
+        // determine current scroll direction
+        if(currY > lastY){
+            console.log("scroll down");
+            if (elementBottom > currY && elementTop < viewportBottom) {
+                scrollPercent = (viewportBottom - elementTop) / elemHeight;
+                rotateDeg = 90 * scrollPercent;
+                translateZ = 580 * scrollPercent;
+
+                if(scrollPercent > 0 && scrollPercent <= 1){
+                    $elem.addClass('scrollable');
+                    $elem.find(".screen-close").addClass('hidden');
+
+                    $elem.find(".screen-open").css({
+                        '-webkit-transform' : 'translateZ(-' + translateZ + 'px) rotateX(0deg)',
+                        'transform'         : 'translateZ(-' + translateZ + 'px) rotateX(0deg)',
+                        '-webkit-transform-origin': 'center bottom',
+                    });
+                }else {
+                    $elem.removeClass('scrollable');
+                }
+            }
+        }else if(currY === lastY){
+            console.log("none")
+        }else {
+            console.log("scroll up");
+            if (elementBottom > currY && elementTop < viewportBottom) {
+                scrollPercent = (elementBottom - currY) / elemHeight;
+                rotateDeg = 90 * scrollPercent;
+                translateZ = 580 * scrollPercent;
+
+                if(scrollPercent > 0 && scrollPercent <= 1){
+                    //$elem.addClass('scrollable');
+                    $elem.find(".screen-open").css({
+                        '-webkit-transform' : 'translateZ(-' + translateZ + 'px) rotateX(-' + rotateDeg + 'deg)',
+                        'transform'         : 'translateZ(-' + translateZ + 'px) rotateX(-' + rotateDeg + 'deg)',
+                        '-webkit-transform-origin': 'center bottom',
+                        '-webkit-transition': 'all 1s ease-in-out'
+                    });
+                }else {
+                    setTimeout(function() {
+                        $elem.find(".screen-close").removeClass('hidden').css({
+                            '-webkit-transition': 'all 1s ease-in-out, bottom .1s ease-in-out .9s'
+                        });
+                    }, 650);
+
+                }
+            }
+
+        }
+        lastY = currY;
+    });
 };
 
 
