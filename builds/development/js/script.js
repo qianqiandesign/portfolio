@@ -109,39 +109,46 @@ return null!=s&&(a="number"==typeof s||"="!==s.charAt(1)?Number(s)-i:parseInt(s.
 $(document).ready(function(){
 
     var $menu = $('.responsive-menu');
+    
 
     // Function to control the toggle of the mobile menu
     $( '.menu-btn' ).click(function(){
-        //$('.responsive-menu').toggleClass('expand');
+      var windowsize = $(window).width();
+      if(windowsize < 960){
+        $('.current').removeClass('active');
+      }else {
+        $('.current').addClass('active');
+      }
+      
+      $(this).toggleClass('active');
+      $('.responsive-overlay').toggleClass('open');
 
-        if ($menu.hasClass('expand')) {
-            // Do things on Nav Close
-            //$('#page').removeClass('navigating');
-            $menu.slideUp( "slow" ).removeClass("expand");
-            //$('#sidebar').find('i.tooltips span').show();
-        } else {
-            // Do things on Nav Open
-            //$('#page').addClass('navigating');
-            $menu.slideDown( "slow" ).addClass("expand");
-            //$('#sidebar').find('i.tooltips span').hide();
+    });
+
+    $(window).resize(function() {
+      var windowsize = $(window).width();
+        if(windowsize < 960){
+          $('.current').removeClass('active');
+        }else {
+          $('.current').addClass('active');
         }
     });
 
     // function to detect when window width less than or greater than 900px of the navigation
-    var windowsize = $(window).width();
+    
 
-    $(window).resize(function() {
-        windowsize = $(window).width();
-        if (windowsize > 960) {
-            //if the window is greater than 900px wide then display the navigation
-            $(".responsive-menu").css( "display", "block");
-        }
+    // 
+    //     windowsize = $(window).width();
+    //     if (windowsize > 960) {
+    //         //if the window is greater than 900px wide then display the navigation
+    //         $(".responsive-menu").css( "display", "block");
+    //     }
 
-        if(windowsize < 960) {
-            //if the window is less than 900px wide then hide the navigation
-            $(".responsive-menu").css( "display", "none");
-        }
-    });
+    //     if(windowsize < 960) {
+    //         //if the window is less than 900px wide then hide the navigation
+    //         $(".responsive-menu").css( "display", "none");
+    //     }
+    // });
 
 
     //Initialize the owl carousel
@@ -150,7 +157,7 @@ $(document).ready(function(){
     //     autoPlay: 3000, //Set AutoPlay to 3 seconds
     //
     //     items : 4,
-    //     itemsDesktop : [1199,3],
+//     itemsDesktop : [1199,3],
     //     itemsDesktopSmall : [979,3]
     //
     // });
@@ -275,6 +282,8 @@ window.onload = function() {
 
 
 });
+
+
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"jquery":2}],2:[function(require,module,exports){
 /*!

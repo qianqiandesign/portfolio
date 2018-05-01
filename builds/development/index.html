@@ -20,19 +20,24 @@
 
 			<div class="mobile-nav">
 
-				<div class="menu-btn" id="menu-btn" style="float: right; position: relative;">
-					<div></div>
-					<span></span>
-					<span></span>
-					<span></span>
+				<div class="menu-btn" id="menu-btn">
+					<span class="top"></span>
+     				<span class="middle"></span>
+      				<span class="bottom"></span>
 				</div> <!-- #menu-btn -->
 
-				<nav class="responsive-menu">
-					<ul>
-						<li><a href="project.html">Project</a></li>
-						<li><a href="about.html">About</a></li>
-					</ul> <!-- ul -->
-				</nav> <!-- nav -->
+				<div class="responsive-overlay">
+					<nav class="responsive-menu">
+				      <ul>
+				        <li><a class="link-text" href="index.html">Proejcts</a></li>
+				        <li><a class="link-text" href="about.html">About</a></li>
+				        <li><img src="images/crown@2x.png" alt="crown" style="width: 15rem; margin-left:-5rem;"></li>
+				      </ul>
+    				</nav>
+
+				</div>
+
+				
 			</div> <!-- .mobile-nav -->
 		</div> <!-- navbar -->
 	</header> <!-- header -->
@@ -43,7 +48,7 @@
 			<div class="large-wrapper">
 				<div class="text-container-left typewriter">
 					<h1 class="typewriter-text">Hi, I am a 
-						<span class="txt-rotate" data-period="2000" data-rotate='[ "passionate.", "visionary.", "playful" ]'></span></h1>
+						<span class="txt-rotate" data-period="2000" data-rotate='[ "passionate", "visionary", "playful" ]'></span></h1>
 					<h1>Product Designer</h1>
 					<p>Show me <span>all projects</span></p>
 				</div>
@@ -57,25 +62,11 @@
 		</div> <!-- promo -->
 	</div> <!-- #intro -->
 
-	<!-- <div id="intro">
-
-		<div class="promo">
-			<div>
-				<div class="text-wrapper">
-					<h1>Hi, I am a passionate</h1>
-					<h1>Product Designer</h1>
-					<p>Show me <span>all projects</span></p>
-				</div>
-			</div>
-		</div> 
-	</div>  -->
-
 	<div id="voco">
 		<div class="container">
 			<div class="text-wrapper">
 				<p>APP</p>
-				<h1>VOCO</h1>
-				<a href="voco.html"><p class="see-case">SEE CASE</p></a>
+				<a href="voco.html" class="link-text">VOCO</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #voco -->
@@ -84,7 +75,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>website</p>
-				<h1>Pacific Coast Highway One</h1>
+				<a href="pch.html" class="link-text">Pacific Coast Highway One</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #pch -->
@@ -93,7 +84,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>website</p>
-				<h1>Color Theory</h1>
+				<a href="#" class="link-text">Color Theory</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #color-theory -->
@@ -102,7 +93,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>website</p>
-				<h1>Less Than One</h1>
+				<a href="#" class="link-text">Less Than One</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #less-than-one -->
@@ -111,7 +102,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>Branding</p>
-				<h1>Petopia</h1>
+				<a href="#" class="link-text">Petopia</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #petopia -->
@@ -120,7 +111,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>website</p>
-				<h1>Pillow</h1>
+				<a href="#" class="link-text">Pillow</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #pillow -->
@@ -129,7 +120,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>website</p>
-				<h1>Crazy Ramen</h1>
+				<a href="#" class="link-text">Crazy Ramen</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #crazy-ramen -->
@@ -138,7 +129,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>dashboard</p>
-				<h1>Short Term Rental</h1>
+				<a href="#" class="link-text">Short Term Rental</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #short-term-rental -->
@@ -147,7 +138,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>website</p>
-				<h1>Volunteer Match</h1>
+				<a href="#" class="link-text">Volunteer Match</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #volunteer-match -->
@@ -155,8 +146,8 @@
 	<div id="kidzjet">
 		<div class="container">
 			<div class="text-wrapper">
-				<p>dashboard&APP</p>
-				<h1>Kidzjet</h1>
+				<p>dashboard &amp; APP</p>
+				<a href="#" class="link-text">Kidzjet</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #kidzjet -->
@@ -165,7 +156,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>Marketing Materials</p>
-				<h1>Promotion</h1>
+				<a href="#" class="link-text">Promotion</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #promotion -->
@@ -174,7 +165,7 @@
 		<div class="container">
 			<div class="text-wrapper">
 				<p>Website</p>
-				<h1>Post-Rock Music</h1>
+				<a href="#" class="link-text">Post-Rock Music</a>
 			</div><!-- text-wrapper -->
 		</div><!-- container -->
 	</div><!-- #post-rock-music -->
