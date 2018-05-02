@@ -109,3 +109,47 @@
 .hidden {
   display: none;
 }
+
+
+.wireframes {
+  min-height: 600px;
+  background-image: url('../images/pch_wireframe1@2x.jpg');
+  background-position: 50% 50%, 0px 0px;
+  background-size: 100%, auto;
+  background-repeat: no-repeat, repeat;
+  background-attachment: fixed, scroll;
+}
+
+.sketches {
+  min-height: 600px;
+  margin-top: 110px;
+  margin-right: 0%;
+  margin-left: 0%;
+  clear: both;
+  background-image: url('../images/pch_wireframe2@2x.jpg');
+  background-position: 50% 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  //background-attachment: fixed;
+  opacity: 1;
+  -webkit-transform: perspective(1px);
+  transform: perspective(1px);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.final-screens {
+  min-height: 600px;
+  background-image: url('../images/pch_design1@2x.jpg');
+  background-position: 50% 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.final-screens._2 {
+  background-image: url('../images/pch_design2@2x.jpg');
+  background-position: 50% 50%;
+  background-size: 100%;
+}
