@@ -35,19 +35,25 @@
   }
 
   &.animated {
-    -webkit-animation: showMe 2s step-end forwards;
-    animation: showMe 2s step-end forwards;
+    -webkit-animation: showMe 1.2s step-end forwards;
+    animation: showMe 1.2s step-end forwards;
     .curtain, .curtain-bg{
-      -webkit-animation: swipeRight 2s cubic-bezier(0.6,0,0.4,1) forwards;
-      animation: swipeRight 2s cubic-bezier(0.6,0,0.4,1) forwards;
+      -webkit-animation: swipeRight 1.2s cubic-bezier(0.6,0,0.4,1) forwards;
+      animation: swipeRight 1.2s cubic-bezier(0.6,0,0.4,1) forwards;
       -webkit-animation-delay: 400ms;
       animation-delay: 400ms;
       &::after {
-        -webkit-animation: fadeOutShadow 2s ease forwards;
-        animation: fadeOutShadow 2s ease forwards;
+        -webkit-animation: fadeOutShadow 1.2s ease forwards;
+        animation: fadeOutShadow 1.2s ease forwards;
         -webkit-animation-delay: inherit;
         animation-delay: inherit;
       }
+    }
+  }
+
+  &.shown {
+    .curtain::after {
+      content: none !important;
     }
   }
 }

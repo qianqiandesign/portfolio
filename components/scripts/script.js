@@ -2,12 +2,14 @@ $(document).ready(function(){
 
     var $menuBtn = $('.menu-btn');
     var $scrollWrapper = $('.scroll-wrapper');
-    var $animateBg = $('.animated-bg');
     window.USER_IS_TOUCHING = false;
 
     // On Pageload all scrollWrappers need to remove the mobile class
     $scrollWrapper.removeClass('mobile');
 
+    /***************************************************/
+    /*               Attach Event handler              */
+    /***************************************************/
     // Function to control the toggle of the mobile menu
     $menuBtn.click(function(){
       var windowsize = $(window).width();
@@ -31,7 +33,9 @@ $(document).ready(function(){
         }
     });
 
+    // Attach scroll event
     $(window).on('resize scroll', function(e) {
+        var $animateBg = $(document).find('.animated-bg');
         // Background image/image scrolling fade Loading control
         viewPortDetectController($animateBg, imgAnimationBinder);
 
@@ -43,6 +47,11 @@ $(document).ready(function(){
         }
     });
 
+    //Detect whether user is using touch device
+    window.addEventListener('touchstart', function() {
+        window.USER_IS_TOUCHING = true;
+    });
+
     // Init text rotate
     initTxtRotate();
 
@@ -52,9 +61,11 @@ $(document).ready(function(){
     // Init macbook scrolling
     scrollMacBook();
 
-    window.addEventListener('touchstart', function() {
-        window.USER_IS_TOUCHING = true;
-    });
+    // init filter dropdown
+    selectDropdown();
+
+    // init filter function
+    filter.init();
 
 });
 
@@ -138,12 +149,27 @@ var viewPortDetectHelper = function($bindEl){
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
+var scrollPastEl = function ($bindEl) {
+    var elementTop = $bindEl.offset().top;
+    var elementBottom = elementTop + $bindEl.outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom < viewportBottom;
+};
+
 var isTargetVisble = function ($bindEl, cb) {
     // Fixing the undefined error for the pages that dont have this scroll wrapper element
     if($bindEl.length > 0) {
         $bindEl.each(function () {
             if (viewPortDetectHelper($(this))) {
                 cb($(this));
+            }
+
+            if(scrollPastEl($(this))){
+                console.log("scroll past element....");
+                $(this).addClass('shown');
             }
         });
     }
@@ -175,6 +201,11 @@ var mobileHorizontalScroll = function($bindEl){
 var imgAnimationBinder = function($bindEl){
 
     $bindEl.addClass('animated');
+
+    //if($bindEl.hasClass('animated')){
+        //$($bindEl).addClass("shown");
+    //}
+
 };
 
 // Hide the control bar for the video
@@ -264,6 +295,167 @@ var scrollMacBook = function(){
         lastY = currY;
     });
 };
+
+var selectDropdown = function(){
+    var triggerOpen		= $('#input');
+    var triggerClose 	= $('#dropdown-menu').find('li');
+    var marka 			= $('#icon');
+
+    // set initial Marka icon
+    var m = new Marka('#icon');
+    m.set('triangle').size(16);
+    m.rotate('down');
+
+    // trigger dropdown
+    triggerOpen.add(marka).on('click', function(e) {
+        e.preventDefault();
+        $('#dropdown-menu').add(triggerOpen).toggleClass('open');
+
+
+        if($('#icon').hasClass("marka-icon-times")) {
+            m.set('triangle').size(16);
+        } else {
+            m.set('times').size(18);
+        }
+    });
+
+    triggerClose.on('click', function() {
+        // set new placeholder for demo
+        var options = $(this).find('a').html();
+        triggerOpen.text(options);
+
+        $('#dropdown-menu').add(triggerOpen).toggleClass('open');
+        m.set('triangle').size(16);
+    });
+};
+
+var filter =  filter || {};
+
+filter.data = {
+    projects : [
+        {
+            "id": "voco",
+            "name": "VOCO",
+            "color": "rgb(111, 86, 241)",
+            "type": "APP"
+        },
+        {
+            "id": "pch",
+            "name": "Pacific Coast Highway One",
+            "color": "rgb(145, 210, 196)",
+            "type": "website"
+        },
+        {
+            "id": "color-theory",
+            "name": "Color Theory",
+            "color": "rgb(233, 232, 237)",
+            "type": "website"
+        },
+        {
+            "id": "less-than-one",
+            "name": "Less Than One",
+            "color": "rgb(22, 23, 67)",
+            "type": "motion"
+        },
+        {
+            "id": "petopia",
+            "name": "Petopia",
+            "color": "rgb(255, 198, 170)",
+            "type": "Branding"
+        },
+        {
+            "id": "pillow",
+            "name": "Pillow",
+            "color": "rgb(25, 163, 157)",
+            "type": "website"
+        },
+        {
+            "id": "crazy-ramen",
+            "name": "Crazy Ramen",
+            "color": "rgb(241, 128, 72)",
+            "type": "website"
+        },
+        {
+            "id": "short-term-rental",
+            "name": "Short Term Rental",
+            "color": "rgb(218, 227, 224)",
+            "type": "dashboard"
+        },
+        {
+            "id": "volunteer-match",
+            "name": "Volunteer Match",
+            "color": "rgb(255, 203, 173)",
+            "type": "website"
+        },
+        {
+            "id": "kidzjet",
+            "name": "Kidzjet",
+            "color": "rgb(253, 253, 253)",
+            "type": "dashboard &amp; APP"
+        },
+        {
+            "id": "promotion",
+            "name": "Promotion",
+            "color": "rgb(247, 245, 247)",
+            "type": "Marketing Materials"
+        },
+        {
+            "id": "post-rock-music",
+            "name": "Post-Rock Music",
+            "color": "rgb(29, 29, 29)",
+            "type": "Website"
+        }
+
+    ]
+};
+
+filter.init = function(){
+    var filterButton = $('.filter_button');
+
+    this.render(this.data);
+
+    filterButton.click(this.filterHandler);
+};
+
+
+filter.render = function (data){
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    var html = template(data);
+    $('.projects-container').html(html);
+};
+
+
+
+filter.filterHandler = function (){
+    console.log("inside the filterhandler.....");
+    var filterText = $(this).text().toLowerCase();
+
+    var newData = {};
+    var newProjects = [];
+    var project;
+
+    if (filterText === 'all projects'){
+        filter.render(filter.data);
+    }else {
+        for(var i = 0; i < filter.data.projects.length; i++ ){
+            project = filter.data.projects[i];
+            if(project && project.type){
+                if(project.type.toLowerCase().indexOf(filterText) > -1){
+                    newProjects.push(project);
+                }
+            }else {
+                console.log("this project object doesn't has the matching type");
+            }
+        }
+
+        newData.projects = newProjects;
+
+        filter.render(newData);
+    }
+};
+
+
 
 
 
