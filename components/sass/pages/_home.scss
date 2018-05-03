@@ -223,7 +223,7 @@
 
 
 #color-theory {
-	@include backImage('../images/color_theory_banner_mockup@2x.png');
+	@include backImage('../images/color_theory_banner_mockup@2x.jpg');
 	@include backSize(0px);
 	@include breakpoint(max-width $small){
 		height: 500px;
