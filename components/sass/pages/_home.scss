@@ -55,6 +55,18 @@
 				}
 			} // h1
 
+			.filter {
+				position: relative;
+				span {
+					color: $slate-grey;
+					font-size: 3rem;
+					text-align: left;
+					line-height: 4rem;
+					letter-spacing: .1rem;
+					padding-right: 1rem;
+				}
+			}// filter
+
 			p {
 				color: $slate-grey;
 				line-height: 4rem;

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qianqian Wang Portfolio | 2018</title>
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">-->
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="brand">
+            <a href="index.html" id="logo"><img src="images/logo@2x.png" class="logo" alt="logo"></a>
+        </div> <!-- brand -->
+
+        <div class="mobile-nav">
+
+            <div class="menu-btn" id="menu-btn">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div> <!-- #menu-btn -->
+
+            <div class="responsive-overlay">
+                <nav class="responsive-menu">
+                    <ul>
+                        <li><a class="link-text" href="index.html">Proejcts</a></li>
+                        <li><a class="link-text" href="about.html">About</a></li>
+                        <li><img src="images/crown@2x.png" alt="crown" style="width: 15rem; margin-left:-5rem;"></li>
+                    </ul>
+                </nav> <!-- nav.responsive-menu -->
+            </div> <!-- .responsive-overlay -->
+
+        </div> <!-- .mobile-nav -->
+    </div> <!-- navbar -->
+</header> <!-- header -->
+
+<div id="intro">
+
+    <div class="promo">
+        <div class="large-wrapper">
+            <div class="text-container-left typewriter">
+                <h1 class="typewriter-text">Hi, I am a
+                    <span class="txt-rotate" data-period="2000" data-rotate='[ "passionate", "visionary", "playful" ]'></span></h1>
+                <h1>Product Designer</h1>
+                <div class="filter">
+                    <span>Show me</span>
+                <div class="button-group">
+                    <i id="icon"></i>
+                    <a id="input" href="">all projects</a>
+                    <ul id="dropdown-menu">
+                        <li class="filter_button"><a>all projects</a></li>
+                        <li class="filter_button"><a>App</a></li>
+                        <li class="filter_button"><a>Website</a></li>
+                        <li class="filter_button"><a>Branding</a></li>
+                        <li class="filter_button"><a>Dashboard</a></li>
+                        <li class="filter_button"><a>Marketing</a></li>
+                        <li class="filter_button"><a>Motion</a></li>
+                    </ul>
+                </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="small-wrapper">
+            <div class="text-container-right">
+                <img src="images/crown@2x.png" alt="crown">
+            </div>
+        </div>
+
+    </div> <!-- promo -->
+</div> <!-- #intro -->
+
+<div class="projects-container">
+
+</div><!-- projects-container -->
+
+<div id="footer">
+    <div class="icons">
+        <a href=""><img src="images/dribbble_icon@2x.png" alt="dribble"></a>
+        <a href=""><img src="images/linkedin_icon@2x.png" alt="linkedin"></a>
+        <a href=""><img src="images/twitter_icon@2x.png" alt="twitter"></a>
+        <a href=""><img src="images/behance_icon@2x.png" alt="behance"></a>
+    </div>
+    <p>&copy; 2018 QIANQIAN W.| All Right Reserved. </p>
+</div>
+
+<script src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script id="entry-template" type="text/x-handlebars-template">
+    {{#each projects}}
+    <div id="{{id}}" class="animated-bg">
+        <div class="container">
+            <div class="text-wrapper">
+                <p>{{{type}}}</p>
+                <a href="#" class="link-text">{{name}}</a>
+            </div>
+        </div>
+        <div class="curtain" style="background: {{color}};"></div>
+        <div class="curtain-bg" style="background: white"></div>
+    </div>
+    {{/each}}
+</script>
+</body>
+</html>
