@@ -42,7 +42,7 @@
     position: relative;
     z-index: 100;
     display: block;
-    padding: 65px 10px;
+    padding: 4rem 1rem;
     background: $blue;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
@@ -86,7 +86,7 @@
 	}
 }
   .icon {
-    fill: $pink;
+    fill: $lightblue;
     position: relative;
     z-index: 100;
 
@@ -95,6 +95,7 @@
     position: absolute;
     top: 0;
     width: 24rem;
+    height: 9rem;
     background: $light;
     -webkit-transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
@@ -102,24 +103,32 @@
   a {
     &.prev div {
       left: 0;
-      padding: 1rem 8rem 1rem 4rem;
-      text-align: right;
+      padding: 1.5rem 8.5rem 1rem 4rem;
+      text-align: right !important;
       border-radius: 0 6px 6px 0;
       -webkit-transform: translateX(-100%);
       transform: translateX(-100%);
+      p {
+      	text-align: right !important;
+      	line-height: 2rem;
+      }
     }
     &.next div {
       right: 0;
-      padding: 1rem 4rem 1rem 8rem;
+      padding: 1.5rem 4rem 1rem 8.5rem;
       border-radius: 6px 0 0 6px;
       -webkit-transform: translateX(100%);
       transform: translateX(100%);
+      p {
+      	line-height: 2rem;
+      }
     }
   }
   img {
+  	width: auto !important;
     position: absolute;
-    top: 1rem;
-    border: .1rem solid $slate-grey;
+    top: 1.2rem;
+    border: .2rem solid $lightblue;
   }
   a {
     &.prev img {
