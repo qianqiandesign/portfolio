@@ -489,6 +489,14 @@ video::-webkit-media-controls {
   }
 }
 
+.image-section {
+  width: 80%;
+  margin: 0 auto;
+  @include breakpoint (max-width $potrait){
+    width: 85%;
+  }
+}
+
 .title-only-section {
   @include container();
   padding: 4rem 0 0 0;
