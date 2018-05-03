@@ -1,0 +1,112 @@
+/* VARS
+   ============================== */
+/* MIXINS
+==================================*/
+.card-shadow,
+#dropdown-menu {
+  box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15), 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
+}
+
+/* INPUT
+   ================================== */
+#input {
+  border: 0;
+  background: transparent;
+  border-bottom: 2px dashed $slate-grey;
+  outline: 0;
+  display: block;
+  text-align: left;
+  width: 270px;
+  cursor: pointer;
+  color: $slate-grey;
+  text-decoration: none;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 1;
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+  font-size: 3rem;
+  line-height: 4rem;
+  letter-spacing: .1rem;
+
+  &.open{
+    opacity: 0;
+  }
+}
+/* DROPDOWN
+   ================================== */
+.button-group {
+  position: absolute;
+  width: 215px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  display:inline-block;
+  .marka {
+    position: absolute;
+    right: -3.5rem;
+    top: 2rem;
+    z-index: 9999;
+    cursor: pointer;
+    i {
+      background: grey!important;
+    }
+  }
+}
+
+#dropdown-menu {
+  position: absolute;
+  top: .8em;
+  right: 0;
+  left: 0;
+  margin: 1em auto;
+  padding: 1em 1.35em 1em;
+  width: 276px;
+  list-style: none;
+  text-align: left;
+  border-radius: 2px;
+  background: #fafafa;
+  transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+  z-index: 2;
+  li {
+    position: relative;
+    line-height: 2.35em;
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+    opacity: 0;
+    cursor: pointer;
+    a {
+      color: #222222;
+      text-decoration: none;
+      font-size: 1em;
+    }
+  }
+
+  &.open{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    li {
+      transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      &:nth-child(1) {
+        transition-delay: 0.07s !important;
+      }
+      &:nth-child(2) {
+        transition-delay: 0.14s !important;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.21s !important;
+      }
+      &:nth-child(4) {
+        transition-delay: 0.28s !important;
+      }
+      &:nth-child(5) {
+        transition-delay: 0.35s !important;
+      }
+    }
+  }
+}
