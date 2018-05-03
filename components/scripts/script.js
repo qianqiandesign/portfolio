@@ -193,6 +193,9 @@ var scrollMacBook = function(){
 
     // Attach scroll event handler for the macbook element
     $(window).on('scroll', function() {
+        var elemHeight;
+        var elementTop;
+        var elementBottom;
         // get current scroll position
         var currY = $(window).scrollTop();
         var scrollPercent;
@@ -200,9 +203,11 @@ var scrollMacBook = function(){
         var translateZ;
 
         var $elem = $(".macbook");
-        var elemHeight = $elem.outerHeight();
-        var elementTop = $elem.offset().top;
-        var elementBottom = elementTop + elemHeight;
+        if($elem.length > 0){
+            elemHeight = $elem.outerHeight();
+            elementTop = $elem.offset().top;
+            elementBottom = elementTop + elemHeight;
+        }
 
         var windowHeight = $(window).height();
         var viewportBottom = currY + windowHeight;
