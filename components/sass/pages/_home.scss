@@ -57,6 +57,7 @@
 
 			.filter {
 				position: relative;
+				margin-top: 3rem;
 				span {
 					color: $slate-grey;
 					font-size: 3rem;
@@ -64,6 +65,19 @@
 					line-height: 4rem;
 					letter-spacing: .1rem;
 					padding-right: 1rem;
+					font-weight: 400;
+					@include breakpoint(max-width $medium){
+						font-size: 2.4rem;
+					}
+					@include breakpoint(max-width $potrait){
+						font-size: 2rem;
+						line-height:3rem;
+					}// .breakpoint 768px
+					@include breakpoint(max-width $small){
+							font-size: 1.6rem;
+							line-height: 2.4rem;
+							padding-right: .4rem;
+					}
 				}
 			}// filter
 

@@ -1,14 +1,7 @@
-/* VARS
-   ============================== */
-/* MIXINS
-==================================*/
-.card-shadow,
-#dropdown-menu {
-  box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15), 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
+.card-shadow, #dropdown-menu {
+  box-shadow: 0 0.1em 0.25em rgba(91, 103, 114, 0.3), 0 0.1em 0.2em rgba(91, 103, 114, 0.3);
 }
 
-/* INPUT
-   ================================== */
 #input {
   border: 0;
   background: transparent;
@@ -16,7 +9,7 @@
   outline: 0;
   display: block;
   text-align: left;
-  width: 270px;
+  width: 16rem;
   cursor: pointer;
   color: $slate-grey;
   text-decoration: none;
@@ -27,13 +20,26 @@
   font-size: 3rem;
   line-height: 4rem;
   letter-spacing: .1rem;
+  @include breakpoint(max-width $large){
+    font-size: 2.4rem;
+    width:14rem;
+  }
+  @include breakpoint(max-width $potrait){
+    font-size: 2rem;
+    line-height:3rem;
+    width:12rem;
+  }// .breakpoint 768px
+  @include breakpoint(max-width $small){
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      width:10rem;
+  }
 
   &.open{
     opacity: 0;
   }
 }
-/* DROPDOWN
-   ================================== */
+
 .button-group {
   position: absolute;
   width: 215px;
@@ -49,38 +55,50 @@
     i {
       background: grey!important;
     }
+    @include breakpoint (max-width $medium){
+      right: -2rem;
+      top: 2rem;
+    }
+    @include breakpoint (max-width $potrait){
+      right: 0;
+      top: 1.5rem;
+    }
+    @include breakpoint (max-width $small){
+      right: 3rem;
+      top: 1rem;
+    }
   }
 }
 
 #dropdown-menu {
   position: absolute;
-  top: .8em;
-  right: 0;
+  top: 0rem;
   left: 0;
-  margin: 1em auto;
-  padding: 1em 1.35em 1em;
-  width: 276px;
+  margin: 0 auto;
+  padding: 1rem 2.5rem 1rem;
+  width: 18rem;
   list-style: none;
   text-align: left;
-  border-radius: 2px;
-  background: #fafafa;
+  border-radius: .6rem;
+  background: #ffffff;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
   -webkit-transform: scale(0);
   transform: scale(0);
   -webkit-transform-origin: right top;
   transform-origin: right top;
   z-index: 2;
+
   li {
     position: relative;
-    line-height: 2.35em;
+    line-height: 3rem;
     -webkit-transform: translate3d(0, -10px, 0);
     transform: translate3d(0, -10px, 0);
     opacity: 0;
     cursor: pointer;
     a {
-      color: #222222;
+      color: $slate-grey;
       text-decoration: none;
-      font-size: 1em;
+      font-size: 1.5rem;
     }
   }
 
@@ -106,6 +124,22 @@
       }
       &:nth-child(5) {
         transition-delay: 0.35s !important;
+      }
+    }
+  }
+  @include breakpoint (max-width $medium){
+    width: 16rem;
+  }
+  @include breakpoint (max-width $potrait){
+    width: 14rem;
+  }
+  @include breakpoint (max-width $small){
+    padding: 1rem 1.5rem;
+    width: 12rem;
+    li {
+      line-height: 2.2rem;
+      a {
+        font-size: 1.2rem;
       }
     }
   }
