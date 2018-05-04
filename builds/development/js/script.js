@@ -520,8 +520,13 @@ $(document).ready(function(){
     // Attach scroll event
     $(window).on('resize scroll', function(e) {
         var $animateBg = $(document).find('.animated-bg');
-        // Background image/image scrolling fade Loading control
-        viewPortDetectController($animateBg, imgAnimationBinder);
+        var $animateImg = $(document).find('.animated-img');
+
+        // Background image scrolling fade in Loading control
+        viewPortDetectController($animateBg, bgImgAnimationBinder);
+
+        // Background image scrolling fade in Loading control
+        viewPortDetectController($animateImg, imgAnimationBinder);
 
         // horizontal slider
         if(!window.USER_IS_TOUCHING){
@@ -549,7 +554,9 @@ $(document).ready(function(){
     selectDropdown();
 
     // init filter function
-    filter.init();
+    if($(".homepage").length >0){
+        filter.init();
+    }
 
 });
 
@@ -643,6 +650,16 @@ var scrollPastEl = function ($bindEl) {
     return elementBottom < viewportBottom;
 };
 
+var scrollInEl = function ($bindEl) {
+    var elementTop = $bindEl.offset().top;
+    var elementBottom = elementTop + $bindEl.outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementTop < viewportBottom;
+};
+
 var isTargetVisble = function ($bindEl, cb) {
     // Fixing the undefined error for the pages that dont have this scroll wrapper element
     if($bindEl.length > 0) {
@@ -652,8 +669,11 @@ var isTargetVisble = function ($bindEl, cb) {
             }
 
             if(scrollPastEl($(this))){
-                console.log("scroll past element....");
                 $(this).addClass('shown');
+            }
+
+            if(scrollInEl($(this))){
+                cb($(this));
             }
         });
     }
@@ -682,13 +702,15 @@ var mobileHorizontalScroll = function($bindEl){
     }
 };
 
-var imgAnimationBinder = function($bindEl){
+var bgImgAnimationBinder = function($bindEl){
 
     $bindEl.addClass('animated');
 
-    //if($bindEl.hasClass('animated')){
-        //$($bindEl).addClass("shown");
-    //}
+};
+
+var imgAnimationBinder = function($bindEl){
+
+    $bindEl.animate({'opacity':'1'}, 1000);
 
 };
 
@@ -786,9 +808,12 @@ var selectDropdown = function(){
     var marka 			= $('#icon');
 
     // set initial Marka icon
-    var m = new Marka('#icon');
-    m.set('triangle').size(16);
-    m.rotate('down');
+    if(marka.length> 0){
+        var m = new Marka('#icon');
+        m.set('triangle').size(16);
+        m.rotate('down');
+    }
+
 
     // trigger dropdown
     triggerOpen.add(marka).on('click', function(e) {
