@@ -67,6 +67,7 @@
   @include breakpoint(max-width $small){
     .small-wrapper{
       .text-container-left{
+
         h1 {
           font-size: 1.6rem;
           line-height: 2.4rem;
@@ -75,6 +76,11 @@
           font-size: .75rem;
           letter-spacing:.4rem;
         }
+      }
+    }
+    .large-wrapper {
+      .text-container-right {
+        width: 100%;
       }
     }
   }// .breakpoint 375px

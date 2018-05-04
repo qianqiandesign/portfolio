@@ -149,3 +149,21 @@
   background-position: 50% 50%;
   background-size: 100%;
 }
+
+#color_parallax {
+  .parallax_1, .parallax_2, .parallax_3, .parallax_4 {
+    min-height: 400px;
+    @include breakpoint (max-width $small){
+      min-height: 150px;
+      margin-top: 0rem;
+    }
+  }
+}
+
+
+
+
+
+
+
+

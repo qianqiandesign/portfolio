@@ -30,11 +30,15 @@
 
 
 .slide-navigation {
-  	background-color: $lightblue;
+  	background-color: $light;
     padding: 4rem;
     text-align: center;
     position: relative;
     overflow: hidden;
+    margin-top:-4rem;
+    @include breakpoint (max-width $small){
+      padding:2rem;
+    }
 }
 
 .nav-fillslide {
@@ -144,7 +148,7 @@
         -webkit-transition-delay: 0s;
         transition-delay: 0s;
         .icon {
-    		fill: $light;
+    		fill: $blue;
     	}
       }
       div {
