@@ -846,73 +846,86 @@ filter.data = {
             "id": "voco",
             "name": "VOCO",
             "color": "rgb(111, 86, 241)",
-            "type": "APP"
+            "type": "APP",
+            "link": "voco.html"
         },
         {
             "id": "pch",
             "name": "Pacific Coast Highway One",
             "color": "rgb(145, 210, 196)",
-            "type": "website"
+            "type": "website",
+            "link": "pch.html"
+
         },
         {
             "id": "color-theory",
             "name": "Color Theory",
             "color": "rgb(233, 232, 237)",
-            "type": "website"
+            "type": "website",
+            "link": "color.html"
         },
         {
             "id": "less-than-one",
             "name": "Less Than One",
             "color": "rgb(22, 23, 67)",
-            "type": "motion"
+            "type": "motion",
+            "link": "soulmate.html"
         },
         {
             "id": "petopia",
             "name": "Petopia",
             "color": "rgb(255, 198, 170)",
-            "type": "Branding"
+            "type": "Branding",
+            "link": "petopia.html"
         },
         {
             "id": "pillow",
             "name": "Pillow",
             "color": "rgb(25, 163, 157)",
-            "type": "website"
+            "type": "website",
+            "link": "project.html"
         },
         {
             "id": "crazy-ramen",
             "name": "Crazy Ramen",
             "color": "rgb(241, 128, 72)",
-            "type": "website"
+            "type": "website",
+            "link": "ramen.html"
         },
         {
             "id": "short-term-rental",
             "name": "Short Term Rental",
             "color": "rgb(218, 227, 224)",
-            "type": "dashboard"
+            "type": "dashboard",
+            "link": "project.html"
         },
         {
             "id": "volunteer-match",
             "name": "Volunteer Match",
             "color": "rgb(255, 203, 173)",
-            "type": "website"
+            "type": "website",
+            "link": "project.html"
         },
         {
             "id": "kidzjet",
             "name": "Kidzjet",
             "color": "rgb(253, 253, 253)",
-            "type": "dashboard &amp; APP"
+            "type": "dashboard &amp; APP",
+            "link": "project.html"
         },
         {
             "id": "promotion",
             "name": "Promotion",
             "color": "rgb(247, 245, 247)",
-            "type": "Marketing Materials"
+            "type": "Marketing Materials",
+            "link": "project.html"
         },
         {
             "id": "post-rock-music",
             "name": "Post-Rock Music",
             "color": "rgb(29, 29, 29)",
-            "type": "Website"
+            "type": "Website",
+            "link": "project.html"
         }
 
     ]
