@@ -41,7 +41,7 @@ $(document).ready(function(){
         // Background image scrolling fade in Loading control
         viewPortDetectController($animateBg, bgImgAnimationBinder);
 
-        // Background image scrolling fade in Loading control
+        // full image scrolling fade in Loading control
         viewPortDetectController($animateImg, imgAnimationBinder);
 
         // horizontal slider
