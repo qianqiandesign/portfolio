@@ -1,7 +1,11 @@
 // Image Animation global
+.animated-img{
+  opacity: 0;
+}
 .animated-bg {
   /* Hide image and title and show at half time */
   visibility: hidden;
+  position: relative;
 
   .curtain {
     position: absolute;
