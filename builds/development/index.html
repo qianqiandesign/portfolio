@@ -90,7 +90,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script id="entry-template" type="text/x-handlebars-template">
     {{#each projects}}
-    <div id="{{id}}" class="animated-bg">
+    <div id="{{id}}" class="animated-bg click-bg" onclick="location.href='{{link}}'";>
         <div class="container">
             <div class="text-wrapper">
                 <p>{{{type}}}</p>
