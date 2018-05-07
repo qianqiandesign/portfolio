@@ -74,6 +74,21 @@ a{
   }
 }
 
+  .half-wrapper{
+    height: 400px;
+    padding-right: 2rem;
+    @include breakpoint(max-width $medium){
+      height: auto;
+      margin-bottom: 6rem;
+      padding-right: 0;
+    }
+    @include breakpoint(max-width $small){
+      margin-bottom: 3rem;
+    }
+  } // half-wrapper
+  
+
+
 .subtitle{
   @include subTitle(); 
 }
