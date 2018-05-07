@@ -1,7 +1,15 @@
 // Image Animation global
-.animated-img{
+.animated-img, .animated-text{
   opacity: 0;
+  position: absolute;
+  top: 120px;
 }
+
+.animated-container {
+  position: relative;
+  display: block;
+}
+
 .animated-bg {
   /* Hide image and title and show at half time */
   visibility: hidden;
