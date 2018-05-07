@@ -520,13 +520,13 @@ $(document).ready(function(){
     // Attach scroll event
     $(window).on('resize scroll', function(e) {
         var $animateBg = $(document).find('.animated-bg');
-        var $animateImg = $(document).find('.animated-img');
+        var $animateEl = $(document).find('.animatedEl');
 
         // Background image scrolling fade in Loading control
         viewPortDetectController($animateBg, bgImgAnimationBinder);
 
-        // full image scrolling fade in Loading control
-        viewPortDetectController($animateImg, imgAnimationBinder);
+        //image/Text scrolling fade in Loading control
+        viewPortDetectController($animateEl, animationBinder);
 
         // horizontal slider
         if(!window.USER_IS_TOUCHING){
@@ -708,9 +708,9 @@ var bgImgAnimationBinder = function($bindEl){
 
 };
 
-var imgAnimationBinder = function($bindEl){
+var animationBinder = function($bindEl){
 
-    $bindEl.animate({'opacity':'1'}, 1000);
+    $bindEl.addClass('animated fadeInUp');
 
 };
 
