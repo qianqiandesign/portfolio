@@ -1,6 +1,8 @@
 // Image Animation global
-.animated-img{
-  opacity: 0;
+.animatedEl {
+  &.shown {
+    position: relative;
+  }
 }
 .animated-bg {
   /* Hide image and title and show at half time */
