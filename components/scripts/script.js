@@ -425,7 +425,7 @@ filter.data = {
         {
             "id": "kidzjet",
             "name": "Kidzjet",
-            "color": "rgb(253, 253, 253)",
+            "color": "rgb(251, 250, 255)",
             "type": "dashboard &amp; APP",
             "link": "kidzjet.html"
         },
@@ -492,8 +492,6 @@ filter.filterHandler = function (){
         filter.render(newData);
     }
 };
-
-
 
 
 

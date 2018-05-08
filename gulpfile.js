@@ -43,7 +43,8 @@ gulp.task('js', function() {
     .pipe(concat('script.js'))
     .pipe(browserify())
     .on('error', gutil.log)
-    .pipe(gulpif(env === 'production', uglify()))
+    .pipe(uglify())
+    //.pipe(gulpif(env === 'production', uglify()))
     .pipe(gulp.dest(outputDir + 'js'))
     .pipe(connect.reload())
 });
