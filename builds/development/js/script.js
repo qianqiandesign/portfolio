@@ -883,7 +883,7 @@ filter.data = {
             "name": "Pillow",
             "color": "rgb(25, 163, 157)",
             "type": "website",
-            "link": "project.html"
+            "link": "pillow.html"
         },
         {
             "id": "crazy-ramen",
@@ -897,21 +897,21 @@ filter.data = {
             "name": "Short Term Rental",
             "color": "rgb(218, 227, 224)",
             "type": "dashboard",
-            "link": "project.html"
+            "link": "dashboard.html"
         },
         {
             "id": "volunteer-match",
             "name": "Volunteer Match",
             "color": "rgb(255, 203, 173)",
             "type": "website",
-            "link": "project.html"
+            "link": "volunteermatch.html"
         },
         {
             "id": "kidzjet",
             "name": "Kidzjet",
             "color": "rgb(253, 253, 253)",
             "type": "dashboard &amp; APP",
-            "link": "project.html"
+            "link": "kidzjet.html"
         },
         {
             "id": "promotion",
