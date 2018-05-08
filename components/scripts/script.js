@@ -74,6 +74,12 @@ $(document).ready(function(){
         filter.init();
     }
 
+    window.setTimeout(function(){
+        $('.transition-background').addClass('animated fadeOut').css({zIndex: 0});
+        }, 5000);
+
+
+
 });
 
 
@@ -493,6 +499,15 @@ filter.filterHandler = function (){
     }
 };
 
+
+
+var animation = bodymovin.loadAnimation({
+    container: document.getElementById('bm'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'data/onnuri.json'
+});
 
 
 
