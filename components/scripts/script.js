@@ -50,12 +50,19 @@ $(document).ready(function(){
         }else {
             mobileHorizontalScroll($scrollWrapper);
         }
+
+        disableParallexOnMobile();
     });
 
     //Detect whether user is using touch device
     window.addEventListener('touchstart', function() {
         window.USER_IS_TOUCHING = true;
     });
+
+    // init filter function
+    if($(".homepage").length >0){
+        filter.init();
+    }
 
     // Init text rotate
     initTxtRotate();
@@ -69,21 +76,35 @@ $(document).ready(function(){
     // init filter dropdown
     selectDropdown();
 
-    // init filter function
-    if($(".homepage").length >0){
-        filter.init();
-    }
-
     // Init the page loading and fadeout animation
+    initPageLoadingAnimation();
+
+    // Disable parallex effect on touch device
+    disableParallexOnMobile();
+
+});
+
+
+var initPageLoadingAnimation = function(){
     window.setTimeout(function(){
         $('.transition-background').addClass('animated fadeOut').css({zIndex: 0});
         $('.initEl').addClass('animated fadeInUpBig');
         $('.animated-header').addClass('animated fadeInDownBig')
     }, 5000);
+};
 
-
-
-});
+var disableParallexOnMobile = function () {
+    if(window.USER_IS_TOUCHING){
+        var $desktopEl = $('.desktop-paralex');
+        if($desktopEl.length > 0){
+            $desktopEl.addClass('hidden');
+        }
+        var $mobileEl = $('.mobile-paralex');
+        if($mobileEl.length > 0){
+            $mobileEl.removeClass('hidden');
+        }
+    }
+};
 
 
 // Create TxtRotate object for the text rotation functionality on homepage
