@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body class="homepage">
-<header>
+<div class="transition-background">
+    <div id="bm"> </div>
+</div>
+
+<header class="animated-header">
     <div class="navbar">
         <div class="brand">
             <a href="index.html" id="logo"><img src="images/logo@2x.png" class="logo" alt="logo"></a>
@@ -40,12 +44,12 @@
     <div class="promo">
         <div class="large-wrapper">
             <div class="text-container-left typewriter">
-                <h1 class="typewriter-text">Hi, I am a
+                <h1 class="typewriter-text initEl">Hi, I am a
                     <span class="txt-rotate" data-period="2000" data-rotate='[ "passionate", "visionary", "playful" ]'></span></h1>
-                <h1>Product Designer</h1>
+                <h1 class="initEl">Product Designer</h1>
 
-                <div class="filter">
-                    <span>Show me</span>
+                <div class="filter initEl">
+                    <span class="initEl">Show me</span>
                     <div class="button-group">
                         <i id="icon"></i>
                         <a id="input" href="">all projects</a>
@@ -65,7 +69,7 @@
         </div>
         <div class="small-wrapper">
             <div class="text-container-right">
-                <img src="images/crown@2x.png" alt="crown">
+                <img src="images/crown@2x.png" alt="crown" class="initEl">
             </div>
         </div>
 
@@ -86,6 +90,7 @@
     <p>&copy; 2018 QIANQIAN W.| All Right Reserved. </p>
 </div>
 
+<script src="js/bodymovin.js"></script>
 <script src="js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script id="entry-template" type="text/x-handlebars-template">

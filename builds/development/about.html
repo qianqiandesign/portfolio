@@ -8,7 +8,11 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-	<header>
+	<div class="transition-background">
+		<div id="bm"> </div>
+	</div>
+
+	<header class="animated-header">
 		<div class="navbar">
 			<div class="brand">
 				<a href="index.html" id="logo"><img src="images/logo@2x.png" class="logo" alt="logo"></a>
@@ -41,16 +45,16 @@
 	<div id="about" class="clearfix">
 		<div class="small-wrapper">
 			<div class="text-container-left">
-				<p class="animated fadeInUp">Me</p>
-				<h1 class="animated fadeInUp">Designer</h1>
-				<h1 class="animated fadeInUp">Coder</h1>
-				<h1 class="animated fadeInUp">Dreamer</h1>
+				<p class="initEl">Me</p>
+				<h1 class="initEl">Designer</h1>
+				<h1 class="initEl">Coder</h1>
+				<h1 class="initEl">Dreamer</h1>
 			</div>
 		</div>
 		<div class="large-wrapper">
 			<div class="text-container-right">
-				<p class="subtext animated fadeInUp">I enthusiastically embrace every opportunity in creating designs that exude a joyous emotion, a breath of fresh air, or a calmness that makes one want to meditate. While my past has been focused on learning, my present and my future, will be dedicated to sharing my views and unique perspective with my clients. Specifically, my diversity will tranlsate to products that are harmonious and inclusive to the end users of my design.</p>
-				<button class="btn-class animated fadeInUp">Download Resume</button>
+				<p class="subtext initEl">I enthusiastically embrace every opportunity in creating designs that exude a joyous emotion, a breath of fresh air, or a calmness that makes one want to meditate. While my past has been focused on learning, my present and my future, will be dedicated to sharing my views and unique perspective with my clients. Specifically, my diversity will tranlsate to products that are harmonious and inclusive to the end users of my design.</p>
+				<button class="btn-class initEl">Download Resume</button>
 			</div>
 		</div>
 	</div> <!-- #about -->
@@ -124,7 +128,8 @@
 		</div>
 		<p>&copy; 2018 QIANQIAN W.| All Right Reserved. </p>
 	</div>
-	
+
+	<script src="js/bodymovin.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
