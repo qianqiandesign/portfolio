@@ -87,9 +87,13 @@ $(document).ready(function(){
 
 var initPageLoadingAnimation = function(){
     window.setTimeout(function(){
-        $('.transition-background').addClass('animated fadeOut').css({zIndex: 0});
+        $('.transition-background').addClass('animated fadeOut').css({zIndex: 0, height: 0});
         $('.initEl').addClass('animated fadeInUpBig');
-        $('.animated-header').addClass('animated fadeInDownBig')
+
+        $('.animated-header').animateCss('fadeInDownBig', function() {
+            // Do somthing after animation
+            $(this).removeClass('animated fadeInDownBig');
+        });
     }, 5000);
 };
 
@@ -531,6 +535,34 @@ var animation = bodymovin.loadAnimation({
     loop: true,
     autoplay: true,
     path: 'data/onnuri.json'
+});
+
+//Extend Jquery to add a function to detect when an animation ends
+$.fn.extend({
+    animateCss: function(animationName, callback) {
+        var animationEnd = (function(el) {
+            var animations = {
+                animation: 'animationend',
+                OAnimation: 'oAnimationEnd',
+                MozAnimation: 'mozAnimationEnd',
+                WebkitAnimation: 'webkitAnimationEnd',
+            };
+
+            for (var t in animations) {
+                if (el.style[t] !== undefined) {
+                    return animations[t];
+                }
+            }
+        })(document.createElement('div'));
+
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+
+            if (typeof callback === 'function') callback();
+        });
+
+        return this;
+    },
 });
 
 
