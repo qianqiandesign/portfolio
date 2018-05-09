@@ -74,9 +74,12 @@ $(document).ready(function(){
         filter.init();
     }
 
+    // Init the page loading and fadeout animation
     window.setTimeout(function(){
         $('.transition-background').addClass('animated fadeOut').css({zIndex: 0});
-        }, 5000);
+        $('.initEl').addClass('animated fadeInUpBig');
+        $('.animated-header').addClass('animated fadeInDownBig')
+    }, 5000);
 
 
 
@@ -273,7 +276,7 @@ var scrollMacBook = function(){
 
         // determine current scroll direction
         if(currY > lastY){
-            console.log("scroll down");
+            //console.log("scroll down");
             if (elementBottom > currY && elementTop < viewportBottom) {
                 scrollPercent = (viewportBottom - elementTop) / elemHeight;
                 rotateDeg = 90 * scrollPercent;
@@ -281,7 +284,7 @@ var scrollMacBook = function(){
 
                 if(scrollPercent > 0 && scrollPercent <= 1){
                     $elem.addClass('scrollable');
-                    $elem.find(".screen-close").addClass('hidden');
+                    //$elem.find(".screen-close").addClass('hidden');
 
                     $elem.find(".screen-open").css({
                         '-webkit-transform' : 'translateZ(-' + translateZ + 'px) rotateX(0deg)',
@@ -293,9 +296,9 @@ var scrollMacBook = function(){
                 }
             }
         }else if(currY === lastY){
-            console.log("none")
+            //console.log("none")
         }else {
-            console.log("scroll up");
+            //console.log("scroll up");
             if (elementBottom > currY && elementTop < viewportBottom) {
                 scrollPercent = (elementBottom - currY) / elemHeight;
                 rotateDeg = 90 * scrollPercent;
