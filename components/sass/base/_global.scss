@@ -560,7 +560,7 @@ video::-webkit-media-controls {
 
 
 .transition-background {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -569,6 +569,7 @@ video::-webkit-media-controls {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 999999;
+  overflow: hidden;
 }
 
 #bm {
