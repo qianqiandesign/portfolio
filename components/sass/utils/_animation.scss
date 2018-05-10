@@ -60,7 +60,6 @@
   &.shown {
     .curtain::after {
       content: none !important;
-      position:relative;
     }
   }
 }
