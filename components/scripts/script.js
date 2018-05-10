@@ -87,8 +87,10 @@ $(document).ready(function(){
 
 var initPageLoadingAnimation = function(){
     window.setTimeout(function(){
-        $('.transition-background').addClass('animated fadeOut').css({zIndex: 0, height: 0});
-        $('.initEl').addClass('animated fadeInUpBig');
+        $('.transition-background').addClass('animated fadeOut').css({ height: 0});
+        $('.initEl').animateCss('fadeInUpBig', function () {
+            $(this).removeClass('animated fadeInUpBig');
+        });
 
         $('.animated-header').animateCss('fadeInDownBig', function() {
             // Do somthing after animation
