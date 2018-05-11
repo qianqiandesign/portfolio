@@ -264,7 +264,7 @@ var bgImgAnimationBinder = function($bindEl){
 
 var animationBinder = function($bindEl){
 
-    //Don't show fadein after you showed the images/text
+    //Don't show fadein effect again after you showed the images/text
     if(!$bindEl.hasClass('shown')){
         $bindEl.animateCss('fadeInUp', function() {
             // Do somthing after animation
