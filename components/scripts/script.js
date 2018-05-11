@@ -52,6 +52,8 @@ $(document).ready(function(){
         }
 
         disableParallexOnMobile();
+
+        hideVideoOnMobile();
     });
 
     //Detect whether user is using touch device
@@ -112,6 +114,25 @@ var disableParallexOnMobile = function () {
             $mobileEl.removeClass('hidden');
         }
     }
+};
+
+var hideVideoOnMobile = function () {
+    // var dataSrc;
+    // var strSrc;
+    var $videoEl = $('video');
+    //var $videoSrc = $('video source');
+    if(window.USER_IS_TOUCHING){
+
+        if($videoEl.length > 0){
+            $videoEl.removeAttr("autoplay loop muted");
+            $videoEl.parent().addClass("hidden");
+        }
+    // }else{
+    //     $videoSrc.each(function(i, v){
+    //         dataSrc = $(this).parent().data('src');
+    //         $(this).attr('src', dataSrc);
+    //     })
+    // }
 };
 
 
