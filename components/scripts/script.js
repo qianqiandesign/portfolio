@@ -471,14 +471,14 @@ filter.data = {
             "name": "Promotion",
             "color": "rgb(247, 245, 247)",
             "type": "Marketing Materials",
-            "link": "project.html"
+            "link": "promotion.html"
         },
         {
             "id": "post-rock-music",
             "name": "Post-Rock Music",
             "color": "rgb(29, 29, 29)",
             "type": "Website",
-            "link": "project.html"
+            "link": "rock.html"
         }
 
     ]
