@@ -85,6 +85,7 @@ $(document).ready(function(){
 });
 
 
+
 var initPageLoadingAnimation = function(){
     window.setTimeout(function(){
         $('.transition-background').addClass('animated fadeOut').css({ zIndex:0, height: 0});
@@ -263,7 +264,12 @@ var bgImgAnimationBinder = function($bindEl){
 
 var animationBinder = function($bindEl){
 
-    $bindEl.addClass('animated fadeInUp');
+    //$bindEl.addClass('animated fadeInUp');
+
+    $bindEl.animateCss('fadeInUp', function() {
+        // Do somthing after animation
+        $(this).removeClass('animated fadeInUp');
+    });
 
 };
 
