@@ -264,12 +264,14 @@ var bgImgAnimationBinder = function($bindEl){
 
 var animationBinder = function($bindEl){
 
-    //$bindEl.addClass('animated fadeInUp');
+    //Don't show fadein after you showed the images/text
+    if(!$bindEl.hasClass('shown')){
+        $bindEl.animateCss('fadeInUp', function() {
+            // Do somthing after animation
+            $(this).removeClass('animated fadeInUp');
+        });
+    }
 
-    $bindEl.animateCss('fadeInUp', function() {
-        // Do somthing after animation
-        $(this).removeClass('animated fadeInUp');
-    });
 
 };
 
