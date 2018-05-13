@@ -52,6 +52,8 @@ $(document).ready(function(){
         }
 
         disableParallexOnMobile();
+
+        hideVideoOnMobile();
     });
 
     //Detect whether user is using touch device
@@ -85,6 +87,7 @@ $(document).ready(function(){
 });
 
 
+
 var initPageLoadingAnimation = function(){
     window.setTimeout(function(){
         $('.transition-background').addClass('animated fadeOut').css({ zIndex:0, height: 0});
@@ -111,6 +114,25 @@ var disableParallexOnMobile = function () {
             $mobileEl.removeClass('hidden');
         }
     }
+};
+
+var hideVideoOnMobile = function () {
+    // var dataSrc;
+    // var strSrc;
+    var $videoEl = $('video');
+    //var $videoSrc = $('video source');
+    if(window.USER_IS_TOUCHING){
+
+        if($videoEl.length > 0){
+            $videoEl.removeAttr("autoplay loop muted");
+            $videoEl.parent().addClass("hidden");
+        }
+    // }else{
+    //     $videoSrc.each(function(i, v){
+    //         dataSrc = $(this).parent().data('src');
+    //         $(this).attr('src', dataSrc);
+    //     })
+    // }
 };
 
 
@@ -263,7 +285,14 @@ var bgImgAnimationBinder = function($bindEl){
 
 var animationBinder = function($bindEl){
 
-    $bindEl.addClass('animated fadeInUp');
+    //Don't show fadein effect again after you showed the images/text
+    if(!$bindEl.hasClass('shown')){
+        $bindEl.animateCss('fadeInUp', function() {
+            // Do somthing after animation
+            $(this).removeClass('animated fadeInUp');
+        });
+    }
+
 
 };
 

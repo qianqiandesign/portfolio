@@ -189,6 +189,12 @@ a{
   }
 }
 
+.sendBtn {
+  background-image: url(../images/send_icon@2x.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  cursor: pointer;
+}
 .full-img {
   width: 100%;
   padding: 2rem 0;
@@ -581,6 +587,8 @@ video::-webkit-media-controls {
 .hidden{
   display: none;
 }
+
+
 
 
 

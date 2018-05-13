@@ -58,6 +58,7 @@
   }
 
   &.shown {
+    overflow-x: hidden;
     .curtain::after {
       content: none !important;
     }
